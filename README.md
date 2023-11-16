@@ -65,6 +65,6 @@ composer analyse
 composer beautify
 ```
 
-2. Every commit to this repository will trigger GitHub Action automatically. The details steps and setup can refer. Basically it just run all of the steps we mention at [Setup Local Environment](#setup-local-environment).
+2. Every commit to this repository will trigger GitHub Action automatically. The details steps and setup can refer `./.github/workflow/laravel.yml`. Basically it just run all of the steps we mention at [Setup Local Environment](#setup-local-environment).
 
 3. There is a folder `/src/postman`. Inside there has two file, collection.json and environment.json. User can import it directly in Postman API platform to use APIs specified in `./routes/api.php`.
