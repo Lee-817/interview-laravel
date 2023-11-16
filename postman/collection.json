@@ -56,6 +56,35 @@
 					"response": []
 				},
 				{
+					"name": "students\\?email=",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL_API}}/students?email=",
+							"host": [
+								"{{URL_API}}"
+							],
+							"path": [
+								"students"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "please_fill_in_student_email_here"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "logout",
 					"request": {
 						"method": "GET",
