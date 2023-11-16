@@ -11,6 +11,20 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    services:
+      db:
+        image: mysql/mysql-server:8.0
+        env:
+          MYSQL_ROOT_USER: root
+          MYSQL_ROOT_PASSWORD: ZkdiwZe38Gsd
+          MYSQL_USER: toyeight
+          MYSQL_PASSWORD: 87sjbS2dBmzd
+          MYSQL_DATABASE: app
+          MYSQL_HOST: db
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping -h localhost" --health-interval=10s --health-timeout=5s --health-retries=3
+
     steps:
     - uses: shivammathur/setup-php@v2
       with:
