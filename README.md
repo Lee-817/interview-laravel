@@ -1,45 +1,70 @@
 # interview-laravel
 
-## Assignment
+## Assignment Answer - By Lee Szeyu
 
-### Objective
+### Setup Local Environment
 
-- Design tests for use cases and issues that engineers may encounter in system development.
-
-### Usecase
-
-- An administrator wants to get a list of students after loging in.
-- At the same time, the administrator wants to confirm the cources which each students registered.
-
-### What you need to do
-
-- Please implement the API listed in `./api/test/openapi.yaml`.
-- This API requires login to make requests.
-- Use the Seeder to create sample data.
-- Also, testing of this API is necessary.
-- Ensure that the tests can be run on GitHub Actions.
-- Prease write readable codes.
-- If there is enough time, please also perform static analysis on GitHub Actions.
-- If there is enough time, please develop screens.
-- Please write down the procedure for starting and running the tests in README.md.
-
-## Installation
-
-1. Fork this project.
-2. How to use this project is below.
+1. After clone the repository, set up a multi-container applications
 
 ```bash
 cp .env.example .env
 docker compose up -d
 ```
 
-## Submit
-After developing, you need to submit your answer.
-Please send us email. And please write the url about your github repository in your email.
+2. Access the toyeight.app (Docker container) by
 
+```bash
+docker exec -it <container_id> sh
+# OR docker exec -it <container_id> /bin/bash
+```
 
-## Duedate
-- The duedate is 5days from receiving the email about this assignment.
-Weekend is not included the due date.
-- If you finish developing, you can submit earlier than the duedate.
-- The faster you can get it out, the higher the rating.
+- In order to obtain the container ID, can use following command
+
+```bash
+docker ps
+
+# sample output of docker ps
+CONTAINER ID   IMAGE                    COMMAND                  CREATED       STATUS                 PORTS                                     NAMES
+59d05ac8a7cf   laravel/php-apache       "docker-php-entrypoi…"   4 hours ago   Up 4 hours             0.0.0.0:8080->80/tcp                      toyeight.app
+5533f13fbea2   mysql/mysql-server:8.0   "/entrypoint.sh mysq…"   4 hours ago   Up 4 hours (healthy)   33060-33061/tcp, 0.0.0.0:3316->3306/tcp   toyeight.db
+```
+
+3. In the toyeight.app command line interface (cli), we can set up our laravel project
+
+```bash
+cp .env.example .env
+composer install
+php artisan key:generate
+```
+
+4. Next is to run database migration
+
+```bash
+# remove the --seed if only need to migrate database schema
+php artisan migrate:fresh --seed
+```
+
+5. Now, we can test our application
+
+```bash
+# feature test with phpunit
+# equivalent to vendor/bin/phpunit --testdox
+composer test
+
+# static analysis with Larastan
+# equivalent to vendor/bin/phpstan analyse --memory-limit=2G
+composer analyse
+```
+
+### Extra
+
+1. We can use Laravel default PHP code style fixer by
+
+```bash
+# equivalent to vendor/bin/pint
+composer beautify
+```
+
+2. Every commit to this repository will trigger GitHub Action automatically. The details steps and setup can refer. Basically it just run all of the steps we mention at [Setup Local Environment](#setup-local-environment).
+
+3. There is a folder `/src/postman`. Inside there has two file, collection.json and environment.json. User can import it directly in Postman API platform to use APIs specified in `./routes/api.php`.
