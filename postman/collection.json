@@ -33,6 +33,29 @@
 					"response": []
 				},
 				{
+					"name": "students",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL_API}}/students",
+							"host": [
+								"{{URL_API}}"
+							],
+							"path": [
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "logout",
 					"request": {
 						"method": "GET",

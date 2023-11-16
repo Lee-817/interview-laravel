@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\StudentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -24,4 +25,6 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     });
 
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+    Route::get('/students', [StudentController::class, 'index'])->name('students');
 });
