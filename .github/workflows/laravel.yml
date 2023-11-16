@@ -1,0 +1,46 @@
+name: Laravel with MySQL
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  laravel-tests:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.2'
+        extensions: mysql
+    - uses: actions/checkout@v3
+    - name: Copy .env
+      working-directory: src/
+      run: php -r "file_exists('.env') || copy('.env.github_action_example', '.env');"
+    - name: Install Dependencies
+      working-directory: src/
+      run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+    - name: Generate key
+      working-directory: src/
+      run: php artisan key:generate
+    - name: Directory Permissions
+      working-directory: src/
+      run: chmod -R 777 storage bootstrap/cache
+    - name: Create Database & Migrate
+      working-directory: src/
+      run: |
+        php artisan migrate:fresh --seed
+    - name: Execute tests (Unit and Feature tests) via PHPUnit
+      env:
+        DB_CONNECTION: sqlite
+      working-directory: src/
+      run: php artisan test
+    - name: Execute static analysis via Laravel Pint
+      working-directory: src/
+      run: vendor/bin/pint
+    - name: Execute static analysis via Larastan
+      working-directory: src/
+      run: vendor/bin/phpstan analyse --memory-limit=2G
