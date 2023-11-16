@@ -46,6 +46,15 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
+        ],
+        "test" : [
+            "vendor/bin/phpunit --testdox"
+        ],
+        "beautify" : [
+            "vendor/bin/pint"
+        ],
+        "analyse" : [
+            "vendor/bin/phpstan analyse --memory-limit=2G"
         ]
     },
     "extra": {
