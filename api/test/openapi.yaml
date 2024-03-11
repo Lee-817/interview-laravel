@@ -1,10 +1,17 @@
 openapi: 3.0.0
 info:
   title: School API
-  version: 0.1.0
-  description: An API for managing students and courses.
+  version: 0.1.0b
+  description: |-
+    An API for managing students and courses.
+    Try editing it
+  contact:
+    name: Fischer
+    url: ''
+    email: fischer.lee@outlook.com
+  termsOfService: ''
 paths:
-  /students:
+  '/students/{email}':
     get:
       summary: List all students
       responses:
@@ -28,6 +35,15 @@ paths:
             type: string
           in: query
           name: email
+      x-stoplight:
+        id: tp93t9he6j6qk
+    parameters:
+      - schema:
+          type: string
+        name: email
+        in: path
+        required: true
+        description: to filter student listing with their full email adress
 components:
   schemas:
     Student:
@@ -66,8 +82,22 @@ components:
       required:
         - id
         - name
+  securitySchemes:
+    apiKey_1:
+      name: apiKey
+      type: apiKey
+      in: query
+  requestBodies:
+    body_1:
+      content:
+        application/json:
+          schema:
+            type: object
+      description: this is the sample body
 servers:
   - url: 'http://localhost:8080'
     description: local
+  - url: 'http://localhost:3000'
+    description: local2
 tags:
   - name: students
