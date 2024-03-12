@@ -69,4 +69,4 @@ composer beautify
 
 3. There is a folder `/src/postman`. Inside there has two file, collection.json and environment.json. User can import it directly in Postman API platform to use APIs specified in `./routes/api.php`.
 
-Now testing codepipeline
+Now testing codepipeline 2
