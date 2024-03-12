@@ -1,103 +1,983 @@
 openapi: 3.0.0
 info:
-  title: School API
-  version: 0.1.0b
-  description: |-
-    An API for managing students and courses.
-    Try editing it
+  title: Toy8 API Server
+  version: 0.1.0
+  description: To provide api endpoints as a service for our in-house mobile applications.
   contact:
     name: Fischer
-    url: ''
-    email: fischer.lee@outlook.com
+    url: 'https://github.com/Lee-817'
+    email: l.szeyu@toyeight.com
   termsOfService: ''
+  license:
+    name: placehodler
+    url: 'https://github.com/Lee-817'
 paths:
-  '/students/{email}':
-    get:
-      summary: List all students
+  /login:
+    post:
+      summary: Log in
       responses:
         '200':
-          description: An array of students
+          description: OK
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Student'
-      operationId: students.index
-      tags:
-        - students
-      description: |-
-        List of all students
-
-        The email parameter needs to be an exact match.
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    x-stoplight:
+                      id: zkh43pbv7a7ka
+                  message:
+                    type: string
+                    x-stoplight:
+                      id: nu2qhrxga42cu
+                  token:
+                    type: string
+                    x-stoplight:
+                      id: 0pmli87uoqsgh
+              examples:
+                Example 1:
+                  value:
+                    status: true
+                    message: User Logged In Successfully
+                    token: 2|OEhkDvEoDgxpwoVqd0Adql1OE2mYH4OOu8qLX4qu7cffe71d
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    x-stoplight:
+                      id: 5ljd8fv9yjjp9
+                  message:
+                    type: string
+                    x-stoplight:
+                      id: zh6jtfnggfq38
+              examples:
+                Example 1:
+                  value:
+                    status: false
+                    message: Email & Password does not match with our record.
+        '422':
+          description: Unprocessable Entity
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    x-stoplight:
+                      id: ui4s57ae38cmt
+                  errors:
+                    type: object
+                    x-stoplight:
+                      id: emxi8esm3mt8r
+              examples:
+                Example 1:
+                  value:
+                    message: The password field is required.
+                    errors:
+                      password:
+                        - The password field is required.
+      operationId: post-login
+      x-stoplight:
+        id: khcvkdc0j8gto
+      description: To login system and get bearer token.
       parameters:
         - schema:
             type: string
-          in: query
-          name: email
+          in: header
+          name: Accept
+          description: application/json
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                password:
+                  type: string
+                  x-stoplight:
+                    id: h2n9xxn6z1ii8
+                email:
+                  type: string
+                  x-stoplight:
+                    id: 65j3nuu5cicty
+            examples:
+              Example 1:
+                value:
+                  password: good@night
+                  email: moon_kindergarten@email.com
+      security: []
+  /logout:
+    post:
+      summary: Log out
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    x-stoplight:
+                      id: 0mzuzs7huqywq
+                  message:
+                    type: string
+                    x-stoplight:
+                      id: widdzicmicolu
+              examples:
+                Example 1:
+                  value:
+                    status: true
+                    message: Logged out success.
+      operationId: post-logout
       x-stoplight:
-        id: tp93t9he6j6qk
+        id: ixx93rgbjyupr
+      description: 'To logout from the system, the associated bearer token will be deleted'
+      parameters:
+        - schema:
+            type: string
+          in: header
+          name: Accept
+          description: application/json
+  /intervention/students:
+    get:
+      summary: Get student listing
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  Example 1:
+                    id: 5
+                    user_type: child
+                    first_name: Otter
+                    last_name: Taylor
+                    email: taylor@email.com
+                    status: active
+                    parent_user_id: null
+                    kindergarten_user_id: 2
+                    birth_date: null
+                    phone_number: null
+                    preferred_language_code: null
+                    created_at: '2024-03-11T20:18:44.000000Z'
+                    updated_at: '2024-03-11T20:18:44.000000Z'
+                    active_intervention_programs:
+                      - id: 1
+                        entry_id: 1
+                        child_user_id: 5
+                        kindergarten_user_id: 2
+                        start_date: '2024-01-01'
+                        end_date: '2024-06-30'
+                        module_cache: null
+                        status: active
+                        created_at: '2024-03-11T20:18:44.000000Z'
+                        updated_at: '2024-03-11T20:18:44.000000Z'
+                properties:
+                  id:
+                    type: integer
+                  user_type:
+                    type: string
+                  first_name:
+                    type: string
+                  last_name:
+                    type: string
+                  email:
+                    type: string
+                  status:
+                    type: string
+                  parent_user_id:
+                    type: integer
+                    nullable: true
+                  kindergarten_user_id:
+                    type: integer
+                    nullable: true
+                  birth_date:
+                    type: string
+                    nullable: true
+                  phone_number:
+                    type: string
+                    nullable: true
+                  preferred_language_code:
+                    type: string
+                    nullable: true
+                  created_at:
+                    type: string
+                  updated_at:
+                    type: string
+                  active_intervention_programs:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        entry_id:
+                          type: integer
+                        child_user_id:
+                          type: integer
+                        kindergarten_user_id:
+                          type: integer
+                        start_date:
+                          type: string
+                        end_date:
+                          type: string
+                        module_cache:
+                          type: string
+                          nullable: true
+                        status:
+                          type: string
+                        created_at:
+                          type: string
+                        updated_at:
+                          type: string
+              examples:
+                Example 1:
+                  value:
+                    id: 5
+                    user_type: child
+                    first_name: Otter
+                    last_name: Taylor
+                    email: taylor@email.com
+                    status: active
+                    parent_user_id: null
+                    kindergarten_user_id: 2
+                    birth_date: null
+                    phone_number: null
+                    preferred_language_code: null
+                    created_at: '2024-03-11T20:18:44.000000Z'
+                    updated_at: '2024-03-11T20:18:44.000000Z'
+                    active_intervention_programs:
+                      - id: 1
+                        entry_id: 1
+                        child_user_id: 5
+                        kindergarten_user_id: 2
+                        start_date: '2024-01-01'
+                        end_date: '2024-06-30'
+                        module_cache: null
+                        status: active
+                        created_at: '2024-03-11T20:18:44.000000Z'
+                        updated_at: '2024-03-11T20:18:44.000000Z'
+      operationId: get-intervention-students
+      x-stoplight:
+        id: 35dunisztch2k
+      description: Retrive a list of students under your kindergarten account
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                page:
+                  type: integer
+                  x-stoplight:
+                    id: jga2p0cefqbt2
+            examples:
+              Example 1:
+                value:
+                  page: 1
     parameters:
       - schema:
           type: string
-        name: email
-        in: path
-        required: true
-        description: to filter student listing with their full email adress
+        in: header
+        name: Accept
+        description: application/json
+  /intervention/entries:
+    get:
+      summary: Get intervention active entries
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  Example 1:
+                    status: true
+                    data:
+                      users:
+                        current_page: 1
+                        data:
+                          - id: 1
+                            child_user_id: 5
+                            kindergarten_user_id: 2
+                            status: active
+                            created_at: '2024-03-11T20:18:44.000000Z'
+                            updated_at: '2024-03-11T20:18:44.000000Z'
+                            student:
+                              id: 5
+                              user_type: child
+                              first_name: Otter
+                              last_name: Taylor
+                              email: taylor@email.com
+                              status: active
+                              parent_user_id: null
+                              kindergarten_user_id: 2
+                              birth_date: null
+                              phone_number: null
+                              preferred_language_code: null
+                              created_at: '2024-03-11T20:18:44.000000Z'
+                              updated_at: '2024-03-11T20:18:44.000000Z'
+                        first_page_url: 'http://localhost:8080/api/intervention/entries?page=1'
+                        from: 1
+                        last_page: 1
+                        last_page_url: 'http://localhost:8080/api/intervention/entries?page=1'
+                        links:
+                          - url: null
+                            label: '&laquo; Previous'
+                            active: false
+                          - url: 'http://localhost:8080/api/intervention/entries?page=1'
+                            label: '1'
+                            active: true
+                          - url: null
+                            label: Next &raquo;
+                            active: false
+                        next_page_url: null
+                        path: 'http://localhost:8080/api/intervention/entries'
+                        per_page: 15
+                        prev_page_url: null
+                        to: 1
+                        total: 1
+                properties:
+                  status:
+                    type: boolean
+                  data:
+                    type: object
+                    properties:
+                      users:
+                        type: object
+                        properties:
+                          current_page:
+                            type: integer
+                          data:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                child_user_id:
+                                  type: integer
+                                kindergarten_user_id:
+                                  type: integer
+                                status:
+                                  type: string
+                                created_at:
+                                  type: string
+                                updated_at:
+                                  type: string
+                                student:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: integer
+                                    user_type:
+                                      type: string
+                                    first_name:
+                                      type: string
+                                    last_name:
+                                      type: string
+                                    email:
+                                      type: string
+                                    status:
+                                      type: string
+                                    parent_user_id:
+                                      type: integer
+                                      nullable: true
+                                    kindergarten_user_id:
+                                      type: integer
+                                      nullable: true
+                                    birth_date:
+                                      type: string
+                                      nullable: true
+                                    phone_number:
+                                      type: string
+                                      nullable: true
+                                    preferred_language_code:
+                                      type: string
+                                      nullable: true
+                                    created_at:
+                                      type: string
+                                    updated_at:
+                                      type: string
+                          first_page_url:
+                            type: string
+                          from:
+                            type: integer
+                          last_page:
+                            type: integer
+                          last_page_url:
+                            type: string
+                          links:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                url:
+                                  type: string
+                                  nullable: true
+                                label:
+                                  type: string
+                                active:
+                                  type: boolean
+                          next_page_url:
+                            nullable: true
+                          path:
+                            type: string
+                          per_page:
+                            type: integer
+                          prev_page_url:
+                            nullable: true
+                          to:
+                            type: integer
+                          total:
+                            type: integer
+      operationId: get-intervention-entries
+      x-stoplight:
+        id: hjtitzird2cw2
+      description: Retrive a list of active entries for each students.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                page:
+                  type: integer
+                  x-stoplight:
+                    id: 29ihnssxls1g9
+            examples:
+              Example 1:
+                value:
+                  page: 1
+    parameters:
+      - schema:
+          type: string
+        in: header
+        name: Accept
+        description: application/json
+  /intervention/modules:
+    get:
+      summary: Get intervention module
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  Example 1:
+                    status: true
+                    data:
+                      modules:
+                        current_page: 1
+                        data:
+                          - id: 1
+                            program_id: 1
+                            day_counter: 1
+                            status: answered
+                            answer_date: '2024-03-01'
+                            version: '2'
+                            created_at: '2024-03-11T20:18:44.000000Z'
+                            updated_at: '2024-03-11T20:18:44.000000Z'
+                          - id: 2
+                            program_id: 1
+                            day_counter: 2
+                            status: answering
+                            answer_date: '2024-03-10'
+                            version: '1'
+                            created_at: '2024-03-11T20:18:44.000000Z'
+                            updated_at: '2024-03-11T20:18:44.000000Z'
+                          - id: 3
+                            program_id: 1
+                            day_counter: 360
+                            status: pending
+                            answer_date: null
+                            version: '1'
+                            created_at: '2024-03-11T20:18:44.000000Z'
+                            updated_at: '2024-03-11T20:18:44.000000Z'
+                        first_page_url: 'http://localhost:8080/api/intervention/modules?page=1'
+                        from: 1
+                        last_page: 1
+                        last_page_url: 'http://localhost:8080/api/intervention/modules?page=1'
+                        links:
+                          - url: null
+                            label: '&laquo; Previous'
+                            active: false
+                          - url: 'http://localhost:8080/api/intervention/modules?page=1'
+                            label: '1'
+                            active: true
+                          - url: null
+                            label: Next &raquo;
+                            active: false
+                        next_page_url: null
+                        path: 'http://localhost:8080/api/intervention/modules'
+                        per_page: 15
+                        prev_page_url: null
+                        to: 3
+                        total: 3
+                properties:
+                  status:
+                    type: boolean
+                  data:
+                    type: object
+                    properties:
+                      modules:
+                        type: object
+                        properties:
+                          current_page:
+                            type: integer
+                          data:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                program_id:
+                                  type: integer
+                                day_counter:
+                                  type: integer
+                                status:
+                                  type: string
+                                answer_date:
+                                  type: string
+                                  nullable: true
+                                version:
+                                  type: string
+                                created_at:
+                                  type: string
+                                updated_at:
+                                  type: string
+                          first_page_url:
+                            type: string
+                          from:
+                            type: integer
+                          last_page:
+                            type: integer
+                          last_page_url:
+                            type: string
+                          links:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                url:
+                                  type: string
+                                  nullable: true
+                                label:
+                                  type: string
+                                active:
+                                  type: boolean
+                          next_page_url:
+                            type: string
+                            nullable: true
+                          path:
+                            type: string
+                          per_page:
+                            type: integer
+                          prev_page_url:
+                            type: string
+                            nullable: true
+                          to:
+                            type: integer
+                          total:
+                            type: integer
+      operationId: get-intervention-modules
+      x-stoplight:
+        id: nxfi200zl0tz0
+      description: Get module listing from specific program
+    parameters:
+      - schema:
+          type: string
+        in: header
+        name: accept
+        description: application/json
+  /intervention/programs:
+    get:
+      summary: Get intervention program
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  Example 1:
+                    status: true
+                    data:
+                      users:
+                        current_page: 1
+                        data:
+                          - id: 1
+                            entry_id: 1
+                            child_user_id: 5
+                            kindergarten_user_id: 2
+                            start_date: '2024-01-01'
+                            end_date: '2024-06-30'
+                            module_cache: null
+                            status: active
+                            created_at: '2024-03-11T20:18:44.000000Z'
+                            updated_at: '2024-03-11T20:18:44.000000Z'
+                            entry:
+                              id: 1
+                              child_user_id: 5
+                              kindergarten_user_id: 2
+                              status: active
+                              created_at: '2024-03-11T20:18:44.000000Z'
+                              updated_at: '2024-03-11T20:18:44.000000Z'
+                            student:
+                              id: 5
+                              user_type: child
+                              first_name: Otter
+                              last_name: Taylor
+                              email: taylor@email.com
+                              status: active
+                              parent_user_id: null
+                              kindergarten_user_id: 2
+                              birth_date: null
+                              phone_number: null
+                              preferred_language_code: null
+                              created_at: '2024-03-11T20:18:44.000000Z'
+                              updated_at: '2024-03-11T20:18:44.000000Z'
+                        first_page_url: 'http://localhost:8080/api/intervention/programs?page=1'
+                        from: 1
+                        last_page: 1
+                        last_page_url: 'http://localhost:8080/api/intervention/programs?page=1'
+                        links:
+                          - url: null
+                            label: '&laquo; Previous'
+                            active: false
+                          - url: 'http://localhost:8080/api/intervention/programs?page=1'
+                            label: '1'
+                            active: true
+                          - url: null
+                            label: Next &raquo;
+                            active: false
+                        next_page_url: null
+                        path: 'http://localhost:8080/api/intervention/programs'
+                        per_page: 15
+                        prev_page_url: null
+                        to: 1
+                        total: 1
+                properties:
+                  status:
+                    type: boolean
+                  data:
+                    type: object
+                    properties:
+                      users:
+                        type: object
+                        properties:
+                          current_page:
+                            type: integer
+                          data:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                entry_id:
+                                  type: integer
+                                child_user_id:
+                                  type: integer
+                                kindergarten_user_id:
+                                  type: integer
+                                start_date:
+                                  type: string
+                                end_date:
+                                  type: string
+                                module_cache:
+                                  type: string
+                                  nullable: true
+                                status:
+                                  type: string
+                                created_at:
+                                  type: string
+                                updated_at:
+                                  type: string
+                                entry:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: integer
+                                    child_user_id:
+                                      type: integer
+                                    kindergarten_user_id:
+                                      type: integer
+                                    status:
+                                      type: string
+                                    created_at:
+                                      type: string
+                                    updated_at:
+                                      type: string
+                                student:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: integer
+                                    user_type:
+                                      type: string
+                                    first_name:
+                                      type: string
+                                    last_name:
+                                      type: string
+                                    email:
+                                      type: string
+                                    status:
+                                      type: string
+                                    parent_user_id:
+                                      type: integer
+                                      nullable: true
+                                    kindergarten_user_id:
+                                      type: integer
+                                      nullable: true
+                                    birth_date:
+                                      type: string
+                                      nullable: true
+                                    phone_number:
+                                      type: string
+                                      nullable: true
+                                    preferred_language_code:
+                                      type: string
+                                      nullable: true
+                                    created_at:
+                                      type: string
+                                    updated_at:
+                                      type: string
+                          first_page_url:
+                            type: string
+                          from:
+                            type: integer
+                          last_page:
+                            type: integer
+                          last_page_url:
+                            type: string
+                          links:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                url:
+                                  type: string
+                                  nullable: true
+                                label:
+                                  type: string
+                                active:
+                                  type: boolean
+                          next_page_url:
+                            nullable: true
+                          path:
+                            type: string
+                          per_page:
+                            type: integer
+                          prev_page_url:
+                            nullable: true
+                          to:
+                            type: integer
+                          total:
+                            type: integer
+      operationId: get-intervention-programs
+      x-stoplight:
+        id: cs2g2lamr7jbi
+      description: Retrive a list of active programs for each students.
 components:
   schemas:
-    Student:
+    User:
+      title: User
+      x-stoplight:
+        id: n7b9wskh2uceb
       type: object
+      x-examples:
+        Example 1:
+          id: 5
+          user_type: child
+          first_name: Otter
+          last_name: Taylor
+          email: taylor@email.com
+          status: active
+          parent_user_id: null
+          kindergarten_user_id: 2
+          birth_date: null
+          phone_number: null
+          preferred_language_code: null
+          created_at: '2024-03-11T20:18:44.000000Z'
+          updated_at: '2024-03-11T20:18:44.000000Z'
       properties:
         id:
           type: integer
-        name:
+          x-stoplight:
+            id: zes2pv5cf3q74
+        user_type:
+          type: integer
+          x-stoplight:
+            id: zbt8bzqmc4plp
+        first_name:
+          type: integer
+          x-stoplight:
+            id: 0z5y23bbrfg36
+        last_name:
           type: string
+          x-stoplight:
+            id: mjbo8hit6cjkk
         email:
           type: string
-          format: email
-        courses:
-          type: array
-          items:
-            $ref: '#/components/schemas/Course'
+          x-stoplight:
+            id: rtdk1de77t0gu
+        status:
+          type: string
+          x-stoplight:
+            id: mu626b57zxr8a
+        parent_user_id:
+          type: string
+          x-stoplight:
+            id: q90jyysdagx7b
+        kindergarten_user_id:
+          type: string
+          x-stoplight:
+            id: etsupbs7uwhbf
+        birth_date:
+          type: string
+          x-stoplight:
+            id: 444r3l0r07knx
+        phone_number:
+          type: string
+          x-stoplight:
+            id: lutg4rmhy968j
+        preferred_language_code:
+          type: string
+          x-stoplight:
+            id: royngr353pqu3
         created_at:
           type: string
-          format: date-time
+          x-stoplight:
+            id: asiob18mul15l
         updated_at:
           type: string
-          format: date-time
-      required:
-        - id
-        - name
-        - email
-        - created_at
-        - updated_at
-    Course:
+          x-stoplight:
+            id: nnnhvncwl090z
+      description: ''
+    Entry:
       type: object
       properties:
         id:
           type: integer
-        name:
+        child_user_id:
+          type: integer
+        kindergarten_user_id:
+          type: integer
+        status:
           type: string
-      required:
-        - id
-        - name
+        created_at:
+          type: string
+        updated_at:
+          type: string
+      x-examples:
+        Example 1:
+          id: 1
+          child_user_id: 5
+          kindergarten_user_id: 2
+          status: active
+          created_at: '2024-03-11T20:18:44.000000Z'
+          updated_at: '2024-03-11T20:18:44.000000Z'
+      title: Entry
+      description: ''
+    Program:
+      type: object
+      x-examples:
+        Example 1:
+          id: 1
+          entry_id: 1
+          child_user_id: 5
+          kindergarten_user_id: 2
+          start_date: '2024-01-01'
+          end_date: '2024-06-30'
+          module_cache: null
+          status: active
+          created_at: '2024-03-11T20:18:44.000000Z'
+          updated_at: '2024-03-11T20:18:44.000000Z'
+      properties:
+        id:
+          type: integer
+        entry_id:
+          type: integer
+        child_user_id:
+          type: integer
+        kindergarten_user_id:
+          type: integer
+        start_date:
+          type: string
+        end_date:
+          type: string
+        module_cache:
+          type: string
+          nullable: true
+        status:
+          type: string
+        created_at:
+          type: string
+        updated_at:
+          type: string
+    Module:
+      type: object
+      properties:
+        id:
+          type: integer
+        program_id:
+          type: integer
+        day_counter:
+          type: integer
+        status:
+          type: string
+        answer_date:
+          type: string
+        version:
+          type: string
+        created_at:
+          type: string
+        updated_at:
+          type: string
+      x-examples:
+        Example 1:
+          id: 1
+          program_id: 1
+          day_counter: 1
+          status: answered
+          answer_date: '2024-03-01'
+          version: '2'
+          created_at: '2024-03-11T20:18:44.000000Z'
+          updated_at: '2024-03-11T20:18:44.000000Z'
   securitySchemes:
-    apiKey_1:
-      name: apiKey
-      type: apiKey
-      in: query
-  requestBodies:
-    body_1:
-      content:
-        application/json:
-          schema:
-            type: object
-      description: this is the sample body
+    Authorization:
+      type: http
+      scheme: bearer
+  requestBodies: {}
 servers:
-  - url: 'http://localhost:8080'
-    description: local
-  - url: 'http://localhost:3000'
-    description: local2
+  - url: 'http://localhost:8080/api'
+    description: Development
+  - url: 'http://localhost:8080/api/#'
+    description: Staging
+  - url: 'http://localhost:8080/api/#'
+    description: Production
 tags:
-  - name: students
+  - name: Toy8 API Server
+    description: OpenAPI documentation
+security:
+  - Authorization: []
