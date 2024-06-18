@@ -9,7 +9,7 @@ info:
     email: l.szeyu@toyeight.com
   termsOfService: ''
   license:
-    name: placehodler
+    name: placeholder
     url: 'https://github.com/Lee-817'
 paths:
   /login:
