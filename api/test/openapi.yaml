@@ -166,7 +166,7 @@ paths:
           description: application/json
   /intervention/children:
     get:
-      summary: Get student listing
+      summary: Get children listing
       responses:
         2XX:
           description: Success
