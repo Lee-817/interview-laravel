@@ -633,20 +633,22 @@ paths:
           application/json:
             schema:
               type: object
-              properties:
-                page:
-                  type: integer
-                student_id:
-                  type: integer
               x-examples:
                 Example 1:
                   page: 1
                   student_id: 5
+              properties:
+                page:
+                  type: integer
+                child_id:
+                  type: integer
+                  x-stoplight:
+                    id: 1tgxl8gyr5887
             examples:
               Example 1:
                 value:
                   page: 1
-                  student_id: 5
+                  child_id: 5
   /intervention/modules:
     get:
       summary: Get intervention module
