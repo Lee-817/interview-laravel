@@ -128,7 +128,7 @@ paths:
               Example 1:
                 value:
                   password: good@night
-                  email: moon_kindergarten@email.com
+                  login_id: moon_kindergarten@email.com
       security: []
   /logout:
     post:
