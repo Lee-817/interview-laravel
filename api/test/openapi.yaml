@@ -1543,146 +1543,132 @@ paths:
 components:
   schemas:
     User:
-      title: User
-      x-stoplight:
-        id: n7b9wskh2uceb
       type: object
       x-examples:
         Example 1:
-          id: 5
+          id: 4
           user_type: child
-          first_name: Otter
-          last_name: Taylor
-          email: taylor@email.com
+          first_name: Josh
+          last_name: Bobby
+          birth_date: '2021-01-20'
+          login_id: null
           status: active
-          parent_user_id: null
+          parent_user_id: 8
           kindergarten_user_id: 2
-          birth_date: null
-          phone_number: null
-          preferred_language_code: null
-          created_at: '2024-03-11T20:18:44.000000Z'
-          updated_at: '2024-03-11T20:18:44.000000Z'
+          preferred_language_id: 1
+          created_at: '2024-06-18T12:23:07.000000Z'
+          updated_at: '2024-06-18T12:23:07.000000Z'
       properties:
         id:
           type: integer
-          x-stoplight:
-            id: zes2pv5cf3q74
         user_type:
-          type: integer
-          x-stoplight:
-            id: zbt8bzqmc4plp
+          type: string
         first_name:
-          type: integer
-          x-stoplight:
-            id: 0z5y23bbrfg36
+          type: string
         last_name:
           type: string
-          x-stoplight:
-            id: mjbo8hit6cjkk
-        email:
-          type: string
-          x-stoplight:
-            id: rtdk1de77t0gu
-        status:
-          type: string
-          x-stoplight:
-            id: mu626b57zxr8a
-        parent_user_id:
-          type: string
-          x-stoplight:
-            id: q90jyysdagx7b
-        kindergarten_user_id:
-          type: string
-          x-stoplight:
-            id: etsupbs7uwhbf
         birth_date:
           type: string
-          x-stoplight:
-            id: 444r3l0r07knx
-        phone_number:
+        login_id:
           type: string
-          x-stoplight:
-            id: lutg4rmhy968j
-        preferred_language_code:
+          nullable: true
+        status:
           type: string
-          x-stoplight:
-            id: royngr353pqu3
-        created_at:
-          type: string
-          x-stoplight:
-            id: asiob18mul15l
-        updated_at:
-          type: string
-          x-stoplight:
-            id: nnnhvncwl090z
-      description: ''
-    Entry:
-      type: object
-      properties:
-        id:
-          type: integer
-        student_user_id:
+        parent_user_id:
           type: integer
         kindergarten_user_id:
           type: integer
-        status:
-          type: string
+        preferred_language_id:
+          type: integer
         created_at:
           type: string
         updated_at:
           type: string
+    Entry:
+      type: object
       x-examples:
         Example 1:
           id: 1
-          student_user_id: 5
+          child_user_id: 5
           kindergarten_user_id: 2
           status: active
-          created_at: '2024-04-17T01:11:17.000000Z'
-          updated_at: '2024-04-17T01:11:17.000000Z'
+          remark: null
+          created_at: '2024-06-18T12:23:07.000000Z'
+          updated_at: '2024-06-18T12:23:07.000000Z'
+      properties:
+        id:
+          type: integer
+        child_user_id:
+          type: integer
+        kindergarten_user_id:
+          type: integer
+        status:
+          type: string
+        remark:
+          type: string
+          nullable: true
+        created_at:
+          type: string
+        updated_at:
+          type: string
     Program:
       type: object
+      x-examples:
+        Example 1:
+          id: 1
+          entry_id: 2
+          child_user_id: 5
+          kindergarten_user_id: 2
+          name: null
+          end_date: '2024-06-30'
+          start_date: '2024-01-01'
+          current_program_language_id: 1
+          status: entered
+          created_at: '2024-06-18T15:53:50.000000Z'
+          updated_at: '2024-06-18T15:53:50.000000Z'
       properties:
         id:
           type: integer
         entry_id:
           type: integer
-        student_user_id:
+        child_user_id:
           type: integer
         kindergarten_user_id:
           type: integer
-        start_date:
+        name:
           type: string
+          nullable: true
         end_date:
           type: string
+        start_date:
+          type: string
+        current_program_language_id:
+          type: integer
         status:
           type: string
         created_at:
           type: string
         updated_at:
           type: string
-      x-examples:
-        Example 1:
-          id: 2
-          entry_id: 1
-          student_user_id: 5
-          kindergarten_user_id: 2
-          start_date: '2024-01-01'
-          end_date: '2024-06-30'
-          status: active
-          created_at: '2024-04-17T01:11:17.000000Z'
-          updated_at: '2024-04-17T01:11:17.000000Z'
     Module:
       type: object
       x-examples:
         Example 1:
-          id: 4
+          id: 1
           program_id: 1
           kindergarten_user_id: 2
-          day_counter: 360
-          status: pending
+          day_counter: 1
+          language_id: 1
+          status: playing
+          is_uploaded: 0
+          device_name: oppo A95 23
+          serial_number: ea52b8fe
+          os_version: ColorOS 13.0
+          model_number: CPH2365
+          app_version: V1.0.1b
           finish_date: null
-          created_at: '2024-04-17T01:11:17.000000Z'
-          updated_at: '2024-04-17T01:11:17.000000Z'
+          created_at: '2024-06-18T15:53:50.000000Z'
+          updated_at: '2024-06-18T07:54:23.000000Z'
       properties:
         id:
           type: integer
@@ -1692,7 +1678,21 @@ components:
           type: integer
         day_counter:
           type: integer
+        language_id:
+          type: integer
         status:
+          type: string
+        is_uploaded:
+          type: integer
+        device_name:
+          type: string
+        serial_number:
+          type: string
+        os_version:
+          type: string
+        model_number:
+          type: string
+        app_version:
           type: string
         finish_date:
           type: string
@@ -1701,35 +1701,42 @@ components:
           type: string
         updated_at:
           type: string
+      description: ''
     Module-Items:
       type: object
       properties:
         id:
           type: integer
-        module_id:
-          type: integer
+        toy8_id:
+          type: string
         module_item_type:
           type: string
         language_id:
           type: integer
-        order:
-          type: integer
-        remark:
+        intervention_screening:
           type: string
+        remarks:
+          type: string
+        status:
+          type: 'null'
+        parent_id:
+          type: 'null'
         created_at:
           type: string
         updated_at:
           type: string
       x-examples:
         Example 1:
-          id: 1
-          module_id: 2
+          id: 2
+          toy8_id: intro_B
           module_item_type: intro
-          language_id: 1
-          order: 1
-          remark: This is a intro
-          created_at: '2024-04-17T01:11:17.000000Z'
-          updated_at: '2024-04-17T01:11:17.000000Z'
+          language_id: 2
+          intervention_screening: intervention
+          remarks: This is a intro
+          status: null
+          parent_id: null
+          created_at: '2024-06-18T15:53:50.000000Z'
+          updated_at: '2024-06-18T15:53:50.000000Z'
   securitySchemes:
     Authorization:
       type: http
