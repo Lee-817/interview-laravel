@@ -1300,147 +1300,9 @@ paths:
             type: integer
           in: query
           name: module_id
-  /check-existence:
-    post:
-      summary: Your POST endpoint
-      tags: []
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    type: boolean
-                  message:
-                    type: string
-                  is_exists:
-                    type: boolean
-                x-examples:
-                  Example 1:
-                    status: true
-                    message: OK
-                    is_exists: true
-              examples:
-                Example 1:
-                  value:
-                    status: true
-                    message: OK
-                    is_exists: true
-        '404':
-          description: Not Found
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    type: boolean
-                  message:
-                    type: string
-                  is_exists:
-                    type: boolean
-                x-examples:
-                  Example 1:
-                    status: false
-                    message: NOT FOUND
-                    is_exists: false
-              examples:
-                Example 1:
-                  value:
-                    status: false
-                    message: NOT FOUND
-                    is_exists: false
-      operationId: post-check-existence
-      x-stoplight:
-        id: 245gi4l1neiev
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                entry_id:
-                  type: integer
-                module_id:
-                  type: integer
-                file_name:
-                  type: string
-              x-examples:
-                Example 1:
-                  entry_id: 5
-                  module_id: 5
-                  file_name: goat_512.png
-            examples:
-              Example 1:
-                value:
-                  entry_id: 5
-                  module_id: 5
-                  file_name: goat_512.png
-    parameters: []
-  /get-upload-url:
-    post:
-      summary: Your POST endpoint
-      tags: []
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    type: boolean
-                  message:
-                    type: string
-                  url:
-                    type: string
-                x-examples:
-                  Example 1:
-                    status: true
-                    message: Upload Url Generated Successfully
-                    url: 'https://toy8-dev-data-upload.s3.ap-southeast-1.amazonaws.com/upload/5/5/goat_512.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIATCKAR6U7E3XZFWMJ%2F20240618%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20240618T074422Z&X-Amz-SignedHeaders=host&X-Amz-Expires=60&X-Amz-Signature=c367c7d648b7576f1dc6640079739fd243bb5e35ee01b0f3cf83c3b5e23e4b5d'
-              examples:
-                Example 1:
-                  value:
-                    status: true
-                    message: Upload Url Generated Successfully
-                    url: 'https://toy8-dev-data-upload.s3.ap-southeast-1.amazonaws.com/upload/5/5/goat_512.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIATCKAR6U7E3XZFWMJ%2F20240618%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20240618T074422Z&X-Amz-SignedHeaders=host&X-Amz-Expires=60&X-Amz-Signature=c367c7d648b7576f1dc6640079739fd243bb5e35ee01b0f3cf83c3b5e23e4b5d'
-      operationId: post-get-upload-url
-      x-stoplight:
-        id: bkn3zax22e99d
-      description: |-
-        Get presigned URL to upload
-        Lifetime of presigned URL is 1 minute
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                entry_id:
-                  type: integer
-                module_id:
-                  type: integer
-                file_name:
-                  type: string
-              x-examples:
-                Example 1:
-                  entry_id: 5
-                  module_id: 5
-                  file_name: goat_512.png
-            examples:
-              Example 1:
-                value:
-                  entry_id: 5
-                  module_id: 5
-                  file_name: goat_512.png
   /intervention/play:
     post:
-      summary: Your POST endpoint
+      summary: Play intervention module
       tags: []
       responses:
         '200':
@@ -1538,6 +1400,144 @@ paths:
                   os_version: ColorOS 13.0
                   model_number: CPH2365
                   app_version: V1.0.1b
+  /check-existence:
+    post:
+      summary: Check file existence on S3
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+                  is_exists:
+                    type: boolean
+                x-examples:
+                  Example 1:
+                    status: true
+                    message: OK
+                    is_exists: true
+              examples:
+                Example 1:
+                  value:
+                    status: true
+                    message: OK
+                    is_exists: true
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+                  is_exists:
+                    type: boolean
+                x-examples:
+                  Example 1:
+                    status: false
+                    message: NOT FOUND
+                    is_exists: false
+              examples:
+                Example 1:
+                  value:
+                    status: false
+                    message: NOT FOUND
+                    is_exists: false
+      operationId: post-check-existence
+      x-stoplight:
+        id: 245gi4l1neiev
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                entry_id:
+                  type: integer
+                module_id:
+                  type: integer
+                file_name:
+                  type: string
+              x-examples:
+                Example 1:
+                  entry_id: 5
+                  module_id: 5
+                  file_name: goat_512.png
+            examples:
+              Example 1:
+                value:
+                  entry_id: 5
+                  module_id: 5
+                  file_name: goat_512.png
+    parameters: []
+  /get-upload-url:
+    post:
+      summary: Get S3 presigned url for upload
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+                  url:
+                    type: string
+                x-examples:
+                  Example 1:
+                    status: true
+                    message: Upload Url Generated Successfully
+                    url: 'https://toy8-dev-data-upload.s3.ap-southeast-1.amazonaws.com/upload/5/5/goat_512.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIATCKAR6U7E3XZFWMJ%2F20240618%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20240618T074422Z&X-Amz-SignedHeaders=host&X-Amz-Expires=60&X-Amz-Signature=c367c7d648b7576f1dc6640079739fd243bb5e35ee01b0f3cf83c3b5e23e4b5d'
+              examples:
+                Example 1:
+                  value:
+                    status: true
+                    message: Upload Url Generated Successfully
+                    url: 'https://toy8-dev-data-upload.s3.ap-southeast-1.amazonaws.com/upload/5/5/goat_512.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIATCKAR6U7E3XZFWMJ%2F20240618%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20240618T074422Z&X-Amz-SignedHeaders=host&X-Amz-Expires=60&X-Amz-Signature=c367c7d648b7576f1dc6640079739fd243bb5e35ee01b0f3cf83c3b5e23e4b5d'
+      operationId: post-get-upload-url
+      x-stoplight:
+        id: bkn3zax22e99d
+      description: |-
+        Get presigned URL to upload
+        Lifetime of presigned URL is 1 minute
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                entry_id:
+                  type: integer
+                module_id:
+                  type: integer
+                file_name:
+                  type: string
+              x-examples:
+                Example 1:
+                  entry_id: 5
+                  module_id: 5
+                  file_name: goat_512.png
+            examples:
+              Example 1:
+                value:
+                  entry_id: 5
+                  module_id: 5
+                  file_name: goat_512.png
 components:
   schemas:
     User:
