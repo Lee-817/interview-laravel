@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: Toy8 API Server
-  version: 0.1.0
+  version: 1.0.0
   description: To provide api endpoints as a service for our in-house mobile applications.
   contact:
     name: Fischer
@@ -25,22 +25,38 @@ paths:
                 properties:
                   status:
                     type: boolean
-                    x-stoplight:
-                      id: zkh43pbv7a7ka
                   message:
                     type: string
-                    x-stoplight:
-                      id: nu2qhrxga42cu
+                  user_info:
+                    type: object
+                    properties:
+                      user_id:
+                        type: integer
+                      user_type:
+                        type: string
+                      user_name:
+                        type: string
                   token:
                     type: string
-                    x-stoplight:
-                      id: 0pmli87uoqsgh
+                x-examples:
+                  Example 1:
+                    status: true
+                    message: User Logged In Successfully
+                    user_info:
+                      user_id: 2
+                      user_type: kindergarten
+                      user_name: Moon Kindergarten
+                    token: 2|5v2VOTxjZJC7B7ieU7n98qhxI3J3ElyrWTGF1lY161100cb8
               examples:
                 Example 1:
                   value:
                     status: true
                     message: User Logged In Successfully
-                    token: 2|OEhkDvEoDgxpwoVqd0Adql1OE2mYH4OOu8qLX4qu7cffe71d
+                    user_info:
+                      user_id: 2
+                      user_type: kindergarten
+                      user_name: Moon Kindergarten
+                    token: 3|fUJDrfFaIXTi6dRZtFSrPaMvitHT1XTf3464rKTeacf7bbe0
         '401':
           description: Unauthorized
           content:
@@ -102,12 +118,12 @@ paths:
               properties:
                 password:
                   type: string
-                  x-stoplight:
-                    id: h2n9xxn6z1ii8
-                email:
+                login_id:
                   type: string
-                  x-stoplight:
-                    id: 65j3nuu5cicty
+              x-examples:
+                Example 1:
+                  password: good@night
+                  login_id: moon_kindergarten@email.com
             examples:
               Example 1:
                 value:
@@ -127,12 +143,12 @@ paths:
                 properties:
                   status:
                     type: boolean
-                    x-stoplight:
-                      id: 0mzuzs7huqywq
                   message:
                     type: string
-                    x-stoplight:
-                      id: widdzicmicolu
+                x-examples:
+                  Example 1:
+                    status: true
+                    message: Logged out success.
               examples:
                 Example 1:
                   value:
@@ -148,7 +164,7 @@ paths:
           in: header
           name: Accept
           description: application/json
-  /intervention/students:
+  /intervention/children:
     get:
       summary: Get student listing
       responses:
@@ -160,51 +176,48 @@ paths:
                 type: object
                 x-examples:
                   Example 1:
-                    students:
+                    children:
                       - id: 4
                         user_type: child
                         first_name: Josh
                         last_name: Bobby
-                        email: bobby@email.com
+                        birth_date: '2021-01-20'
+                        login_id: null
                         status: active
-                        parent_user_id: null
+                        parent_user_id: 8
                         kindergarten_user_id: 2
-                        birth_date: null
-                        phone_number: null
-                        preferred_language_id: null
-                        created_at: '2024-04-17T01:11:17.000000Z'
-                        updated_at: '2024-04-17T01:11:17.000000Z'
+                        preferred_language_id: 1
+                        created_at: '2024-06-18T12:23:07.000000Z'
+                        updated_at: '2024-06-18T12:23:07.000000Z'
                       - id: 5
                         user_type: child
                         first_name: Otter
                         last_name: Taylor
-                        email: taylor@email.com
+                        birth_date: '2019-08-05'
+                        login_id: null
                         status: active
-                        parent_user_id: null
+                        parent_user_id: 8
                         kindergarten_user_id: 2
-                        birth_date: null
-                        phone_number: null
-                        preferred_language_id: null
-                        created_at: '2024-04-17T01:11:17.000000Z'
-                        updated_at: '2024-04-17T01:11:17.000000Z'
+                        preferred_language_id: 2
+                        created_at: '2024-06-18T12:23:07.000000Z'
+                        updated_at: '2024-06-18T12:23:07.000000Z'
                       - id: 6
                         user_type: child
                         first_name: Ruby
                         last_name: Chan
-                        email: ruby@email.com
+                        birth_date: '2022-11-09'
+                        login_id: null
                         status: active
-                        parent_user_id: null
+                        parent_user_id: 7
                         kindergarten_user_id: 2
-                        birth_date: null
-                        phone_number: null
-                        preferred_language_id: null
-                        created_at: '2024-04-17T01:11:17.000000Z'
-                        updated_at: '2024-04-17T01:11:17.000000Z'
+                        preferred_language_id: 2
+                        created_at: '2024-06-18T12:23:07.000000Z'
+                        updated_at: '2024-06-18T12:23:07.000000Z'
                     pagination:
                       current_page: 1
                       last_page: 1
                 properties:
-                  students:
+                  children:
                     type: array
                     items:
                       type: object
@@ -217,24 +230,19 @@ paths:
                           type: string
                         last_name:
                           type: string
-                        email:
+                        birth_date:
                           type: string
+                        login_id:
+                          type: string
+                          nullable: true
                         status:
                           type: string
                         parent_user_id:
-                          type: string
-                          nullable: true
+                          type: integer
                         kindergarten_user_id:
                           type: integer
-                        birth_date:
-                          type: string
-                          nullable: true
-                        phone_number:
-                          type: string
-                          nullable: true
                         preferred_language_id:
                           type: integer
-                          nullable: true
                         created_at:
                           type: string
                         updated_at:
@@ -249,53 +257,50 @@ paths:
               examples:
                 Example 1:
                   value:
-                    students:
+                    children:
                       - id: 4
                         user_type: child
                         first_name: Josh
                         last_name: Bobby
-                        email: bobby@email.com
+                        birth_date: '2021-01-20'
+                        login_id: null
                         status: active
-                        parent_user_id: null
+                        parent_user_id: 8
                         kindergarten_user_id: 2
-                        birth_date: null
-                        phone_number: null
-                        preferred_language_id: null
-                        created_at: '2024-04-17T01:11:17.000000Z'
-                        updated_at: '2024-04-17T01:11:17.000000Z'
+                        preferred_language_id: 1
+                        created_at: '2024-06-18T12:23:07.000000Z'
+                        updated_at: '2024-06-18T12:23:07.000000Z'
                       - id: 5
                         user_type: child
                         first_name: Otter
                         last_name: Taylor
-                        email: taylor@email.com
+                        birth_date: '2019-08-05'
+                        login_id: null
                         status: active
-                        parent_user_id: null
+                        parent_user_id: 8
                         kindergarten_user_id: 2
-                        birth_date: null
-                        phone_number: null
-                        preferred_language_id: null
-                        created_at: '2024-04-17T01:11:17.000000Z'
-                        updated_at: '2024-04-17T01:11:17.000000Z'
+                        preferred_language_id: 2
+                        created_at: '2024-06-18T12:23:07.000000Z'
+                        updated_at: '2024-06-18T12:23:07.000000Z'
                       - id: 6
                         user_type: child
                         first_name: Ruby
                         last_name: Chan
-                        email: ruby@email.com
+                        birth_date: '2022-11-09'
+                        login_id: null
                         status: active
-                        parent_user_id: null
+                        parent_user_id: 7
                         kindergarten_user_id: 2
-                        birth_date: null
-                        phone_number: null
-                        preferred_language_id: null
-                        created_at: '2024-04-17T01:11:17.000000Z'
-                        updated_at: '2024-04-17T01:11:17.000000Z'
+                        preferred_language_id: 2
+                        created_at: '2024-06-18T12:23:07.000000Z'
+                        updated_at: '2024-06-18T12:23:07.000000Z'
                     pagination:
                       current_page: 1
                       last_page: 1
       operationId: get-intervention-students
       x-stoplight:
         id: 35dunisztch2k
-      description: Retrive a list of students under your kindergarten account
+      description: Retrive a list of children under your kindergarten account
       parameters: []
       requestBody:
         content:
@@ -305,12 +310,9 @@ paths:
               properties:
                 page:
                   type: integer
-                  x-stoplight:
-                    id: jga2p0cefqbt2
-                '':
-                  type: string
-                  x-stoplight:
-                    id: uxrfoezygnv38
+              x-examples:
+                Example 1:
+                  page: 1
             examples:
               Example 1:
                 value:
@@ -331,6 +333,36 @@ paths:
             application/json:
               schema:
                 type: object
+                x-examples:
+                  Example 1:
+                    entries:
+                      - id: 1
+                        child_user_id: 5
+                        kindergarten_user_id: 2
+                        status: active
+                        remark: null
+                        created_at: '2024-06-18T12:23:07.000000Z'
+                        updated_at: '2024-06-18T12:23:07.000000Z'
+                        child:
+                          id: 5
+                          first_name: Otter
+                          last_name: Taylor
+                          language: English
+                      - id: 2
+                        child_user_id: 4
+                        kindergarten_user_id: 2
+                        status: deactivated
+                        remark: null
+                        created_at: '2024-06-18T12:23:07.000000Z'
+                        updated_at: '2024-06-18T12:23:07.000000Z'
+                        child:
+                          id: 4
+                          first_name: Josh
+                          last_name: Bobby
+                          language: English
+                    pagination:
+                      current_page: 1
+                      last_page: 1
                 properties:
                   entries:
                     type: array
@@ -339,16 +371,30 @@ paths:
                       properties:
                         id:
                           type: integer
-                        student_user_id:
+                        child_user_id:
                           type: integer
                         kindergarten_user_id:
                           type: integer
                         status:
                           type: string
+                        remark:
+                          type: string
+                          nullable: true
                         created_at:
                           type: string
                         updated_at:
                           type: string
+                        child:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                            first_name:
+                              type: string
+                            last_name:
+                              type: string
+                            language:
+                              type: string
                   pagination:
                     type: object
                     properties:
@@ -356,28 +402,34 @@ paths:
                         type: integer
                       last_page:
                         type: integer
-                x-examples:
-                  Example 1:
-                    entries:
-                      - id: 1
-                        student_user_id: 5
-                        kindergarten_user_id: 2
-                        status: active
-                        created_at: '2024-04-17T01:11:17.000000Z'
-                        updated_at: '2024-04-17T01:11:17.000000Z'
-                    pagination:
-                      current_page: 1
-                      last_page: 1
               examples:
                 Example 1:
                   value:
                     entries:
                       - id: 1
-                        student_user_id: 5
+                        child_user_id: 5
                         kindergarten_user_id: 2
                         status: active
-                        created_at: '2024-04-17T01:11:17.000000Z'
-                        updated_at: '2024-04-17T01:11:17.000000Z'
+                        remark: null
+                        created_at: '2024-06-18T12:23:07.000000Z'
+                        updated_at: '2024-06-18T12:23:07.000000Z'
+                        child:
+                          id: 5
+                          first_name: Otter
+                          last_name: Taylor
+                          language: English
+                      - id: 2
+                        child_user_id: 4
+                        kindergarten_user_id: 2
+                        status: deactivated
+                        remark: null
+                        created_at: '2024-06-18T12:23:07.000000Z'
+                        updated_at: '2024-06-18T12:23:07.000000Z'
+                        child:
+                          id: 4
+                          first_name: Josh
+                          last_name: Bobby
+                          language: English
                     pagination:
                       current_page: 1
                       last_page: 1
@@ -416,6 +468,60 @@ paths:
             application/json:
               schema:
                 type: object
+                x-examples:
+                  Example 1:
+                    programs:
+                      - id: 1
+                        entry_id: 1
+                        child_user_id: 5
+                        kindergarten_user_id: 2
+                        name: null
+                        end_date: '2024-06-30'
+                        start_date: '2024-01-01'
+                        current_program_language_id: 1
+                        status: entered
+                        created_at: '2024-06-18T12:23:07.000000Z'
+                        updated_at: '2024-06-18T12:23:07.000000Z'
+                        child:
+                          id: 5
+                          first_name: Otter
+                          last_name: Taylor
+                          language: English
+                      - id: 2
+                        entry_id: 1
+                        child_user_id: 5
+                        kindergarten_user_id: 2
+                        name: null
+                        end_date: '2024-07-30'
+                        start_date: '2024-02-01'
+                        current_program_language_id: 1
+                        status: finished
+                        created_at: '2024-06-18T12:23:07.000000Z'
+                        updated_at: '2024-06-18T12:23:07.000000Z'
+                        child:
+                          id: 5
+                          first_name: Otter
+                          last_name: Taylor
+                          language: English
+                      - id: 3
+                        entry_id: 1
+                        child_user_id: 5
+                        kindergarten_user_id: 2
+                        name: null
+                        end_date: '2024-06-30'
+                        start_date: '2024-01-01'
+                        current_program_language_id: 2
+                        status: undergoing
+                        created_at: '2024-06-18T12:23:07.000000Z'
+                        updated_at: '2024-06-18T12:23:07.000000Z'
+                        child:
+                          id: 5
+                          first_name: Otter
+                          last_name: Taylor
+                          language: English
+                    pagination:
+                      current_page: 1
+                      last_page: 1
                 properties:
                   programs:
                     type: array
@@ -426,20 +532,36 @@ paths:
                           type: integer
                         entry_id:
                           type: integer
-                        student_user_id:
+                        child_user_id:
                           type: integer
                         kindergarten_user_id:
                           type: integer
-                        start_date:
+                        name:
                           type: string
+                          nullable: true
                         end_date:
                           type: string
+                        start_date:
+                          type: string
+                        current_program_language_id:
+                          type: integer
                         status:
                           type: string
                         created_at:
                           type: string
                         updated_at:
                           type: string
+                        child:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                            first_name:
+                              type: string
+                            last_name:
+                              type: string
+                            language:
+                              type: string
                   pagination:
                     type: object
                     properties:
@@ -447,52 +569,58 @@ paths:
                         type: integer
                       last_page:
                         type: integer
-                x-examples:
-                  Example 1:
-                    programs:
-                      - id: 2
-                        entry_id: 1
-                        student_user_id: 5
-                        kindergarten_user_id: 2
-                        start_date: '2024-01-01'
-                        end_date: '2024-06-30'
-                        status: active
-                        created_at: '2024-04-17T01:11:17.000000Z'
-                        updated_at: '2024-04-17T01:11:17.000000Z'
-                      - id: 3
-                        entry_id: 1
-                        student_user_id: 6
-                        kindergarten_user_id: 2
-                        start_date: '2024-01-01'
-                        end_date: '2024-06-30'
-                        status: active
-                        created_at: '2024-04-17T01:11:17.000000Z'
-                        updated_at: '2024-04-17T01:11:17.000000Z'
-                    pagination:
-                      current_page: 1
-                      last_page: 1
               examples:
                 Example 1:
                   value:
                     programs:
+                      - id: 1
+                        entry_id: 1
+                        child_user_id: 5
+                        kindergarten_user_id: 2
+                        name: null
+                        end_date: '2024-06-30'
+                        start_date: '2024-01-01'
+                        current_program_language_id: 1
+                        status: entered
+                        created_at: '2024-06-18T12:23:07.000000Z'
+                        updated_at: '2024-06-18T12:23:07.000000Z'
+                        child:
+                          id: 5
+                          first_name: Otter
+                          last_name: Taylor
+                          language: English
                       - id: 2
                         entry_id: 1
-                        student_user_id: 5
+                        child_user_id: 5
                         kindergarten_user_id: 2
-                        start_date: '2024-01-01'
-                        end_date: '2024-06-30'
-                        status: active
-                        created_at: '2024-04-17T01:11:17.000000Z'
-                        updated_at: '2024-04-17T01:11:17.000000Z'
+                        name: null
+                        end_date: '2024-07-30'
+                        start_date: '2024-02-01'
+                        current_program_language_id: 1
+                        status: finished
+                        created_at: '2024-06-18T12:23:07.000000Z'
+                        updated_at: '2024-06-18T12:23:07.000000Z'
+                        child:
+                          id: 5
+                          first_name: Otter
+                          last_name: Taylor
+                          language: English
                       - id: 3
                         entry_id: 1
-                        student_user_id: 6
+                        child_user_id: 5
                         kindergarten_user_id: 2
-                        start_date: '2024-01-01'
+                        name: null
                         end_date: '2024-06-30'
-                        status: active
-                        created_at: '2024-04-17T01:11:17.000000Z'
-                        updated_at: '2024-04-17T01:11:17.000000Z'
+                        start_date: '2024-01-01'
+                        current_program_language_id: 2
+                        status: undergoing
+                        created_at: '2024-06-18T12:23:07.000000Z'
+                        updated_at: '2024-06-18T12:23:07.000000Z'
+                        child:
+                          id: 5
+                          first_name: Otter
+                          last_name: Taylor
+                          language: English
                     pagination:
                       current_page: 1
                       last_page: 1
@@ -532,30 +660,182 @@ paths:
                 x-examples:
                   Example 1:
                     modules:
+                      - id: 1
+                        program_id: 1
+                        kindergarten_user_id: 2
+                        day_counter: 1
+                        language_id: 1
+                        status: playing
+                        is_uploaded: 0
+                        device_name: oppo A95 23
+                        serial_number: ea52b8fe
+                        os_version: ColorOS 13.0
+                        model_number: CPH2365
+                        app_version: V1.0.1b
+                        finish_date: null
+                        created_at: '2024-06-18T12:23:07.000000Z'
+                        updated_at: '2024-06-18T04:36:36.000000Z'
+                        module_items:
+                          - id: 1
+                            order: 1
+                            module_item_type: intro
+                            laravel_through_key: 1
+                          - id: 3
+                            order: 2
+                            module_item_type: activity
+                            laravel_through_key: 1
+                          - id: 6
+                            order: 3
+                            module_item_type: middle_praise
+                            laravel_through_key: 1
+                          - id: 9
+                            order: 4
+                            module_item_type: reward
+                            laravel_through_key: 1
                       - id: 2
                         program_id: 2
                         kindergarten_user_id: 2
-                        day_counter: 2
-                        status: answering
-                        finish_date: '2024-03-10'
-                        created_at: '2024-04-17T01:11:17.000000Z'
-                        updated_at: '2024-04-17T01:11:17.000000Z'
+                        day_counter: 1
+                        language_id: 1
+                        status: completed
+                        is_uploaded: 0
+                        device_name: null
+                        serial_number: null
+                        os_version: null
+                        model_number: null
+                        app_version: null
+                        finish_date: '2024-03-01'
+                        created_at: '2024-06-18T12:23:07.000000Z'
+                        updated_at: '2024-06-18T12:23:07.000000Z'
+                        module_items:
+                          - id: 2
+                            order: 1
+                            module_item_type: intro
+                            laravel_through_key: 2
+                          - id: 3
+                            order: 2
+                            module_item_type: activity
+                            laravel_through_key: 2
+                          - id: 7
+                            order: 3
+                            module_item_type: middle_praise
+                            laravel_through_key: 2
+                          - id: 9
+                            order: 4
+                            module_item_type: reward
+                            laravel_through_key: 2
                       - id: 3
-                        program_id: 2
+                        program_id: 3
                         kindergarten_user_id: 2
-                        day_counter: 360
-                        status: pending
-                        finish_date: null
-                        created_at: '2024-04-17T01:11:17.000000Z'
-                        updated_at: '2024-04-17T01:11:17.000000Z'
+                        day_counter: 1
+                        language_id: 1
+                        status: incomplete
+                        is_uploaded: 0
+                        device_name: null
+                        serial_number: null
+                        os_version: null
+                        model_number: null
+                        app_version: null
+                        finish_date: '2024-03-10'
+                        created_at: '2024-06-18T12:23:07.000000Z'
+                        updated_at: '2024-06-18T12:23:07.000000Z'
+                        module_items:
+                          - id: 1
+                            order: 1
+                            module_item_type: intro
+                            laravel_through_key: 3
+                          - id: 5
+                            order: 2
+                            module_item_type: activity
+                            laravel_through_key: 3
+                          - id: 6
+                            order: 3
+                            module_item_type: middle_praise
+                            laravel_through_key: 3
+                          - id: 9
+                            order: 4
+                            module_item_type: reward
+                            laravel_through_key: 3
                       - id: 4
-                        program_id: 1
+                        program_id: 3
                         kindergarten_user_id: 2
-                        day_counter: 360
-                        status: pending
+                        day_counter: 2
+                        language_id: 1
+                        status: playing
+                        is_uploaded: 0
+                        device_name: null
+                        serial_number: null
+                        os_version: null
+                        model_number: null
+                        app_version: null
                         finish_date: null
-                        created_at: '2024-04-17T01:11:17.000000Z'
-                        updated_at: '2024-04-17T01:11:17.000000Z'
+                        created_at: '2024-06-18T12:23:07.000000Z'
+                        updated_at: '2024-06-18T12:23:07.000000Z'
+                        module_items:
+                          - id: 2
+                            order: 1
+                            module_item_type: intro
+                            laravel_through_key: 4
+                          - id: 3
+                            order: 2
+                            module_item_type: activity
+                            laravel_through_key: 4
+                          - id: 7
+                            order: 3
+                            module_item_type: middle_praise
+                            laravel_through_key: 4
+                          - id: 4
+                            order: 4
+                            module_item_type: activity
+                            laravel_through_key: 4
+                          - id: 6
+                            order: 5
+                            module_item_type: middle_praise
+                            laravel_through_key: 4
+                          - id: 5
+                            order: 6
+                            module_item_type: activity
+                            laravel_through_key: 4
+                          - id: 7
+                            order: 7
+                            module_item_type: middle_praise
+                            laravel_through_key: 4
+                          - id: 9
+                            order: 8
+                            module_item_type: reward
+                            laravel_through_key: 4
+                      - id: 5
+                        program_id: 3
+                        kindergarten_user_id: 2
+                        day_counter: 3
+                        language_id: 1
+                        status: playing
+                        is_uploaded: 0
+                        device_name: oppo A95 23
+                        serial_number: ea52b8fe
+                        os_version: null
+                        model_number: null
+                        app_version: null
+                        finish_date: null
+                        created_at: '2024-06-18T12:23:07.000000Z'
+                        updated_at: '2024-06-18T04:37:49.000000Z'
+                        module_items:
+                          - id: 2
+                            order: 1
+                            module_item_type: intro
+                            laravel_through_key: 5
+                          - id: 3
+                            order: 2
+                            module_item_type: activity
+                            laravel_through_key: 5
+                          - id: 7
+                            order: 3
+                            module_item_type: middle_praise
+                            laravel_through_key: 5
+                          - id: 9
+                            order: 4
+                            module_item_type: reward
+                            laravel_through_key: 5
                     pagination:
                       current_page: 1
                       last_page: 1
@@ -573,8 +853,27 @@ paths:
                           type: integer
                         day_counter:
                           type: integer
+                        language_id:
+                          type: integer
                         status:
                           type: string
+                        is_uploaded:
+                          type: integer
+                        device_name:
+                          type: string
+                          nullable: true
+                        serial_number:
+                          type: string
+                          nullable: true
+                        os_version:
+                          type: string
+                          nullable: true
+                        model_number:
+                          type: string
+                          nullable: true
+                        app_version:
+                          type: string
+                          nullable: true
                         finish_date:
                           type: string
                           nullable: true
@@ -582,6 +881,19 @@ paths:
                           type: string
                         updated_at:
                           type: string
+                        module_items:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                              order:
+                                type: integer
+                              module_item_type:
+                                type: string
+                              laravel_through_key:
+                                type: integer
                   pagination:
                     type: object
                     properties:
@@ -593,30 +905,182 @@ paths:
                 Example 1:
                   value:
                     modules:
+                      - id: 1
+                        program_id: 1
+                        kindergarten_user_id: 2
+                        day_counter: 1
+                        language_id: 1
+                        status: playing
+                        is_uploaded: 0
+                        device_name: oppo A95 23
+                        serial_number: ea52b8fe
+                        os_version: ColorOS 13.0
+                        model_number: CPH2365
+                        app_version: V1.0.1b
+                        finish_date: null
+                        created_at: '2024-06-18T12:23:07.000000Z'
+                        updated_at: '2024-06-18T04:36:36.000000Z'
+                        module_items:
+                          - id: 1
+                            order: 1
+                            module_item_type: intro
+                            laravel_through_key: 1
+                          - id: 3
+                            order: 2
+                            module_item_type: activity
+                            laravel_through_key: 1
+                          - id: 6
+                            order: 3
+                            module_item_type: middle_praise
+                            laravel_through_key: 1
+                          - id: 9
+                            order: 4
+                            module_item_type: reward
+                            laravel_through_key: 1
                       - id: 2
                         program_id: 2
                         kindergarten_user_id: 2
-                        day_counter: 2
-                        status: answering
-                        finish_date: '2024-03-10'
-                        created_at: '2024-04-17T01:11:17.000000Z'
-                        updated_at: '2024-04-17T01:11:17.000000Z'
+                        day_counter: 1
+                        language_id: 1
+                        status: completed
+                        is_uploaded: 0
+                        device_name: null
+                        serial_number: null
+                        os_version: null
+                        model_number: null
+                        app_version: null
+                        finish_date: '2024-03-01'
+                        created_at: '2024-06-18T12:23:07.000000Z'
+                        updated_at: '2024-06-18T12:23:07.000000Z'
+                        module_items:
+                          - id: 2
+                            order: 1
+                            module_item_type: intro
+                            laravel_through_key: 2
+                          - id: 3
+                            order: 2
+                            module_item_type: activity
+                            laravel_through_key: 2
+                          - id: 7
+                            order: 3
+                            module_item_type: middle_praise
+                            laravel_through_key: 2
+                          - id: 9
+                            order: 4
+                            module_item_type: reward
+                            laravel_through_key: 2
                       - id: 3
-                        program_id: 2
+                        program_id: 3
                         kindergarten_user_id: 2
-                        day_counter: 360
-                        status: pending
-                        finish_date: null
-                        created_at: '2024-04-17T01:11:17.000000Z'
-                        updated_at: '2024-04-17T01:11:17.000000Z'
+                        day_counter: 1
+                        language_id: 1
+                        status: incomplete
+                        is_uploaded: 0
+                        device_name: null
+                        serial_number: null
+                        os_version: null
+                        model_number: null
+                        app_version: null
+                        finish_date: '2024-03-10'
+                        created_at: '2024-06-18T12:23:07.000000Z'
+                        updated_at: '2024-06-18T12:23:07.000000Z'
+                        module_items:
+                          - id: 1
+                            order: 1
+                            module_item_type: intro
+                            laravel_through_key: 3
+                          - id: 5
+                            order: 2
+                            module_item_type: activity
+                            laravel_through_key: 3
+                          - id: 6
+                            order: 3
+                            module_item_type: middle_praise
+                            laravel_through_key: 3
+                          - id: 9
+                            order: 4
+                            module_item_type: reward
+                            laravel_through_key: 3
                       - id: 4
-                        program_id: 1
+                        program_id: 3
                         kindergarten_user_id: 2
-                        day_counter: 360
-                        status: pending
+                        day_counter: 2
+                        language_id: 1
+                        status: playing
+                        is_uploaded: 0
+                        device_name: null
+                        serial_number: null
+                        os_version: null
+                        model_number: null
+                        app_version: null
                         finish_date: null
-                        created_at: '2024-04-17T01:11:17.000000Z'
-                        updated_at: '2024-04-17T01:11:17.000000Z'
+                        created_at: '2024-06-18T12:23:07.000000Z'
+                        updated_at: '2024-06-18T12:23:07.000000Z'
+                        module_items:
+                          - id: 2
+                            order: 1
+                            module_item_type: intro
+                            laravel_through_key: 4
+                          - id: 3
+                            order: 2
+                            module_item_type: activity
+                            laravel_through_key: 4
+                          - id: 7
+                            order: 3
+                            module_item_type: middle_praise
+                            laravel_through_key: 4
+                          - id: 4
+                            order: 4
+                            module_item_type: activity
+                            laravel_through_key: 4
+                          - id: 6
+                            order: 5
+                            module_item_type: middle_praise
+                            laravel_through_key: 4
+                          - id: 5
+                            order: 6
+                            module_item_type: activity
+                            laravel_through_key: 4
+                          - id: 7
+                            order: 7
+                            module_item_type: middle_praise
+                            laravel_through_key: 4
+                          - id: 9
+                            order: 8
+                            module_item_type: reward
+                            laravel_through_key: 4
+                      - id: 5
+                        program_id: 3
+                        kindergarten_user_id: 2
+                        day_counter: 3
+                        language_id: 1
+                        status: playing
+                        is_uploaded: 0
+                        device_name: oppo A95 23
+                        serial_number: ea52b8fe
+                        os_version: null
+                        model_number: null
+                        app_version: null
+                        finish_date: null
+                        created_at: '2024-06-18T12:23:07.000000Z'
+                        updated_at: '2024-06-18T04:37:49.000000Z'
+                        module_items:
+                          - id: 2
+                            order: 1
+                            module_item_type: intro
+                            laravel_through_key: 5
+                          - id: 3
+                            order: 2
+                            module_item_type: activity
+                            laravel_through_key: 5
+                          - id: 7
+                            order: 3
+                            module_item_type: middle_praise
+                            laravel_through_key: 5
+                          - id: 9
+                            order: 4
+                            module_item_type: reward
+                            laravel_through_key: 5
                     pagination:
                       current_page: 1
                       last_page: 1
@@ -664,12 +1128,87 @@ paths:
       summary: Get module items from module id
       tags: []
       responses:
+        '422':
+          description: Unprocessable Entity (WebDAV)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  errors:
+                    type: object
+                    properties:
+                      module_id:
+                        type: array
+                        items:
+                          type: string
+                x-examples:
+                  Example 1:
+                    message: The selected module id is invalid.
+                    errors:
+                      module_id:
+                        - The selected module id is invalid.
+              examples:
+                Example 1:
+                  value:
+                    message: The selected module id is invalid.
+                    errors:
+                      module_id:
+                        - The selected module id is invalid.
         2XX:
           description: Success
           content:
             application/json:
               schema:
                 type: object
+                x-examples:
+                  Example 1:
+                    module_items:
+                      - id: 1
+                        toy8_id: intro_A
+                        module_item_type: intro
+                        language_id: 1
+                        intervention_screening: intervention
+                        remarks: This is a intro
+                        status: null
+                        parent_id: null
+                        created_at: '2024-06-18T12:23:07.000000Z'
+                        updated_at: '2024-06-18T12:23:07.000000Z'
+                      - id: 3
+                        toy8_id: activity_A
+                        module_item_type: activity
+                        language_id: 1
+                        intervention_screening: intervention
+                        remarks: This is an activity
+                        status: null
+                        parent_id: null
+                        created_at: '2024-06-18T12:23:07.000000Z'
+                        updated_at: '2024-06-18T12:23:07.000000Z'
+                      - id: 6
+                        toy8_id: middle_praise_A
+                        module_item_type: middle_praise
+                        language_id: 1
+                        intervention_screening: intervention
+                        remarks: This is a middle praise
+                        status: null
+                        parent_id: null
+                        created_at: '2024-06-18T12:23:07.000000Z'
+                        updated_at: '2024-06-18T12:23:07.000000Z'
+                      - id: 9
+                        toy8_id: reward_B
+                        module_item_type: reward
+                        language_id: 1
+                        intervention_screening: intervention
+                        remarks: This is a reward
+                        status: null
+                        parent_id: null
+                        created_at: '2024-06-18T12:23:07.000000Z'
+                        updated_at: '2024-06-18T12:23:07.000000Z'
+                    pagination:
+                      current_page: 1
+                      last_page: 1
                 properties:
                   module_items:
                     type: array
@@ -678,16 +1217,22 @@ paths:
                       properties:
                         id:
                           type: integer
-                        module_id:
-                          type: integer
+                        toy8_id:
+                          type: string
                         module_item_type:
                           type: string
                         language_id:
                           type: integer
-                        order:
-                          type: integer
-                        remark:
+                        intervention_screening:
                           type: string
+                        remarks:
+                          type: string
+                        status:
+                          type: string
+                          nullable: true
+                        parent_id:
+                          type: integer
+                          nullable: true
                         created_at:
                           type: string
                         updated_at:
@@ -699,96 +1244,50 @@ paths:
                         type: integer
                       last_page:
                         type: integer
-                x-examples:
-                  Example 1:
-                    module_items:
-                      - id: 1
-                        module_id: 2
-                        module_item_type: intro
-                        language_id: 1
-                        order: 1
-                        remark: This is a intro
-                        created_at: '2024-04-17T01:11:17.000000Z'
-                        updated_at: '2024-04-17T01:11:17.000000Z'
-                      - id: 2
-                        module_id: 2
-                        module_item_type: reward
-                        language_id: 1
-                        order: 2
-                        remark: This is a reward
-                        created_at: '2024-04-17T01:11:17.000000Z'
-                        updated_at: '2024-04-17T01:11:17.000000Z'
-                      - id: 3
-                        module_id: 2
-                        module_item_type: activity
-                        language_id: 1
-                        order: 3
-                        remark: This is an activity
-                        created_at: '2024-04-17T01:11:17.000000Z'
-                        updated_at: '2024-04-17T01:11:17.000000Z'
-                      - id: 4
-                        module_id: 2
-                        module_item_type: activity
-                        language_id: 1
-                        order: 4
-                        remark: This is an activity
-                        created_at: '2024-04-17T01:11:17.000000Z'
-                        updated_at: '2024-04-17T01:11:17.000000Z'
-                      - id: 5
-                        module_id: 2
-                        module_item_type: activity
-                        language_id: 1
-                        order: 5
-                        remark: This is an activity
-                        created_at: '2024-04-17T01:11:17.000000Z'
-                        updated_at: '2024-04-17T01:11:17.000000Z'
-                    pagination:
-                      current_page: 1
-                      last_page: 1
               examples:
                 Example 1:
                   value:
                     module_items:
                       - id: 1
-                        module_id: 2
+                        toy8_id: intro_A
                         module_item_type: intro
                         language_id: 1
-                        order: 1
-                        remark: This is a intro
-                        created_at: '2024-04-17T01:11:17.000000Z'
-                        updated_at: '2024-04-17T01:11:17.000000Z'
-                      - id: 2
-                        module_id: 2
+                        intervention_screening: intervention
+                        remarks: This is a intro
+                        status: null
+                        parent_id: null
+                        created_at: '2024-06-18T12:23:07.000000Z'
+                        updated_at: '2024-06-18T12:23:07.000000Z'
+                      - id: 3
+                        toy8_id: activity_A
+                        module_item_type: activity
+                        language_id: 1
+                        intervention_screening: intervention
+                        remarks: This is an activity
+                        status: null
+                        parent_id: null
+                        created_at: '2024-06-18T12:23:07.000000Z'
+                        updated_at: '2024-06-18T12:23:07.000000Z'
+                      - id: 6
+                        toy8_id: middle_praise_A
+                        module_item_type: middle_praise
+                        language_id: 1
+                        intervention_screening: intervention
+                        remarks: This is a middle praise
+                        status: null
+                        parent_id: null
+                        created_at: '2024-06-18T12:23:07.000000Z'
+                        updated_at: '2024-06-18T12:23:07.000000Z'
+                      - id: 9
+                        toy8_id: reward_B
                         module_item_type: reward
                         language_id: 1
-                        order: 2
-                        remark: This is a reward
-                        created_at: '2024-04-17T01:11:17.000000Z'
-                        updated_at: '2024-04-17T01:11:17.000000Z'
-                      - id: 3
-                        module_id: 2
-                        module_item_type: activity
-                        language_id: 1
-                        order: 3
-                        remark: This is an activity
-                        created_at: '2024-04-17T01:11:17.000000Z'
-                        updated_at: '2024-04-17T01:11:17.000000Z'
-                      - id: 4
-                        module_id: 2
-                        module_item_type: activity
-                        language_id: 1
-                        order: 4
-                        remark: This is an activity
-                        created_at: '2024-04-17T01:11:17.000000Z'
-                        updated_at: '2024-04-17T01:11:17.000000Z'
-                      - id: 5
-                        module_id: 2
-                        module_item_type: activity
-                        language_id: 1
-                        order: 5
-                        remark: This is an activity
-                        created_at: '2024-04-17T01:11:17.000000Z'
-                        updated_at: '2024-04-17T01:11:17.000000Z'
+                        intervention_screening: intervention
+                        remarks: This is a reward
+                        status: null
+                        parent_id: null
+                        created_at: '2024-06-18T12:23:07.000000Z'
+                        updated_at: '2024-06-18T12:23:07.000000Z'
                     pagination:
                       current_page: 1
                       last_page: 1
@@ -801,6 +1300,244 @@ paths:
             type: integer
           in: query
           name: module_id
+  /check-existence:
+    post:
+      summary: Your POST endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+                  is_exists:
+                    type: boolean
+                x-examples:
+                  Example 1:
+                    status: true
+                    message: OK
+                    is_exists: true
+              examples:
+                Example 1:
+                  value:
+                    status: true
+                    message: OK
+                    is_exists: true
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+                  is_exists:
+                    type: boolean
+                x-examples:
+                  Example 1:
+                    status: false
+                    message: NOT FOUND
+                    is_exists: false
+              examples:
+                Example 1:
+                  value:
+                    status: false
+                    message: NOT FOUND
+                    is_exists: false
+      operationId: post-check-existence
+      x-stoplight:
+        id: 245gi4l1neiev
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                entry_id:
+                  type: integer
+                module_id:
+                  type: integer
+                file_name:
+                  type: string
+              x-examples:
+                Example 1:
+                  entry_id: 5
+                  module_id: 5
+                  file_name: goat_512.png
+            examples:
+              Example 1:
+                value:
+                  entry_id: 5
+                  module_id: 5
+                  file_name: goat_512.png
+    parameters: []
+  /get-upload-url:
+    post:
+      summary: Your POST endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+                  url:
+                    type: string
+                x-examples:
+                  Example 1:
+                    status: true
+                    message: Upload Url Generated Successfully
+                    url: 'https://toy8-dev-data-upload.s3.ap-southeast-1.amazonaws.com/upload/5/5/goat_512.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIATCKAR6U7E3XZFWMJ%2F20240618%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20240618T074422Z&X-Amz-SignedHeaders=host&X-Amz-Expires=60&X-Amz-Signature=c367c7d648b7576f1dc6640079739fd243bb5e35ee01b0f3cf83c3b5e23e4b5d'
+              examples:
+                Example 1:
+                  value:
+                    status: true
+                    message: Upload Url Generated Successfully
+                    url: 'https://toy8-dev-data-upload.s3.ap-southeast-1.amazonaws.com/upload/5/5/goat_512.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIATCKAR6U7E3XZFWMJ%2F20240618%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20240618T074422Z&X-Amz-SignedHeaders=host&X-Amz-Expires=60&X-Amz-Signature=c367c7d648b7576f1dc6640079739fd243bb5e35ee01b0f3cf83c3b5e23e4b5d'
+      operationId: post-get-upload-url
+      x-stoplight:
+        id: bkn3zax22e99d
+      description: |-
+        Get presigned URL to upload
+        Lifetime of presigned URL is 1 minute
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                entry_id:
+                  type: integer
+                module_id:
+                  type: integer
+                file_name:
+                  type: string
+              x-examples:
+                Example 1:
+                  entry_id: 5
+                  module_id: 5
+                  file_name: goat_512.png
+            examples:
+              Example 1:
+                value:
+                  entry_id: 5
+                  module_id: 5
+                  file_name: goat_512.png
+  /intervention/play:
+    post:
+      summary: Your POST endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+                x-examples:
+                  Example 1:
+                    status: true
+                    message: Update Module Status Success
+              examples:
+                Example 1:
+                  value:
+                    status: true
+                    message: Update Module Status Success
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                x-examples:
+                  Example 1:
+                    message: Unauthenticated.
+              examples:
+                Example 1:
+                  value:
+                    message: Unauthenticated.
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+                x-examples:
+                  Example 1:
+                    status: true
+                    message: NOT FOUND
+              examples:
+                Example 1:
+                  value:
+                    status: true
+                    message: NOT FOUND
+      operationId: post-intervention-play
+      x-stoplight:
+        id: rw16mhjyrp2ak
+      description: Update the module status into 'playing'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                module_id:
+                  type: integer
+                device_name:
+                  type: string
+                serial_number:
+                  type: string
+                os_version:
+                  type: string
+                model_number:
+                  type: string
+                app_version:
+                  type: string
+              x-examples:
+                Example 1:
+                  module_id: 5
+                  device_name: oppo A95 23
+                  serial_number: ea52b8fe
+                  os_version: ColorOS 13.0
+                  model_number: CPH2365
+                  app_version: V1.0.1b
+            examples:
+              Example 1:
+                value:
+                  module_id: 5
+                  device_name: oppo A95 23
+                  serial_number: ea52b8fe
+                  os_version: ColorOS 13.0
+                  model_number: CPH2365
+                  app_version: V1.0.1b
 components:
   schemas:
     User:
@@ -999,9 +1736,9 @@ components:
 servers:
   - url: 'http://localhost:8080/api'
     description: Development
-  - url: 'http://localhost:8080/api/#'
+  - url: 'https://api.dev.toyeight-assessment.com/api'
     description: Staging
-  - url: 'http://localhost:8080/api/#'
+  - url: 'https://api.prod.toyeight-assessment.com/api'
     description: Production
 tags:
   - name: Toy8 API Server
