@@ -1657,6 +1657,35 @@ paths:
                       label: testing
                       domain: api.toyeight.com
                       public_key: '-----BEGIN PUBLIC KEY----- pub_key_line_1 pub_key_line_2 -----END PUBLIC KEY-----'
+        '422':
+          description: Unprocessable Entity (WebDAV)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  errors:
+                    type: object
+                    properties:
+                      setting_id:
+                        type: array
+                        items:
+                          type: string
+                x-examples:
+                  Example 1:
+                    message: The selected setting id is invalid.
+                    errors:
+                      setting_id:
+                        - The selected setting id is invalid.
+              examples:
+                Example 1:
+                  value:
+                    message: The selected setting id is invalid.
+                    errors:
+                      setting_id:
+                        - The selected setting id is invalid.
       operationId: get-settings-setting_id
       x-stoplight:
         id: kg2creesm90g2
