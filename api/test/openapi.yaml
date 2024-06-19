@@ -1540,6 +1540,132 @@ paths:
                   entry_id: 5
                   module_id: 5
                   file_name: goat_512.png
+  /settings:
+    get:
+      summary: Get environment settings
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  settings:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        label:
+                          type: string
+                        domain:
+                          type: string
+                  pagination:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                      last_page:
+                        type: integer
+                x-examples:
+                  Example 1:
+                    settings:
+                      - id: 1
+                        label: testing
+                        domain: api.toyeight.com
+                      - id: 2
+                        label: default
+                        domain: 'https://api.dev.toyeight-assessment.com/'
+                    pagination:
+                      current_page: 1
+                      last_page: 1
+              examples:
+                Example 1:
+                  value:
+                    settings:
+                      - id: 1
+                        label: testing
+                        domain: api.toyeight.com
+                      - id: 2
+                        label: default
+                        domain: 'https://api.dev.toyeight-assessment.com/'
+                    pagination:
+                      current_page: 1
+                      last_page: 1
+      operationId: get-settings
+      x-stoplight:
+        id: k5g0apq1llenc
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                page:
+                  type: integer
+              x-examples:
+                Example 1:
+                  page: 1
+            examples:
+              Example 1:
+                value:
+                  page: 1
+  '/settings/{setting_id}':
+    parameters:
+      - schema:
+          type: string
+        name: setting_id
+        in: path
+        required: true
+    get:
+      summary: Get specific environment setting detail
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  setting:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                      label:
+                        type: string
+                      domain:
+                        type: string
+                      public_key:
+                        type: string
+                x-examples:
+                  Example 1:
+                    setting:
+                      id: 1
+                      label: testing
+                      domain: api.toyeight.com
+                      public_key: '-----BEGIN PUBLIC KEY----- pub_key_line_1 pub_key_line_2 -----END PUBLIC KEY-----'
+              examples:
+                Example 1:
+                  value:
+                    setting:
+                      id: 1
+                      label: testing
+                      domain: api.toyeight.com
+                      public_key: '-----BEGIN PUBLIC KEY----- pub_key_line_1 pub_key_line_2 -----END PUBLIC KEY-----'
+      operationId: get-settings-setting_id
+      x-stoplight:
+        id: kg2creesm90g2
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: setting_id
+          description: id of environment setting
 components:
   schemas:
     User:
@@ -1704,6 +1830,18 @@ components:
       description: ''
     Module-Items:
       type: object
+      x-examples:
+        Example 1:
+          id: 2
+          toy8_id: intro_B
+          module_item_type: intro
+          language_id: 2
+          intervention_screening: intervention
+          remarks: This is a intro
+          status: null
+          parent_id: null
+          created_at: '2024-06-18T15:53:50.000000Z'
+          updated_at: '2024-06-18T15:53:50.000000Z'
       properties:
         id:
           type: integer
@@ -1718,25 +1856,32 @@ components:
         remarks:
           type: string
         status:
-          type: 'null'
+          type: string
+          nullable: true
         parent_id:
-          type: 'null'
+          type: integer
+          nullable: true
         created_at:
           type: string
         updated_at:
           type: string
+    Setting:
+      type: object
+      properties:
+        id:
+          type: integer
+        label:
+          type: string
+        domain:
+          type: string
+        public_key:
+          type: string
       x-examples:
         Example 1:
-          id: 2
-          toy8_id: intro_B
-          module_item_type: intro
-          language_id: 2
-          intervention_screening: intervention
-          remarks: This is a intro
-          status: null
-          parent_id: null
-          created_at: '2024-06-18T15:53:50.000000Z'
-          updated_at: '2024-06-18T15:53:50.000000Z'
+          id: 1
+          label: testing
+          domain: api.toyeight.com
+          public_key: '-----BEGIN PUBLIC KEY----- pub_key_line_1 pub_key_line_2 -----END PUBLIC KEY-----'
   securitySchemes:
     Authorization:
       type: http
