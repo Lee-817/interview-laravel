@@ -2741,7 +2741,7 @@ paths:
                               updated_at: '2024-06-26T18:04:02.000000Z'
                               deleted_at: null
                               laravel_through_key: 3
-      operationId: get-screening-get-kindergarten-info
+      operationId: get-screening-kindergarten-info
       x-stoplight:
         id: v4csb5ob835fj
       requestBody:
