@@ -2762,7 +2762,7 @@ paths:
                   page: 1
   /screening/children:
     get:
-      summary: Get children list
+      summary: Get children list for screening
       tags: []
       responses:
         '200':
