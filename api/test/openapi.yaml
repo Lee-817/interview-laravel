@@ -1767,7 +1767,7 @@ paths:
           in: query
           name: setting_id
           description: id of environment setting
-  /screening/get-kindergarten-info:
+  /screening/kindergarten-info:
     get:
       summary: Get my kindergarten info
       tags: []
@@ -2760,6 +2760,7 @@ paths:
               Example 1:
                 value:
                   page: 1
+    parameters: []
   /screening/children:
     get:
       summary: Get children list for screening
