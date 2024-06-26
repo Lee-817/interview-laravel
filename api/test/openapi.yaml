@@ -3065,7 +3065,7 @@ paths:
                 value:
                   device_name: OPPO A95 23
                   serial_number: ABC123x
-      description: 'While showing all children registered under this kindergarten, the currect age of each child will be calculated on spot. Then, base on calculated age, suitable module will be retrieved under field ''suggested_modules''.'
+      description: ''
   /screening/create-entry:
     post:
       summary: Create new screening entry
