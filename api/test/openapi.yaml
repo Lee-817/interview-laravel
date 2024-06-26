@@ -1326,7 +1326,7 @@ paths:
                 Example 1:
                   value:
                     status: true
-                    message: Update Module Status Success
+                    message: Update Module Success
         '401':
           description: Unauthorized
           content:
@@ -1402,6 +1402,57 @@ paths:
                   os_version: ColorOS 13.0
                   model_number: CPH2365
                   app_version: V1.0.1b
+  /intervention/finish-play:
+    post:
+      summary: Finish playing intervention module
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+                x-examples:
+                  Example 1:
+                    status: true
+                    message: Update Module Status Success
+              examples:
+                Example 1:
+                  value:
+                    status: true
+                    message: Update Module Status Success
+      operationId: post-intervention-finish-play
+      x-stoplight:
+        id: j90nobkmxto36
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                module_id:
+                  type: integer
+                device_name:
+                  type: string
+                serial_number:
+                  type: string
+              x-examples:
+                Example 1:
+                  module_id: 1
+                  device_name: oppo A95 23
+                  serial_number: ea52b8fe
+            examples:
+              Example 1:
+                value:
+                  module_id: 1
+                  device_name: oppo A95 23
+                  serial_number: ea52b8fe
   /check-existence:
     post:
       summary: Check file existence on S3
@@ -1716,6 +1767,2903 @@ paths:
           in: query
           name: setting_id
           description: id of environment setting
+  /screening/get-kindergarten-info:
+    get:
+      summary: Get my kindergarten info
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  Example 1:
+                    kindergarten_info:
+                      id: 2
+                      name: Moon Kindergarten
+                      kindergarten_user_id: 2
+                      contact_person: Ms Moon
+                      district_code: '01'
+                      address: In the moon
+                      remark: Empty Remark
+                      status_code: '01'
+                      consent_code: '01'
+                      created_at: '2024-06-26T18:04:02.000000Z'
+                      updated_at: '2024-06-26T18:04:02.000000Z'
+                      is_test_mode: 0
+                    default_modules:
+                      summary:
+                        - age: 3
+                          languages:
+                            - id: 1
+                              name: English
+                              module_id: 5
+                              has_module: 1
+                            - id: 2
+                              name: Malay
+                              module_id: 4
+                              has_module: 1
+                            - id: 3
+                              name: Chinese
+                              module_id: 0
+                              has_module: 0
+                        - age: 4
+                          languages:
+                            - id: 1
+                              name: English
+                              module_id: 2
+                              has_module: 1
+                            - id: 2
+                              name: Malay
+                              module_id: 0
+                              has_module: 0
+                            - id: 3
+                              name: Chinese
+                              module_id: 0
+                              has_module: 0
+                        - age: 5
+                          languages:
+                            - id: 1
+                              name: English
+                              module_id: 3
+                              has_module: 1
+                            - id: 2
+                              name: Malay
+                              module_id: 0
+                              has_module: 0
+                            - id: 3
+                              name: Chinese
+                              module_id: 0
+                              has_module: 0
+                      modules:
+                        - id: 5
+                          toy8_id: 3yo_en_custom
+                          name: 3 Years Old EN Custom
+                          target_age: 3
+                          language_id: 1
+                          remark: null
+                          is_default: 0
+                          parent_id: null
+                          status: 2
+                          created_at: '2024-06-26T18:04:02.000000Z'
+                          updated_at: '2024-06-26T18:04:02.000000Z'
+                          deleted_at: null
+                          module_items:
+                            - id: 10
+                              toy8_id: intro_en
+                              module_item_type: '1'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN intro
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 5
+                            - id: 12
+                              toy8_id: activity_en_A
+                              module_item_type: '2'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN activity
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 5
+                            - id: 16
+                              toy8_id: middle_praise_en
+                              module_item_type: '4'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN middle praise
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 5
+                            - id: 13
+                              toy8_id: activity_en_B
+                              module_item_type: '2'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN activity
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 5
+                            - id: 16
+                              toy8_id: middle_praise_en
+                              module_item_type: '4'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN middle praise
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 5
+                            - id: 14
+                              toy8_id: activity_en_c
+                              module_item_type: '2'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN activity
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 5
+                            - id: 16
+                              toy8_id: middle_praise_en
+                              module_item_type: '4'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN middle praise
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 5
+                            - id: 18
+                              toy8_id: reward_en
+                              module_item_type: '3'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN reward
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 5
+                        - id: 4
+                          toy8_id: 3yo_ms
+                          name: 3 Years Old MS Default
+                          target_age: 3
+                          language_id: 2
+                          remark: null
+                          is_default: 1
+                          parent_id: null
+                          status: 2
+                          created_at: '2024-06-26T18:04:02.000000Z'
+                          updated_at: '2024-06-26T18:04:02.000000Z'
+                          deleted_at: null
+                          module_items:
+                            - id: 11
+                              toy8_id: intro_ms
+                              module_item_type: '1'
+                              language_id: 2
+                              intervention_screening: '2'
+                              remarks: This is a MS intro
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 4
+                            - id: 15
+                              toy8_id: activity_ms_A
+                              module_item_type: '2'
+                              language_id: 2
+                              intervention_screening: '2'
+                              remarks: This is a MS activity
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 4
+                            - id: 17
+                              toy8_id: middle_praise_ms
+                              module_item_type: '4'
+                              language_id: 2
+                              intervention_screening: '2'
+                              remarks: This is a MS middle praise
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 4
+                            - id: 19
+                              toy8_id: reward_ms
+                              module_item_type: '3'
+                              language_id: 2
+                              intervention_screening: '2'
+                              remarks: This is a ms reward
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 4
+                        - id: 2
+                          toy8_id: 4yo_en
+                          name: 4 Years Old EN Default
+                          target_age: 4
+                          language_id: 1
+                          remark: null
+                          is_default: 1
+                          parent_id: null
+                          status: 2
+                          created_at: '2024-06-26T18:04:02.000000Z'
+                          updated_at: '2024-06-26T18:04:02.000000Z'
+                          deleted_at: null
+                          module_items:
+                            - id: 10
+                              toy8_id: intro_en
+                              module_item_type: '1'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN intro
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 2
+                            - id: 13
+                              toy8_id: activity_en_B
+                              module_item_type: '2'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN activity
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 2
+                            - id: 16
+                              toy8_id: middle_praise_en
+                              module_item_type: '4'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN middle praise
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 2
+                            - id: 13
+                              toy8_id: activity_en_B
+                              module_item_type: '2'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN activity
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 2
+                            - id: 16
+                              toy8_id: middle_praise_en
+                              module_item_type: '4'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN middle praise
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 2
+                            - id: 18
+                              toy8_id: reward_en
+                              module_item_type: '3'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN reward
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 2
+                        - id: 3
+                          toy8_id: 5yo_en
+                          name: 5 Years Old EN Default
+                          target_age: 5
+                          language_id: 1
+                          remark: null
+                          is_default: 1
+                          parent_id: null
+                          status: 2
+                          created_at: '2024-06-26T18:04:02.000000Z'
+                          updated_at: '2024-06-26T18:04:02.000000Z'
+                          deleted_at: null
+                          module_items:
+                            - id: 10
+                              toy8_id: intro_en
+                              module_item_type: '1'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN intro
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 3
+                            - id: 14
+                              toy8_id: activity_en_c
+                              module_item_type: '2'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN activity
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 3
+                            - id: 16
+                              toy8_id: middle_praise_en
+                              module_item_type: '4'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN middle praise
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 3
+                            - id: 14
+                              toy8_id: activity_en_c
+                              module_item_type: '2'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN activity
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 3
+                            - id: 16
+                              toy8_id: middle_praise_en
+                              module_item_type: '4'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN middle praise
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 3
+                            - id: 14
+                              toy8_id: activity_en_c
+                              module_item_type: '2'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN activity
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 3
+                            - id: 16
+                              toy8_id: middle_praise_en
+                              module_item_type: '4'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN middle praise
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 3
+                            - id: 18
+                              toy8_id: reward_en
+                              module_item_type: '3'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN reward
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 3
+                properties:
+                  kindergarten_info:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                      name:
+                        type: string
+                      kindergarten_user_id:
+                        type: integer
+                      contact_person:
+                        type: string
+                      district_code:
+                        type: string
+                      address:
+                        type: string
+                      remark:
+                        type: string
+                      status_code:
+                        type: string
+                      consent_code:
+                        type: string
+                      created_at:
+                        type: string
+                      updated_at:
+                        type: string
+                      is_test_mode:
+                        type: integer
+                  default_modules:
+                    type: object
+                    properties:
+                      summary:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            age:
+                              type: integer
+                            languages:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  id:
+                                    type: integer
+                                  name:
+                                    type: string
+                                  module_id:
+                                    type: integer
+                                  has_module:
+                                    type: integer
+                      modules:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                            toy8_id:
+                              type: string
+                            name:
+                              type: string
+                            target_age:
+                              type: integer
+                            language_id:
+                              type: integer
+                            remark:
+                              type: string
+                              nullable: true
+                            is_default:
+                              type: integer
+                            parent_id:
+                              type: integer
+                              nullable: true
+                            status:
+                              type: integer
+                            created_at:
+                              type: string
+                            updated_at:
+                              type: string
+                            deleted_at:
+                              type: string
+                              nullable: true
+                            module_items:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  id:
+                                    type: integer
+                                  toy8_id:
+                                    type: string
+                                  module_item_type:
+                                    type: string
+                                  language_id:
+                                    type: integer
+                                  intervention_screening:
+                                    type: string
+                                  remarks:
+                                    type: string
+                                  parent_id:
+                                    type: integer
+                                    nullable: true
+                                  status:
+                                    type: string
+                                  created_at:
+                                    type: string
+                                  updated_at:
+                                    type: string
+                                  deleted_at:
+                                    type: string
+                                    nullable: true
+                                  laravel_through_key:
+                                    type: integer
+              examples:
+                Example 1:
+                  value:
+                    kindergarten_info:
+                      id: 2
+                      name: Moon Kindergarten
+                      kindergarten_user_id: 2
+                      contact_person: Ms Moon
+                      district_code: '01'
+                      address: In the moon
+                      remark: Empty Remark
+                      status_code: '01'
+                      consent_code: '01'
+                      created_at: '2024-06-26T18:04:02.000000Z'
+                      updated_at: '2024-06-26T18:04:02.000000Z'
+                      is_test_mode: 0
+                    default_modules:
+                      summary:
+                        - age: 3
+                          languages:
+                            - id: 1
+                              name: English
+                              module_id: 5
+                              has_module: 1
+                            - id: 2
+                              name: Malay
+                              module_id: 4
+                              has_module: 1
+                            - id: 3
+                              name: Chinese
+                              module_id: 0
+                              has_module: 0
+                        - age: 4
+                          languages:
+                            - id: 1
+                              name: English
+                              module_id: 2
+                              has_module: 1
+                            - id: 2
+                              name: Malay
+                              module_id: 0
+                              has_module: 0
+                            - id: 3
+                              name: Chinese
+                              module_id: 0
+                              has_module: 0
+                        - age: 5
+                          languages:
+                            - id: 1
+                              name: English
+                              module_id: 3
+                              has_module: 1
+                            - id: 2
+                              name: Malay
+                              module_id: 0
+                              has_module: 0
+                            - id: 3
+                              name: Chinese
+                              module_id: 0
+                              has_module: 0
+                      modules:
+                        - id: 5
+                          toy8_id: 3yo_en_custom
+                          name: 3 Years Old EN Custom
+                          target_age: 3
+                          language_id: 1
+                          remark: null
+                          is_default: 0
+                          parent_id: null
+                          status: 2
+                          created_at: '2024-06-26T18:04:02.000000Z'
+                          updated_at: '2024-06-26T18:04:02.000000Z'
+                          deleted_at: null
+                          module_items:
+                            - id: 10
+                              toy8_id: intro_en
+                              module_item_type: '1'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN intro
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 5
+                            - id: 12
+                              toy8_id: activity_en_A
+                              module_item_type: '2'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN activity
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 5
+                            - id: 16
+                              toy8_id: middle_praise_en
+                              module_item_type: '4'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN middle praise
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 5
+                            - id: 13
+                              toy8_id: activity_en_B
+                              module_item_type: '2'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN activity
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 5
+                            - id: 16
+                              toy8_id: middle_praise_en
+                              module_item_type: '4'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN middle praise
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 5
+                            - id: 14
+                              toy8_id: activity_en_c
+                              module_item_type: '2'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN activity
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 5
+                            - id: 16
+                              toy8_id: middle_praise_en
+                              module_item_type: '4'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN middle praise
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 5
+                            - id: 18
+                              toy8_id: reward_en
+                              module_item_type: '3'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN reward
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 5
+                        - id: 4
+                          toy8_id: 3yo_ms
+                          name: 3 Years Old MS Default
+                          target_age: 3
+                          language_id: 2
+                          remark: null
+                          is_default: 1
+                          parent_id: null
+                          status: 2
+                          created_at: '2024-06-26T18:04:02.000000Z'
+                          updated_at: '2024-06-26T18:04:02.000000Z'
+                          deleted_at: null
+                          module_items:
+                            - id: 11
+                              toy8_id: intro_ms
+                              module_item_type: '1'
+                              language_id: 2
+                              intervention_screening: '2'
+                              remarks: This is a MS intro
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 4
+                            - id: 15
+                              toy8_id: activity_ms_A
+                              module_item_type: '2'
+                              language_id: 2
+                              intervention_screening: '2'
+                              remarks: This is a MS activity
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 4
+                            - id: 17
+                              toy8_id: middle_praise_ms
+                              module_item_type: '4'
+                              language_id: 2
+                              intervention_screening: '2'
+                              remarks: This is a MS middle praise
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 4
+                            - id: 19
+                              toy8_id: reward_ms
+                              module_item_type: '3'
+                              language_id: 2
+                              intervention_screening: '2'
+                              remarks: This is a ms reward
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 4
+                        - id: 2
+                          toy8_id: 4yo_en
+                          name: 4 Years Old EN Default
+                          target_age: 4
+                          language_id: 1
+                          remark: null
+                          is_default: 1
+                          parent_id: null
+                          status: 2
+                          created_at: '2024-06-26T18:04:02.000000Z'
+                          updated_at: '2024-06-26T18:04:02.000000Z'
+                          deleted_at: null
+                          module_items:
+                            - id: 10
+                              toy8_id: intro_en
+                              module_item_type: '1'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN intro
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 2
+                            - id: 13
+                              toy8_id: activity_en_B
+                              module_item_type: '2'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN activity
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 2
+                            - id: 16
+                              toy8_id: middle_praise_en
+                              module_item_type: '4'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN middle praise
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 2
+                            - id: 13
+                              toy8_id: activity_en_B
+                              module_item_type: '2'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN activity
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 2
+                            - id: 16
+                              toy8_id: middle_praise_en
+                              module_item_type: '4'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN middle praise
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 2
+                            - id: 18
+                              toy8_id: reward_en
+                              module_item_type: '3'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN reward
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 2
+                        - id: 3
+                          toy8_id: 5yo_en
+                          name: 5 Years Old EN Default
+                          target_age: 5
+                          language_id: 1
+                          remark: null
+                          is_default: 1
+                          parent_id: null
+                          status: 2
+                          created_at: '2024-06-26T18:04:02.000000Z'
+                          updated_at: '2024-06-26T18:04:02.000000Z'
+                          deleted_at: null
+                          module_items:
+                            - id: 10
+                              toy8_id: intro_en
+                              module_item_type: '1'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN intro
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 3
+                            - id: 14
+                              toy8_id: activity_en_c
+                              module_item_type: '2'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN activity
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 3
+                            - id: 16
+                              toy8_id: middle_praise_en
+                              module_item_type: '4'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN middle praise
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 3
+                            - id: 14
+                              toy8_id: activity_en_c
+                              module_item_type: '2'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN activity
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 3
+                            - id: 16
+                              toy8_id: middle_praise_en
+                              module_item_type: '4'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN middle praise
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 3
+                            - id: 14
+                              toy8_id: activity_en_c
+                              module_item_type: '2'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN activity
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 3
+                            - id: 16
+                              toy8_id: middle_praise_en
+                              module_item_type: '4'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN middle praise
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 3
+                            - id: 18
+                              toy8_id: reward_en
+                              module_item_type: '3'
+                              language_id: 1
+                              intervention_screening: '2'
+                              remarks: This is an EN reward
+                              parent_id: null
+                              status: '1'
+                              created_at: '2024-06-26T18:04:02.000000Z'
+                              updated_at: '2024-06-26T18:04:02.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 3
+      operationId: get-screening-get-kindergarten-info
+      x-stoplight:
+        id: v4csb5ob835fj
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                page:
+                  type: integer
+              x-examples:
+                Example 1:
+                  page: 1
+            examples:
+              Example 1:
+                value:
+                  page: 1
+  /screening/children:
+    get:
+      summary: Get children list
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  Example 1:
+                    children:
+                      - id: 4
+                        first_name: Josh
+                        last_name: Bobby
+                        birth_date: '2021-01-20'
+                        kindergarten_user_id: 2
+                        preferred_language_id: 1
+                        show_play_button: 1
+                        show_resume_button: 0
+                        show_create_entry_button: 0
+                        age: 3
+                        suggested_modules:
+                          - language_id: 1
+                            language_name: English
+                            module_id: 5
+                          - language_id: 2
+                            language_name: Malay
+                            module_id: 4
+                          - language_id: 3
+                            language_name: Chinese
+                            module_id: 0
+                        today_active_screening_entries:
+                          id: 1
+                          status: entered
+                          device_name: null
+                          serial_number: null
+                          child_user_id: 4
+                      - id: 5
+                        first_name: Otter
+                        last_name: Taylor
+                        birth_date: '2019-08-05'
+                        kindergarten_user_id: 2
+                        preferred_language_id: 2
+                        show_play_button: 0
+                        show_resume_button: 0
+                        show_create_entry_button: 0
+                        age: 4
+                        suggested_modules:
+                          - language_id: 1
+                            language_name: English
+                            module_id: 2
+                          - language_id: 2
+                            language_name: Malay
+                            module_id: 0
+                          - language_id: 3
+                            language_name: Chinese
+                            module_id: 0
+                        today_active_screening_entries:
+                          id: 3
+                          status: playing
+                          device_name: OPPO A95 23
+                          serial_number: ABC123
+                          child_user_id: 5
+                      - id: 6
+                        first_name: Ruby
+                        last_name: Chan
+                        birth_date: '2018-11-09'
+                        kindergarten_user_id: 2
+                        preferred_language_id: 2
+                        show_play_button: 0
+                        show_resume_button: 0
+                        show_create_entry_button: 1
+                        age: 5
+                        suggested_modules:
+                          - language_id: 1
+                            language_name: English
+                            module_id: 3
+                          - language_id: 2
+                            language_name: Malay
+                            module_id: 0
+                          - language_id: 3
+                            language_name: Chinese
+                            module_id: 0
+                        today_active_screening_entries:
+                          id: 4
+                          status: completed
+                          device_name: OPPO A95 23
+                          serial_number: ABC123
+                          child_user_id: 6
+                      - id: 9
+                        first_name: 新之助
+                        last_name: 野原
+                        birth_date: '2020-05-05'
+                        kindergarten_user_id: 2
+                        preferred_language_id: 1
+                        show_play_button: 0
+                        show_resume_button: 0
+                        show_create_entry_button: 1
+                        age: 4
+                        suggested_modules:
+                          - language_id: 1
+                            language_name: English
+                            module_id: 2
+                          - language_id: 2
+                            language_name: Malay
+                            module_id: 0
+                          - language_id: 3
+                            language_name: Chinese
+                            module_id: 0
+                        today_active_screening_entries: null
+                    pagination:
+                      current_page: 1
+                      last_page: 1
+                properties:
+                  children:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        first_name:
+                          type: string
+                        last_name:
+                          type: string
+                        birth_date:
+                          type: string
+                        kindergarten_user_id:
+                          type: integer
+                        preferred_language_id:
+                          type: integer
+                        show_play_button:
+                          type: integer
+                        show_resume_button:
+                          type: integer
+                        show_create_entry_button:
+                          type: integer
+                        age:
+                          type: integer
+                        suggested_modules:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              language_id:
+                                type: integer
+                              language_name:
+                                type: string
+                              module_id:
+                                type: integer
+                        today_active_screening_entries:
+                          type: object
+                          nullable: true
+                          properties:
+                            id:
+                              type: integer
+                            status:
+                              type: string
+                            device_name:
+                              type: string
+                              nullable: true
+                            serial_number:
+                              type: string
+                              nullable: true
+                            child_user_id:
+                              type: integer
+                  pagination:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                      last_page:
+                        type: integer
+              examples:
+                Example 1:
+                  value:
+                    children:
+                      - id: 4
+                        first_name: Josh
+                        last_name: Bobby
+                        birth_date: '2021-01-20'
+                        kindergarten_user_id: 2
+                        preferred_language_id: 1
+                        show_play_button: 1
+                        show_resume_button: 0
+                        show_create_entry_button: 0
+                        age: 3
+                        suggested_modules:
+                          - language_id: 1
+                            language_name: English
+                            module_id: 5
+                          - language_id: 2
+                            language_name: Malay
+                            module_id: 4
+                          - language_id: 3
+                            language_name: Chinese
+                            module_id: 0
+                        today_active_screening_entries:
+                          id: 1
+                          status: entered
+                          device_name: null
+                          serial_number: null
+                          child_user_id: 4
+                      - id: 5
+                        first_name: Otter
+                        last_name: Taylor
+                        birth_date: '2019-08-05'
+                        kindergarten_user_id: 2
+                        preferred_language_id: 2
+                        show_play_button: 0
+                        show_resume_button: 0
+                        show_create_entry_button: 0
+                        age: 4
+                        suggested_modules:
+                          - language_id: 1
+                            language_name: English
+                            module_id: 2
+                          - language_id: 2
+                            language_name: Malay
+                            module_id: 0
+                          - language_id: 3
+                            language_name: Chinese
+                            module_id: 0
+                        today_active_screening_entries:
+                          id: 3
+                          status: playing
+                          device_name: OPPO A95 23
+                          serial_number: ABC123
+                          child_user_id: 5
+                      - id: 6
+                        first_name: Ruby
+                        last_name: Chan
+                        birth_date: '2018-11-09'
+                        kindergarten_user_id: 2
+                        preferred_language_id: 2
+                        show_play_button: 0
+                        show_resume_button: 0
+                        show_create_entry_button: 1
+                        age: 5
+                        suggested_modules:
+                          - language_id: 1
+                            language_name: English
+                            module_id: 3
+                          - language_id: 2
+                            language_name: Malay
+                            module_id: 0
+                          - language_id: 3
+                            language_name: Chinese
+                            module_id: 0
+                        today_active_screening_entries:
+                          id: 4
+                          status: completed
+                          device_name: OPPO A95 23
+                          serial_number: ABC123
+                          child_user_id: 6
+                      - id: 9
+                        first_name: 新之助
+                        last_name: 野原
+                        birth_date: '2020-05-05'
+                        kindergarten_user_id: 2
+                        preferred_language_id: 1
+                        show_play_button: 0
+                        show_resume_button: 0
+                        show_create_entry_button: 1
+                        age: 4
+                        suggested_modules:
+                          - language_id: 1
+                            language_name: English
+                            module_id: 2
+                          - language_id: 2
+                            language_name: Malay
+                            module_id: 0
+                          - language_id: 3
+                            language_name: Chinese
+                            module_id: 0
+                        today_active_screening_entries: null
+                    pagination:
+                      current_page: 1
+                      last_page: 1
+      operationId: get-screening-children
+      x-stoplight:
+        id: 6ciqao0j3ahif
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                device_name:
+                  type: string
+                serial_number:
+                  type: string
+              x-examples:
+                Example 1:
+                  device_name: OPPO A95 23
+                  serial_number: ABC123x
+            examples:
+              Example 1:
+                value:
+                  device_name: OPPO A95 23
+                  serial_number: ABC123x
+      description: 'While showing all children registered under this kindergarten, the currect age of each child will be calculated on spot. Then, base on calculated age, suitable module will be retrieved under field ''suggested_modules''.'
+  /screening/create-entry:
+    post:
+      summary: Create new screening entry
+      tags: []
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+                x-examples:
+                  Example 1:
+                    status: true
+                    message: Screening Entry Created Successfully
+              examples:
+                Example 1:
+                  value:
+                    status: true
+                    message: Screening Entry Created Successfully
+          headers: {}
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+                  detected_entry_id:
+                    type: integer
+                x-examples:
+                  Example 1:
+                    status: false
+                    message: Today's Screening Entry Existed
+                    detected_entry_id: 6
+              examples:
+                Example 1:
+                  value:
+                    status: false
+                    message: Today's Screening Entry Existed
+                    detected_entry_id: 6
+      operationId: post-screening-create-entry
+      x-stoplight:
+        id: vs4kg5yirfd9u
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                child_user_id:
+                  type: string
+              x-examples:
+                Example 1:
+                  child_user_id: '9'
+            examples:
+              Example 1:
+                value:
+                  child_user_id: '9'
+  /screening/modules:
+    get:
+      summary: Get all published screening modules
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  Example 1:
+                    modules:
+                      - id: 1
+                        toy8_id: 3yo_en
+                        name: 3 Years Old EN Default
+                        target_age: 3
+                        language_id: 1
+                        remark: null
+                        is_default: 1
+                        parent_id: null
+                        status: 2
+                        created_at: '2024-06-26T18:04:02.000000Z'
+                        updated_at: '2024-06-26T18:04:02.000000Z'
+                        deleted_at: null
+                        module_items:
+                          - id: 1
+                            toy8_id: intro_en
+                            module_item_type: '1'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN intro
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 1
+                            game_module_item_id: 10
+                            order: 1
+                            laravel_through_key: 1
+                          - id: 2
+                            toy8_id: activity_en_A
+                            module_item_type: '2'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN activity
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 1
+                            game_module_item_id: 12
+                            order: 2
+                            laravel_through_key: 1
+                          - id: 3
+                            toy8_id: middle_praise_en
+                            module_item_type: '4'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN middle praise
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 1
+                            game_module_item_id: 16
+                            order: 3
+                            laravel_through_key: 1
+                          - id: 4
+                            toy8_id: reward_en
+                            module_item_type: '3'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN reward
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 1
+                            game_module_item_id: 18
+                            order: 4
+                            laravel_through_key: 1
+                      - id: 2
+                        toy8_id: 4yo_en
+                        name: 4 Years Old EN Default
+                        target_age: 4
+                        language_id: 1
+                        remark: null
+                        is_default: 1
+                        parent_id: null
+                        status: 2
+                        created_at: '2024-06-26T18:04:02.000000Z'
+                        updated_at: '2024-06-26T18:04:02.000000Z'
+                        deleted_at: null
+                        module_items:
+                          - id: 5
+                            toy8_id: intro_en
+                            module_item_type: '1'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN intro
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 2
+                            game_module_item_id: 10
+                            order: 1
+                            laravel_through_key: 2
+                          - id: 6
+                            toy8_id: activity_en_B
+                            module_item_type: '2'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN activity
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 2
+                            game_module_item_id: 13
+                            order: 2
+                            laravel_through_key: 2
+                          - id: 7
+                            toy8_id: middle_praise_en
+                            module_item_type: '4'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN middle praise
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 2
+                            game_module_item_id: 16
+                            order: 3
+                            laravel_through_key: 2
+                          - id: 8
+                            toy8_id: activity_en_B
+                            module_item_type: '2'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN activity
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 2
+                            game_module_item_id: 13
+                            order: 4
+                            laravel_through_key: 2
+                          - id: 9
+                            toy8_id: middle_praise_en
+                            module_item_type: '4'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN middle praise
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 2
+                            game_module_item_id: 16
+                            order: 5
+                            laravel_through_key: 2
+                          - id: 10
+                            toy8_id: reward_en
+                            module_item_type: '3'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN reward
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 2
+                            game_module_item_id: 18
+                            order: 6
+                            laravel_through_key: 2
+                      - id: 3
+                        toy8_id: 5yo_en
+                        name: 5 Years Old EN Default
+                        target_age: 5
+                        language_id: 1
+                        remark: null
+                        is_default: 1
+                        parent_id: null
+                        status: 2
+                        created_at: '2024-06-26T18:04:02.000000Z'
+                        updated_at: '2024-06-26T18:04:02.000000Z'
+                        deleted_at: null
+                        module_items:
+                          - id: 11
+                            toy8_id: intro_en
+                            module_item_type: '1'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN intro
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 3
+                            game_module_item_id: 10
+                            order: 1
+                            laravel_through_key: 3
+                          - id: 12
+                            toy8_id: activity_en_c
+                            module_item_type: '2'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN activity
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 3
+                            game_module_item_id: 14
+                            order: 2
+                            laravel_through_key: 3
+                          - id: 13
+                            toy8_id: middle_praise_en
+                            module_item_type: '4'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN middle praise
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 3
+                            game_module_item_id: 16
+                            order: 3
+                            laravel_through_key: 3
+                          - id: 14
+                            toy8_id: activity_en_c
+                            module_item_type: '2'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN activity
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 3
+                            game_module_item_id: 14
+                            order: 4
+                            laravel_through_key: 3
+                          - id: 15
+                            toy8_id: middle_praise_en
+                            module_item_type: '4'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN middle praise
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 3
+                            game_module_item_id: 16
+                            order: 5
+                            laravel_through_key: 3
+                          - id: 16
+                            toy8_id: activity_en_c
+                            module_item_type: '2'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN activity
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 3
+                            game_module_item_id: 14
+                            order: 5
+                            laravel_through_key: 3
+                          - id: 17
+                            toy8_id: middle_praise_en
+                            module_item_type: '4'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN middle praise
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 3
+                            game_module_item_id: 16
+                            order: 6
+                            laravel_through_key: 3
+                          - id: 18
+                            toy8_id: reward_en
+                            module_item_type: '3'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN reward
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 3
+                            game_module_item_id: 18
+                            order: 7
+                            laravel_through_key: 3
+                      - id: 4
+                        toy8_id: 3yo_ms
+                        name: 3 Years Old MS Default
+                        target_age: 3
+                        language_id: 2
+                        remark: null
+                        is_default: 1
+                        parent_id: null
+                        status: 2
+                        created_at: '2024-06-26T18:04:02.000000Z'
+                        updated_at: '2024-06-26T18:04:02.000000Z'
+                        deleted_at: null
+                        module_items:
+                          - id: 19
+                            toy8_id: intro_ms
+                            module_item_type: '1'
+                            language_id: 2
+                            intervention_screening: '2'
+                            remarks: This is a MS intro
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 4
+                            game_module_item_id: 11
+                            order: 1
+                            laravel_through_key: 4
+                          - id: 20
+                            toy8_id: activity_ms_A
+                            module_item_type: '2'
+                            language_id: 2
+                            intervention_screening: '2'
+                            remarks: This is a MS activity
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 4
+                            game_module_item_id: 15
+                            order: 2
+                            laravel_through_key: 4
+                          - id: 21
+                            toy8_id: middle_praise_ms
+                            module_item_type: '4'
+                            language_id: 2
+                            intervention_screening: '2'
+                            remarks: This is a MS middle praise
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 4
+                            game_module_item_id: 17
+                            order: 3
+                            laravel_through_key: 4
+                          - id: 22
+                            toy8_id: reward_ms
+                            module_item_type: '3'
+                            language_id: 2
+                            intervention_screening: '2'
+                            remarks: This is a ms reward
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 4
+                            game_module_item_id: 19
+                            order: 4
+                            laravel_through_key: 4
+                      - id: 5
+                        toy8_id: 3yo_en_custom
+                        name: 3 Years Old EN Custom
+                        target_age: 3
+                        language_id: 1
+                        remark: null
+                        is_default: 0
+                        parent_id: null
+                        status: 2
+                        created_at: '2024-06-26T18:04:02.000000Z'
+                        updated_at: '2024-06-26T18:04:02.000000Z'
+                        deleted_at: null
+                        module_items:
+                          - id: 23
+                            toy8_id: intro_en
+                            module_item_type: '1'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN intro
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 5
+                            game_module_item_id: 10
+                            order: 1
+                            laravel_through_key: 5
+                          - id: 24
+                            toy8_id: activity_en_A
+                            module_item_type: '2'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN activity
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 5
+                            game_module_item_id: 12
+                            order: 2
+                            laravel_through_key: 5
+                          - id: 25
+                            toy8_id: middle_praise_en
+                            module_item_type: '4'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN middle praise
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 5
+                            game_module_item_id: 16
+                            order: 3
+                            laravel_through_key: 5
+                          - id: 26
+                            toy8_id: activity_en_B
+                            module_item_type: '2'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN activity
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 5
+                            game_module_item_id: 13
+                            order: 4
+                            laravel_through_key: 5
+                          - id: 27
+                            toy8_id: middle_praise_en
+                            module_item_type: '4'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN middle praise
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 5
+                            game_module_item_id: 16
+                            order: 5
+                            laravel_through_key: 5
+                          - id: 28
+                            toy8_id: activity_en_c
+                            module_item_type: '2'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN activity
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 5
+                            game_module_item_id: 14
+                            order: 5
+                            laravel_through_key: 5
+                          - id: 29
+                            toy8_id: middle_praise_en
+                            module_item_type: '4'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN middle praise
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 5
+                            game_module_item_id: 16
+                            order: 6
+                            laravel_through_key: 5
+                          - id: 30
+                            toy8_id: reward_en
+                            module_item_type: '3'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN reward
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 5
+                            game_module_item_id: 18
+                            order: 7
+                            laravel_through_key: 5
+                    pagination:
+                      current_page: 1
+                      last_page: 1
+                properties:
+                  modules:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        toy8_id:
+                          type: string
+                        name:
+                          type: string
+                        target_age:
+                          type: integer
+                        language_id:
+                          type: integer
+                        remark:
+                          type: string
+                          nullable: true
+                        is_default:
+                          type: integer
+                        parent_id:
+                          type: integer
+                          nullable: true
+                        status:
+                          type: integer
+                        created_at:
+                          type: string
+                        updated_at:
+                          type: string
+                        deleted_at:
+                          type: string
+                          nullable: true
+                        module_items:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                              toy8_id:
+                                type: string
+                              module_item_type:
+                                type: string
+                              language_id:
+                                type: integer
+                              intervention_screening:
+                                type: string
+                              remarks:
+                                type: string
+                              parent_id:
+                                type: integer
+                                nullable: true
+                              status:
+                                type: string
+                              created_at:
+                                type: string
+                              updated_at:
+                                type: string
+                              deleted_at:
+                                type: string
+                                nullable: true
+                              screening_module_id:
+                                type: integer
+                              game_module_item_id:
+                                type: integer
+                              order:
+                                type: integer
+                              laravel_through_key:
+                                type: integer
+                  pagination:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                      last_page:
+                        type: integer
+              examples:
+                Example 1:
+                  value:
+                    modules:
+                      - id: 1
+                        toy8_id: 3yo_en
+                        name: 3 Years Old EN Default
+                        target_age: 3
+                        language_id: 1
+                        remark: null
+                        is_default: 1
+                        parent_id: null
+                        status: 2
+                        created_at: '2024-06-26T18:04:02.000000Z'
+                        updated_at: '2024-06-26T18:04:02.000000Z'
+                        deleted_at: null
+                        module_items:
+                          - id: 1
+                            toy8_id: intro_en
+                            module_item_type: '1'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN intro
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 1
+                            game_module_item_id: 10
+                            order: 1
+                            laravel_through_key: 1
+                          - id: 2
+                            toy8_id: activity_en_A
+                            module_item_type: '2'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN activity
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 1
+                            game_module_item_id: 12
+                            order: 2
+                            laravel_through_key: 1
+                          - id: 3
+                            toy8_id: middle_praise_en
+                            module_item_type: '4'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN middle praise
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 1
+                            game_module_item_id: 16
+                            order: 3
+                            laravel_through_key: 1
+                          - id: 4
+                            toy8_id: reward_en
+                            module_item_type: '3'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN reward
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 1
+                            game_module_item_id: 18
+                            order: 4
+                            laravel_through_key: 1
+                      - id: 2
+                        toy8_id: 4yo_en
+                        name: 4 Years Old EN Default
+                        target_age: 4
+                        language_id: 1
+                        remark: null
+                        is_default: 1
+                        parent_id: null
+                        status: 2
+                        created_at: '2024-06-26T18:04:02.000000Z'
+                        updated_at: '2024-06-26T18:04:02.000000Z'
+                        deleted_at: null
+                        module_items:
+                          - id: 5
+                            toy8_id: intro_en
+                            module_item_type: '1'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN intro
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 2
+                            game_module_item_id: 10
+                            order: 1
+                            laravel_through_key: 2
+                          - id: 6
+                            toy8_id: activity_en_B
+                            module_item_type: '2'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN activity
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 2
+                            game_module_item_id: 13
+                            order: 2
+                            laravel_through_key: 2
+                          - id: 7
+                            toy8_id: middle_praise_en
+                            module_item_type: '4'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN middle praise
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 2
+                            game_module_item_id: 16
+                            order: 3
+                            laravel_through_key: 2
+                          - id: 8
+                            toy8_id: activity_en_B
+                            module_item_type: '2'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN activity
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 2
+                            game_module_item_id: 13
+                            order: 4
+                            laravel_through_key: 2
+                          - id: 9
+                            toy8_id: middle_praise_en
+                            module_item_type: '4'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN middle praise
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 2
+                            game_module_item_id: 16
+                            order: 5
+                            laravel_through_key: 2
+                          - id: 10
+                            toy8_id: reward_en
+                            module_item_type: '3'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN reward
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 2
+                            game_module_item_id: 18
+                            order: 6
+                            laravel_through_key: 2
+                      - id: 3
+                        toy8_id: 5yo_en
+                        name: 5 Years Old EN Default
+                        target_age: 5
+                        language_id: 1
+                        remark: null
+                        is_default: 1
+                        parent_id: null
+                        status: 2
+                        created_at: '2024-06-26T18:04:02.000000Z'
+                        updated_at: '2024-06-26T18:04:02.000000Z'
+                        deleted_at: null
+                        module_items:
+                          - id: 11
+                            toy8_id: intro_en
+                            module_item_type: '1'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN intro
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 3
+                            game_module_item_id: 10
+                            order: 1
+                            laravel_through_key: 3
+                          - id: 12
+                            toy8_id: activity_en_c
+                            module_item_type: '2'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN activity
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 3
+                            game_module_item_id: 14
+                            order: 2
+                            laravel_through_key: 3
+                          - id: 13
+                            toy8_id: middle_praise_en
+                            module_item_type: '4'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN middle praise
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 3
+                            game_module_item_id: 16
+                            order: 3
+                            laravel_through_key: 3
+                          - id: 14
+                            toy8_id: activity_en_c
+                            module_item_type: '2'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN activity
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 3
+                            game_module_item_id: 14
+                            order: 4
+                            laravel_through_key: 3
+                          - id: 15
+                            toy8_id: middle_praise_en
+                            module_item_type: '4'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN middle praise
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 3
+                            game_module_item_id: 16
+                            order: 5
+                            laravel_through_key: 3
+                          - id: 16
+                            toy8_id: activity_en_c
+                            module_item_type: '2'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN activity
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 3
+                            game_module_item_id: 14
+                            order: 5
+                            laravel_through_key: 3
+                          - id: 17
+                            toy8_id: middle_praise_en
+                            module_item_type: '4'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN middle praise
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 3
+                            game_module_item_id: 16
+                            order: 6
+                            laravel_through_key: 3
+                          - id: 18
+                            toy8_id: reward_en
+                            module_item_type: '3'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN reward
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 3
+                            game_module_item_id: 18
+                            order: 7
+                            laravel_through_key: 3
+                      - id: 4
+                        toy8_id: 3yo_ms
+                        name: 3 Years Old MS Default
+                        target_age: 3
+                        language_id: 2
+                        remark: null
+                        is_default: 1
+                        parent_id: null
+                        status: 2
+                        created_at: '2024-06-26T18:04:02.000000Z'
+                        updated_at: '2024-06-26T18:04:02.000000Z'
+                        deleted_at: null
+                        module_items:
+                          - id: 19
+                            toy8_id: intro_ms
+                            module_item_type: '1'
+                            language_id: 2
+                            intervention_screening: '2'
+                            remarks: This is a MS intro
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 4
+                            game_module_item_id: 11
+                            order: 1
+                            laravel_through_key: 4
+                          - id: 20
+                            toy8_id: activity_ms_A
+                            module_item_type: '2'
+                            language_id: 2
+                            intervention_screening: '2'
+                            remarks: This is a MS activity
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 4
+                            game_module_item_id: 15
+                            order: 2
+                            laravel_through_key: 4
+                          - id: 21
+                            toy8_id: middle_praise_ms
+                            module_item_type: '4'
+                            language_id: 2
+                            intervention_screening: '2'
+                            remarks: This is a MS middle praise
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 4
+                            game_module_item_id: 17
+                            order: 3
+                            laravel_through_key: 4
+                          - id: 22
+                            toy8_id: reward_ms
+                            module_item_type: '3'
+                            language_id: 2
+                            intervention_screening: '2'
+                            remarks: This is a ms reward
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 4
+                            game_module_item_id: 19
+                            order: 4
+                            laravel_through_key: 4
+                      - id: 5
+                        toy8_id: 3yo_en_custom
+                        name: 3 Years Old EN Custom
+                        target_age: 3
+                        language_id: 1
+                        remark: null
+                        is_default: 0
+                        parent_id: null
+                        status: 2
+                        created_at: '2024-06-26T18:04:02.000000Z'
+                        updated_at: '2024-06-26T18:04:02.000000Z'
+                        deleted_at: null
+                        module_items:
+                          - id: 23
+                            toy8_id: intro_en
+                            module_item_type: '1'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN intro
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 5
+                            game_module_item_id: 10
+                            order: 1
+                            laravel_through_key: 5
+                          - id: 24
+                            toy8_id: activity_en_A
+                            module_item_type: '2'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN activity
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 5
+                            game_module_item_id: 12
+                            order: 2
+                            laravel_through_key: 5
+                          - id: 25
+                            toy8_id: middle_praise_en
+                            module_item_type: '4'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN middle praise
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 5
+                            game_module_item_id: 16
+                            order: 3
+                            laravel_through_key: 5
+                          - id: 26
+                            toy8_id: activity_en_B
+                            module_item_type: '2'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN activity
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 5
+                            game_module_item_id: 13
+                            order: 4
+                            laravel_through_key: 5
+                          - id: 27
+                            toy8_id: middle_praise_en
+                            module_item_type: '4'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN middle praise
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 5
+                            game_module_item_id: 16
+                            order: 5
+                            laravel_through_key: 5
+                          - id: 28
+                            toy8_id: activity_en_c
+                            module_item_type: '2'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN activity
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 5
+                            game_module_item_id: 14
+                            order: 5
+                            laravel_through_key: 5
+                          - id: 29
+                            toy8_id: middle_praise_en
+                            module_item_type: '4'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN middle praise
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 5
+                            game_module_item_id: 16
+                            order: 6
+                            laravel_through_key: 5
+                          - id: 30
+                            toy8_id: reward_en
+                            module_item_type: '3'
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: This is an EN reward
+                            parent_id: null
+                            status: '1'
+                            created_at: '2024-06-26T18:04:02.000000Z'
+                            updated_at: '2024-06-26T18:04:02.000000Z'
+                            deleted_at: null
+                            screening_module_id: 5
+                            game_module_item_id: 18
+                            order: 7
+                            laravel_through_key: 5
+                    pagination:
+                      current_page: 1
+                      last_page: 1
+      operationId: get-screening-modules
+      x-stoplight:
+        id: 6dgie01h3464n
+  '/screening/modules/{module_id}':
+    parameters:
+      - schema:
+          type: string
+        name: module_id
+        in: path
+        required: true
+    get:
+      summary: Get module items from screening module id
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  Example 1:
+                    module_items:
+                      - id: 10
+                        toy8_id: intro_en
+                        module_item_type: '1'
+                        language_id: 1
+                        intervention_screening: '2'
+                        remarks: This is an EN intro
+                        parent_id: null
+                        status: '1'
+                        created_at: '2024-06-26T18:04:02.000000Z'
+                        updated_at: '2024-06-26T18:04:02.000000Z'
+                        deleted_at: null
+                      - id: 13
+                        toy8_id: activity_en_B
+                        module_item_type: '2'
+                        language_id: 1
+                        intervention_screening: '2'
+                        remarks: This is an EN activity
+                        parent_id: null
+                        status: '1'
+                        created_at: '2024-06-26T18:04:02.000000Z'
+                        updated_at: '2024-06-26T18:04:02.000000Z'
+                        deleted_at: null
+                      - id: 16
+                        toy8_id: middle_praise_en
+                        module_item_type: '4'
+                        language_id: 1
+                        intervention_screening: '2'
+                        remarks: This is an EN middle praise
+                        parent_id: null
+                        status: '1'
+                        created_at: '2024-06-26T18:04:02.000000Z'
+                        updated_at: '2024-06-26T18:04:02.000000Z'
+                        deleted_at: null
+                      - id: 13
+                        toy8_id: activity_en_B
+                        module_item_type: '2'
+                        language_id: 1
+                        intervention_screening: '2'
+                        remarks: This is an EN activity
+                        parent_id: null
+                        status: '1'
+                        created_at: '2024-06-26T18:04:02.000000Z'
+                        updated_at: '2024-06-26T18:04:02.000000Z'
+                        deleted_at: null
+                      - id: 16
+                        toy8_id: middle_praise_en
+                        module_item_type: '4'
+                        language_id: 1
+                        intervention_screening: '2'
+                        remarks: This is an EN middle praise
+                        parent_id: null
+                        status: '1'
+                        created_at: '2024-06-26T18:04:02.000000Z'
+                        updated_at: '2024-06-26T18:04:02.000000Z'
+                        deleted_at: null
+                      - id: 18
+                        toy8_id: reward_en
+                        module_item_type: '3'
+                        language_id: 1
+                        intervention_screening: '2'
+                        remarks: This is an EN reward
+                        parent_id: null
+                        status: '1'
+                        created_at: '2024-06-26T18:04:02.000000Z'
+                        updated_at: '2024-06-26T18:04:02.000000Z'
+                        deleted_at: null
+                    pagination:
+                      current_page: 1
+                      last_page: 1
+                properties:
+                  module_items:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        toy8_id:
+                          type: string
+                        module_item_type:
+                          type: string
+                        language_id:
+                          type: integer
+                        intervention_screening:
+                          type: string
+                        remarks:
+                          type: string
+                        parent_id:
+                          type: integer
+                          nullable: true
+                        status:
+                          type: string
+                        created_at:
+                          type: string
+                        updated_at:
+                          type: string
+                        deleted_at:
+                          type: string
+                          nullable: true
+                  pagination:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                      last_page:
+                        type: integer
+              examples:
+                Example 1:
+                  value:
+                    module_items:
+                      - id: 10
+                        toy8_id: intro_en
+                        module_item_type: '1'
+                        language_id: 1
+                        intervention_screening: '2'
+                        remarks: This is an EN intro
+                        parent_id: null
+                        status: '1'
+                        created_at: '2024-06-26T18:04:02.000000Z'
+                        updated_at: '2024-06-26T18:04:02.000000Z'
+                        deleted_at: null
+                      - id: 13
+                        toy8_id: activity_en_B
+                        module_item_type: '2'
+                        language_id: 1
+                        intervention_screening: '2'
+                        remarks: This is an EN activity
+                        parent_id: null
+                        status: '1'
+                        created_at: '2024-06-26T18:04:02.000000Z'
+                        updated_at: '2024-06-26T18:04:02.000000Z'
+                        deleted_at: null
+                      - id: 16
+                        toy8_id: middle_praise_en
+                        module_item_type: '4'
+                        language_id: 1
+                        intervention_screening: '2'
+                        remarks: This is an EN middle praise
+                        parent_id: null
+                        status: '1'
+                        created_at: '2024-06-26T18:04:02.000000Z'
+                        updated_at: '2024-06-26T18:04:02.000000Z'
+                        deleted_at: null
+                      - id: 13
+                        toy8_id: activity_en_B
+                        module_item_type: '2'
+                        language_id: 1
+                        intervention_screening: '2'
+                        remarks: This is an EN activity
+                        parent_id: null
+                        status: '1'
+                        created_at: '2024-06-26T18:04:02.000000Z'
+                        updated_at: '2024-06-26T18:04:02.000000Z'
+                        deleted_at: null
+                      - id: 16
+                        toy8_id: middle_praise_en
+                        module_item_type: '4'
+                        language_id: 1
+                        intervention_screening: '2'
+                        remarks: This is an EN middle praise
+                        parent_id: null
+                        status: '1'
+                        created_at: '2024-06-26T18:04:02.000000Z'
+                        updated_at: '2024-06-26T18:04:02.000000Z'
+                        deleted_at: null
+                      - id: 18
+                        toy8_id: reward_en
+                        module_item_type: '3'
+                        language_id: 1
+                        intervention_screening: '2'
+                        remarks: This is an EN reward
+                        parent_id: null
+                        status: '1'
+                        created_at: '2024-06-26T18:04:02.000000Z'
+                        updated_at: '2024-06-26T18:04:02.000000Z'
+                        deleted_at: null
+                    pagination:
+                      current_page: 1
+                      last_page: 1
+      operationId: get-screening-modules-module_id
+      x-stoplight:
+        id: ierdcazb3ap61
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: module_id
+  /screening/play:
+    post:
+      summary: Playing screening module
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+                x-examples:
+                  Example 1:
+                    status: true
+                    message: Update Entry Success
+              examples:
+                Example 1:
+                  value:
+                    status: true
+                    message: Update Entry Success
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+                x-examples:
+                  Example 1:
+                    status: true
+                    message: NOT ALLOWED TO RESUME ON THIS DEVICE
+              examples:
+                Example 1:
+                  value:
+                    status: true
+                    message: NOT ALLOWED TO RESUME ON THIS DEVICE
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+                x-examples:
+                  Example 1:
+                    status: true
+                    message: NOT FOUND
+              examples:
+                Example 1:
+                  value:
+                    status: true
+                    message: NOT FOUND
+      operationId: post-screening-play
+      x-stoplight:
+        id: 3pcvfp834kbi7
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                child_user_id:
+                  type: integer
+                language_id:
+                  type: integer
+                entry_id:
+                  type: integer
+                module_id:
+                  type: integer
+                device_name:
+                  type: string
+                serial_number:
+                  type: string
+                os_version:
+                  type: string
+                model_number:
+                  type: string
+                app_version:
+                  type: string
+              x-examples:
+                Example 1:
+                  child_user_id: 9
+                  language_id: 1
+                  entry_id: 6
+                  module_id: 1
+                  device_name: oppo A95 23
+                  serial_number: ea52b8fe
+                  os_version: ColorOS 13.0
+                  model_number: CPH2365
+                  app_version: V1.0.1b
+            examples:
+              Example 1:
+                value:
+                  child_user_id: 9
+                  language_id: 1
+                  entry_id: 6
+                  module_id: 1
+                  device_name: oppo A95 23
+                  serial_number: ea52b8fe
+                  os_version: ColorOS 13.0
+                  model_number: CPH2365
+                  app_version: V1.0.1b
+  /screening/finish-play:
+    post:
+      summary: Finish playing screening module
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+                x-examples:
+                  Example 1:
+                    status: true
+                    message: Update Entry Status Success
+              examples:
+                Example 1:
+                  value:
+                    status: true
+                    message: Update Entry Status Success
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+                x-examples:
+                  Example 1:
+                    status: true
+                    message: NOT FOUND
+              examples:
+                Example 1:
+                  value:
+                    status: true
+                    message: NOT FOUND
+      operationId: post-screening-finish-play
+      x-stoplight:
+        id: vw88020miuy5t
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                child_user_id:
+                  type: integer
+                entry_id:
+                  type: integer
+                device_name:
+                  type: string
+                serial_number:
+                  type: string
+              x-examples:
+                Example 1:
+                  child_user_id: 9
+                  entry_id: 6
+                  device_name: oppo A95 23
+                  serial_number: ea52b8fe
+            examples:
+              Example 1:
+                value:
+                  child_user_id: 9
+                  entry_id: 6
+                  device_name: oppo A95 23
+                  serial_number: ea52b8fe
 components:
   schemas:
     User:
@@ -1787,6 +4735,7 @@ components:
           type: string
         updated_at:
           type: string
+      title: Intervention Entry
     Program:
       type: object
       x-examples:
