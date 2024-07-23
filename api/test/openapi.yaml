@@ -2991,15 +2991,60 @@ paths:
                     type: boolean
                   message:
                     type: string
+                  child:
+                    type: object
+                    properties:
+                      status:
+                        type: string
+                      user_type:
+                        type: string
+                      last_name:
+                        type: string
+                      birth_date:
+                        type: string
+                      first_name:
+                        type: string
+                      kindergarten_user_id:
+                        type: integer
+                      preferred_language_id:
+                        type: string
+                      updated_at:
+                        type: string
+                      created_at:
+                        type: string
+                      id:
+                        type: integer
                 x-examples:
                   Example 1:
                     status: true
                     message: Child Created Successfully
+                    child:
+                      status: active
+                      user_type: child
+                      last_name: Chow
+                      birth_date: '2020-01-08'
+                      first_name: Steve
+                      kindergarten_user_id: 2
+                      preferred_language_id: '1'
+                      updated_at: '2024-07-23T09:43:13.000000Z'
+                      created_at: '2024-07-23T09:43:13.000000Z'
+                      id: 12
               examples:
                 Example 1:
                   value:
                     status: true
                     message: Child Created Successfully
+                    child:
+                      status: active
+                      user_type: child
+                      last_name: Chow
+                      birth_date: '2020-01-08'
+                      first_name: Steve
+                      kindergarten_user_id: 2
+                      preferred_language_id: '1'
+                      updated_at: '2024-07-23T09:43:13.000000Z'
+                      created_at: '2024-07-23T09:43:13.000000Z'
+                      id: 12
       operationId: post-screening-create-child
       x-stoplight:
         id: lx8r9i6sa5j00
@@ -3270,15 +3315,52 @@ paths:
                     type: boolean
                   message:
                     type: string
+                  entry:
+                    type: object
+                    properties:
+                      status:
+                        type: string
+                      status_code:
+                        type: string
+                      acceptance_date:
+                        type: string
+                      kindergarten_user_id:
+                        type: integer
+                      child_user_id:
+                        type: string
+                      updated_at:
+                        type: string
+                      created_at:
+                        type: string
+                      id:
+                        type: integer
                 x-examples:
                   Example 1:
                     status: true
                     message: Screening Entry Created Successfully
+                    entry:
+                      status: entered
+                      status_code: '01'
+                      acceptance_date: '2024-07-23T09:44:27.234847Z'
+                      kindergarten_user_id: 2
+                      child_user_id: '12'
+                      updated_at: '2024-07-23T09:44:27.000000Z'
+                      created_at: '2024-07-23T09:44:27.000000Z'
+                      id: 1
               examples:
                 Example 1:
                   value:
                     status: true
                     message: Screening Entry Created Successfully
+                    entry:
+                      status: entered
+                      status_code: '01'
+                      acceptance_date: '2024-07-23T09:44:27.234847Z'
+                      kindergarten_user_id: 2
+                      child_user_id: '12'
+                      updated_at: '2024-07-23T09:44:27.000000Z'
+                      created_at: '2024-07-23T09:44:27.000000Z'
+                      id: 1
           headers: {}
         '403':
           description: Forbidden
