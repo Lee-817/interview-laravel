@@ -1453,6 +1453,170 @@ paths:
                   module_id: 1
                   device_name: oppo A95 23
                   serial_number: ea52b8fe
+  /intervention/progresses:
+    get:
+      summary: Get intervention program's progress
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  summary:
+                    type: object
+                    properties:
+                      total_completed_days:
+                        type: integer
+                      total_play_times:
+                        type: string
+                      average_play_times:
+                        type: string
+                  progresses:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        program_id:
+                          type: integer
+                        kindergarten_user_id:
+                          type: integer
+                        intervention_module_id:
+                          type: integer
+                        status:
+                          type: string
+                        play_date:
+                          type: string
+                        play_time:
+                          type: integer
+                        score:
+                          type: integer
+                        created_at:
+                          type: string
+                        updated_at:
+                          type: string
+                  pagination:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                      last_page:
+                        type: integer
+                x-examples:
+                  Example 1:
+                    summary:
+                      total_completed_days: 3
+                      total_play_times: '438'
+                      average_play_times: '146.0000'
+                    progresses:
+                      - id: 1
+                        program_id: 2
+                        kindergarten_user_id: 2
+                        intervention_module_id: 2
+                        status: completed
+                        play_date: '2024-06-01'
+                        play_time: 138
+                        score: 75
+                        created_at: '2024-07-23T14:42:48.000000Z'
+                        updated_at: '2024-07-23T14:42:48.000000Z'
+                      - id: 2
+                        program_id: 2
+                        kindergarten_user_id: 2
+                        intervention_module_id: 2
+                        status: completed
+                        play_date: '2024-06-02'
+                        play_time: 202
+                        score: 66
+                        created_at: '2024-07-23T14:42:48.000000Z'
+                        updated_at: '2024-07-23T14:42:48.000000Z'
+                      - id: 3
+                        program_id: 2
+                        kindergarten_user_id: 2
+                        intervention_module_id: 2
+                        status: completed
+                        play_date: '2024-06-03'
+                        play_time: 98
+                        score: 89
+                        created_at: '2024-07-23T14:42:48.000000Z'
+                        updated_at: '2024-07-23T14:42:48.000000Z'
+                    pagination:
+                      current_page: 1
+                      last_page: 1
+              examples:
+                Example 1:
+                  value:
+                    summary:
+                      total_completed_days: 3
+                      total_play_times: '438'
+                      average_play_times: '146.0000'
+                    progresses:
+                      - id: 1
+                        program_id: 2
+                        kindergarten_user_id: 2
+                        intervention_module_id: 2
+                        status: completed
+                        play_date: '2024-06-01'
+                        play_time: 138
+                        score: 75
+                        created_at: '2024-07-23T14:42:48.000000Z'
+                        updated_at: '2024-07-23T14:42:48.000000Z'
+                      - id: 2
+                        program_id: 2
+                        kindergarten_user_id: 2
+                        intervention_module_id: 2
+                        status: completed
+                        play_date: '2024-06-02'
+                        play_time: 202
+                        score: 66
+                        created_at: '2024-07-23T14:42:48.000000Z'
+                        updated_at: '2024-07-23T14:42:48.000000Z'
+                      - id: 3
+                        program_id: 2
+                        kindergarten_user_id: 2
+                        intervention_module_id: 2
+                        status: completed
+                        play_date: '2024-06-03'
+                        play_time: 98
+                        score: 89
+                        created_at: '2024-07-23T14:42:48.000000Z'
+                        updated_at: '2024-07-23T14:42:48.000000Z'
+                    pagination:
+                      current_page: 1
+                      last_page: 1
+      operationId: get-intervention-progresses
+      x-stoplight:
+        id: 5jbgx04m3p9tc
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                program_id:
+                  type: integer
+                intervention_module_id:
+                  type: integer
+                start_date:
+                  type: string
+                end_date:
+                  type: string
+              x-examples:
+                Example 1:
+                  program_id: 2
+                  intervention_module_id: 2
+                  start_date: '2024-06-01'
+                  end_date: '2024-06-05'
+            examples:
+              Example 1:
+                value:
+                  program_id: 2
+                  intervention_module_id: 2
+                  start_date: '2024-06-01'
+                  end_date: '2024-06-05'
   /check-existence:
     post:
       summary: Check file existence on S3
@@ -4906,6 +5070,41 @@ components:
           label: testing
           domain: api.toyeight.com
           public_key: '-----BEGIN PUBLIC KEY----- pub_key_line_1 pub_key_line_2 -----END PUBLIC KEY-----'
+    Progress:
+      type: object
+      properties:
+        id:
+          type: integer
+        program_id:
+          type: integer
+        kindergarten_user_id:
+          type: integer
+        intervention_module_id:
+          type: integer
+        status:
+          type: string
+        play_date:
+          type: string
+        play_time:
+          type: integer
+        score:
+          type: integer
+        created_at:
+          type: string
+        updated_at:
+          type: string
+      x-examples:
+        Example 1:
+          id: 1
+          program_id: 2
+          kindergarten_user_id: 2
+          intervention_module_id: 2
+          status: completed
+          play_date: '2024-06-01'
+          play_time: 138
+          score: 75
+          created_at: '2024-07-23T14:42:48.000000Z'
+          updated_at: '2024-07-23T14:42:48.000000Z'
   securitySchemes:
     Authorization:
       type: http
