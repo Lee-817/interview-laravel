@@ -1474,16 +1474,14 @@ paths:
                         type: string
                       average_play_times:
                         type: string
+                      average_game_completion_rate:
+                        type: string
                   progresses:
                     type: array
                     items:
                       type: object
                       properties:
                         id:
-                          type: integer
-                        program_id:
-                          type: integer
-                        kindergarten_user_id:
                           type: integer
                         intervention_module_id:
                           type: integer
@@ -1499,6 +1497,10 @@ paths:
                           type: string
                         updated_at:
                           type: string
+                        program_id:
+                          type: integer
+                        kindergarten_user_id:
+                          type: integer
                   pagination:
                     type: object
                     properties:
@@ -1509,40 +1511,51 @@ paths:
                 x-examples:
                   Example 1:
                     summary:
-                      total_completed_days: 3
-                      total_play_times: '438'
-                      average_play_times: '146.0000'
+                      total_completed_days: 4
+                      total_play_times: '458'
+                      average_play_times: '114.50'
+                      average_game_completion_rate: '79.75'
                     progresses:
                       - id: 1
-                        program_id: 2
-                        kindergarten_user_id: 2
                         intervention_module_id: 2
                         status: completed
                         play_date: '2024-06-01'
                         play_time: 138
                         score: 75
-                        created_at: '2024-07-23T14:42:48.000000Z'
-                        updated_at: '2024-07-23T14:42:48.000000Z'
-                      - id: 2
+                        created_at: '2024-08-09T14:56:15.000000Z'
+                        updated_at: '2024-08-09T14:56:15.000000Z'
                         program_id: 2
                         kindergarten_user_id: 2
+                      - id: 2
                         intervention_module_id: 2
                         status: completed
                         play_date: '2024-06-02'
                         play_time: 202
                         score: 66
-                        created_at: '2024-07-23T14:42:48.000000Z'
-                        updated_at: '2024-07-23T14:42:48.000000Z'
-                      - id: 3
+                        created_at: '2024-08-09T14:56:15.000000Z'
+                        updated_at: '2024-08-09T14:56:15.000000Z'
                         program_id: 2
                         kindergarten_user_id: 2
+                      - id: 3
                         intervention_module_id: 2
                         status: completed
                         play_date: '2024-06-03'
                         play_time: 98
                         score: 89
-                        created_at: '2024-07-23T14:42:48.000000Z'
-                        updated_at: '2024-07-23T14:42:48.000000Z'
+                        created_at: '2024-08-09T14:56:15.000000Z'
+                        updated_at: '2024-08-09T14:56:15.000000Z'
+                        program_id: 2
+                        kindergarten_user_id: 2
+                      - id: 4
+                        intervention_module_id: 3
+                        status: incomplete
+                        play_date: '2024-06-06'
+                        play_time: 20
+                        score: 89
+                        created_at: '2024-08-09T14:56:15.000000Z'
+                        updated_at: '2024-08-09T14:56:15.000000Z'
+                        program_id: 3
+                        kindergarten_user_id: 2
                     pagination:
                       current_page: 1
                       last_page: 1
@@ -1550,40 +1563,51 @@ paths:
                 Example 1:
                   value:
                     summary:
-                      total_completed_days: 3
-                      total_play_times: '438'
-                      average_play_times: '146.0000'
+                      total_completed_days: 4
+                      total_play_times: '458'
+                      average_play_times: '114.50'
+                      average_game_completion_rate: '79.75'
                     progresses:
                       - id: 1
-                        program_id: 2
-                        kindergarten_user_id: 2
                         intervention_module_id: 2
                         status: completed
                         play_date: '2024-06-01'
                         play_time: 138
                         score: 75
-                        created_at: '2024-07-23T14:42:48.000000Z'
-                        updated_at: '2024-07-23T14:42:48.000000Z'
-                      - id: 2
+                        created_at: '2024-08-09T14:56:15.000000Z'
+                        updated_at: '2024-08-09T14:56:15.000000Z'
                         program_id: 2
                         kindergarten_user_id: 2
+                      - id: 2
                         intervention_module_id: 2
                         status: completed
                         play_date: '2024-06-02'
                         play_time: 202
                         score: 66
-                        created_at: '2024-07-23T14:42:48.000000Z'
-                        updated_at: '2024-07-23T14:42:48.000000Z'
-                      - id: 3
+                        created_at: '2024-08-09T14:56:15.000000Z'
+                        updated_at: '2024-08-09T14:56:15.000000Z'
                         program_id: 2
                         kindergarten_user_id: 2
+                      - id: 3
                         intervention_module_id: 2
                         status: completed
                         play_date: '2024-06-03'
                         play_time: 98
                         score: 89
-                        created_at: '2024-07-23T14:42:48.000000Z'
-                        updated_at: '2024-07-23T14:42:48.000000Z'
+                        created_at: '2024-08-09T14:56:15.000000Z'
+                        updated_at: '2024-08-09T14:56:15.000000Z'
+                        program_id: 2
+                        kindergarten_user_id: 2
+                      - id: 4
+                        intervention_module_id: 3
+                        status: incomplete
+                        play_date: '2024-06-06'
+                        play_time: 20
+                        score: 89
+                        created_at: '2024-08-09T14:56:15.000000Z'
+                        updated_at: '2024-08-09T14:56:15.000000Z'
+                        program_id: 3
+                        kindergarten_user_id: 2
                     pagination:
                       current_page: 1
                       last_page: 1
