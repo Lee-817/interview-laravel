@@ -339,27 +339,19 @@ paths:
                       - id: 1
                         child_user_id: 5
                         kindergarten_user_id: 2
+                        screening_entry_id: null
                         status: active
                         remark: null
-                        created_at: '2024-06-18T12:23:07.000000Z'
-                        updated_at: '2024-06-18T12:23:07.000000Z'
+                        created_at: '2024-08-14T15:46:29.000000Z'
+                        updated_at: '2024-08-14T15:46:29.000000Z'
                         child:
                           id: 5
-                          first_name: Otter
                           last_name: Taylor
-                          language: English
-                      - id: 2
-                        child_user_id: 4
-                        kindergarten_user_id: 2
-                        status: deactivated
-                        remark: null
-                        created_at: '2024-06-18T12:23:07.000000Z'
-                        updated_at: '2024-06-18T12:23:07.000000Z'
-                        child:
-                          id: 4
-                          first_name: Josh
-                          last_name: Bobby
-                          language: English
+                          first_name: Otter
+                          preferred_language_id: 2
+                          language:
+                            id: 2
+                            name: Malay
                     pagination:
                       current_page: 1
                       last_page: 1
@@ -375,6 +367,9 @@ paths:
                           type: integer
                         kindergarten_user_id:
                           type: integer
+                        screening_entry_id:
+                          type: integer
+                          nullable: true
                         status:
                           type: string
                         remark:
@@ -389,12 +384,19 @@ paths:
                           properties:
                             id:
                               type: integer
-                            first_name:
-                              type: string
                             last_name:
                               type: string
-                            language:
+                            first_name:
                               type: string
+                            preferred_language_id:
+                              type: integer
+                            language:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                name:
+                                  type: string
                   pagination:
                     type: object
                     properties:
@@ -409,27 +411,19 @@ paths:
                       - id: 1
                         child_user_id: 5
                         kindergarten_user_id: 2
+                        screening_entry_id: null
                         status: active
                         remark: null
-                        created_at: '2024-06-18T12:23:07.000000Z'
-                        updated_at: '2024-06-18T12:23:07.000000Z'
+                        created_at: '2024-08-14T15:46:29.000000Z'
+                        updated_at: '2024-08-14T15:46:29.000000Z'
                         child:
                           id: 5
-                          first_name: Otter
                           last_name: Taylor
-                          language: English
-                      - id: 2
-                        child_user_id: 4
-                        kindergarten_user_id: 2
-                        status: deactivated
-                        remark: null
-                        created_at: '2024-06-18T12:23:07.000000Z'
-                        updated_at: '2024-06-18T12:23:07.000000Z'
-                        child:
-                          id: 4
-                          first_name: Josh
-                          last_name: Bobby
-                          language: English
+                          first_name: Otter
+                          preferred_language_id: 2
+                          language:
+                            id: 2
+                            name: Malay
                     pagination:
                       current_page: 1
                       last_page: 1
@@ -468,60 +462,6 @@ paths:
             application/json:
               schema:
                 type: object
-                x-examples:
-                  Example 1:
-                    programs:
-                      - id: 1
-                        entry_id: 1
-                        child_user_id: 5
-                        kindergarten_user_id: 2
-                        name: null
-                        end_date: '2024-06-30'
-                        start_date: '2024-01-01'
-                        current_program_language_id: 1
-                        status: entered
-                        created_at: '2024-06-18T12:23:07.000000Z'
-                        updated_at: '2024-06-18T12:23:07.000000Z'
-                        child:
-                          id: 5
-                          first_name: Otter
-                          last_name: Taylor
-                          language: English
-                      - id: 2
-                        entry_id: 1
-                        child_user_id: 5
-                        kindergarten_user_id: 2
-                        name: null
-                        end_date: '2024-07-30'
-                        start_date: '2024-02-01'
-                        current_program_language_id: 1
-                        status: finished
-                        created_at: '2024-06-18T12:23:07.000000Z'
-                        updated_at: '2024-06-18T12:23:07.000000Z'
-                        child:
-                          id: 5
-                          first_name: Otter
-                          last_name: Taylor
-                          language: English
-                      - id: 3
-                        entry_id: 1
-                        child_user_id: 5
-                        kindergarten_user_id: 2
-                        name: null
-                        end_date: '2024-06-30'
-                        start_date: '2024-01-01'
-                        current_program_language_id: 2
-                        status: undergoing
-                        created_at: '2024-06-18T12:23:07.000000Z'
-                        updated_at: '2024-06-18T12:23:07.000000Z'
-                        child:
-                          id: 5
-                          first_name: Otter
-                          last_name: Taylor
-                          language: English
-                    pagination:
-                      current_page: 1
-                      last_page: 1
                 properties:
                   programs:
                     type: array
@@ -538,7 +478,6 @@ paths:
                           type: integer
                         name:
                           type: string
-                          nullable: true
                         end_date:
                           type: string
                         start_date:
@@ -551,17 +490,26 @@ paths:
                           type: string
                         updated_at:
                           type: string
+                        is_suspended:
+                          type: integer
                         child:
                           type: object
                           properties:
                             id:
                               type: integer
-                            first_name:
-                              type: string
                             last_name:
                               type: string
-                            language:
+                            first_name:
                               type: string
+                            preferred_language_id:
+                              type: integer
+                            language:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                name:
+                                  type: string
                   pagination:
                     type: object
                     properties:
@@ -569,6 +517,32 @@ paths:
                         type: integer
                       last_page:
                         type: integer
+                x-examples:
+                  Example 1:
+                    programs:
+                      - id: 1
+                        entry_id: 1
+                        child_user_id: 5
+                        kindergarten_user_id: 2
+                        name: program_cool_name
+                        end_date: '2024-09-01'
+                        start_date: '2024-08-14'
+                        current_program_language_id: 2
+                        status: undergoing
+                        created_at: '2024-08-14T15:46:29.000000Z'
+                        updated_at: '2024-08-14T15:57:26.000000Z'
+                        is_suspended: 1
+                        child:
+                          id: 5
+                          last_name: Taylor
+                          first_name: Otter
+                          preferred_language_id: 2
+                          language:
+                            id: 2
+                            name: Malay
+                    pagination:
+                      current_page: 1
+                      last_page: 1
               examples:
                 Example 1:
                   value:
@@ -577,50 +551,22 @@ paths:
                         entry_id: 1
                         child_user_id: 5
                         kindergarten_user_id: 2
-                        name: null
-                        end_date: '2024-06-30'
-                        start_date: '2024-01-01'
-                        current_program_language_id: 1
-                        status: entered
-                        created_at: '2024-06-18T12:23:07.000000Z'
-                        updated_at: '2024-06-18T12:23:07.000000Z'
-                        child:
-                          id: 5
-                          first_name: Otter
-                          last_name: Taylor
-                          language: English
-                      - id: 2
-                        entry_id: 1
-                        child_user_id: 5
-                        kindergarten_user_id: 2
-                        name: null
-                        end_date: '2024-07-30'
-                        start_date: '2024-02-01'
-                        current_program_language_id: 1
-                        status: finished
-                        created_at: '2024-06-18T12:23:07.000000Z'
-                        updated_at: '2024-06-18T12:23:07.000000Z'
-                        child:
-                          id: 5
-                          first_name: Otter
-                          last_name: Taylor
-                          language: English
-                      - id: 3
-                        entry_id: 1
-                        child_user_id: 5
-                        kindergarten_user_id: 2
-                        name: null
-                        end_date: '2024-06-30'
-                        start_date: '2024-01-01'
+                        name: program_cool_name
+                        end_date: '2024-09-01'
+                        start_date: '2024-08-14'
                         current_program_language_id: 2
                         status: undergoing
-                        created_at: '2024-06-18T12:23:07.000000Z'
-                        updated_at: '2024-06-18T12:23:07.000000Z'
+                        created_at: '2024-08-14T15:46:29.000000Z'
+                        updated_at: '2024-08-14T15:57:26.000000Z'
+                        is_suspended: 1
                         child:
                           id: 5
-                          first_name: Otter
                           last_name: Taylor
-                          language: English
+                          first_name: Otter
+                          preferred_language_id: 2
+                          language:
+                            id: 2
+                            name: Malay
                     pagination:
                       current_page: 1
                       last_page: 1
@@ -1697,17 +1643,6 @@ paths:
           application/json:
             schema:
               type: object
-              properties:
-                entry_id:
-                  type: integer
-                module_id:
-                  type: integer
-                intervention_or_screening:
-                  type: string
-                file_names:
-                  type: array
-                  items:
-                    type: string
               x-examples:
                 Example 1:
                   entry_id: 2
@@ -1716,6 +1651,18 @@ paths:
                   file_names:
                     - result.json
                     - new_folder/.../file_2.json
+              properties:
+                entry_id:
+                  type: integer
+                module_id:
+                  type: integer
+                  nullable: true
+                intervention_or_screening:
+                  type: string
+                file_names:
+                  type: array
+                  items:
+                    type: string
             examples:
               Example 1:
                 value:
@@ -1725,6 +1672,7 @@ paths:
                   file_names:
                     - result.json
                     - new_folder/.../file_2.json
+      description: '*module_id is not required if target to screening'
     parameters: []
   /get-upload-url:
     post:
@@ -1767,22 +1715,13 @@ paths:
       description: |-
         Get presigned URLs to upload
         Lifetime of presigned URL is 60 minutes
+
+        *module_id is not required if target to screening
       requestBody:
         content:
           application/json:
             schema:
               type: object
-              properties:
-                entry_id:
-                  type: integer
-                module_id:
-                  type: integer
-                intervention_or_screening:
-                  type: string
-                file_names:
-                  type: array
-                  items:
-                    type: string
               x-examples:
                 Example 1:
                   entry_id: 2
@@ -1791,6 +1730,18 @@ paths:
                   file_names:
                     - result.json
                     - new_folder/.../file_2.json
+              properties:
+                entry_id:
+                  type: integer
+                module_id:
+                  type: integer
+                  nullable: true
+                intervention_or_screening:
+                  type: string
+                file_names:
+                  type: array
+                  items:
+                    type: string
             examples:
               Example 1:
                 value:
