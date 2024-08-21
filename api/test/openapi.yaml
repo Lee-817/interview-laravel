@@ -1674,6 +1674,235 @@ paths:
                     - new_folder/.../file_2.json
       description: '*module_id is not required if target to screening'
     parameters: []
+  /intervention/check-existence:
+    post:
+      summary: Check intervention file existence on S3
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+                  checking_path:
+                    type: string
+                  existences:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        file_name:
+                          type: string
+                        is_exists:
+                          type: boolean
+                  is_uploaded:
+                    type: integer
+                x-examples:
+                  Example 1:
+                    status: true
+                    message: OK
+                    checking_path: intervention/upload/1/1/
+                    existences:
+                      - file_name: result.json
+                        is_exists: false
+                      - file_name: new_folder/.../file_2.json
+                        is_exists: false
+                    is_uploaded: 0
+              examples:
+                Example 1:
+                  value:
+                    status: true
+                    message: OK
+                    checking_path: screening/upload/2/8/
+                    existences:
+                      - file_name: result.json
+                        is_exists: true
+                      - file_name: new_folder/.../file_2.json
+                        is_exists: false
+        '422':
+          description: Unprocessable Entity (WebDAV)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  errors:
+                    type: object
+                    properties:
+                      module_id:
+                        type: array
+                        items:
+                          type: string
+                x-examples:
+                  Example 1:
+                    message: The selected module id is invalid.
+                    errors:
+                      module_id:
+                        - The selected module id is invalid.
+              examples:
+                Example 1:
+                  value:
+                    message: The selected module id is invalid.
+                    errors:
+                      module_id:
+                        - The selected module id is invalid.
+      operationId: post-intervention-check-existence
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              x-examples:
+                Example 1:
+                  entry_id: 2
+                  module_id: 8
+                  intervention_or_screening: screening
+                  file_names:
+                    - result.json
+                    - new_folder/.../file_2.json
+              properties:
+                entry_id:
+                  type: integer
+                module_id:
+                  type: integer
+                  nullable: true
+                file_names:
+                  type: array
+                  items:
+                    type: string
+            examples:
+              Example 1:
+                value:
+                  entry_id: 2
+                  module_id: 8
+                  file_names:
+                    - result.json
+                    - new_folder/.../file_2.json
+      description: ''
+      x-stoplight:
+        id: m19p2bnni729b
+    parameters: []
+  /screening/check-existence:
+    post:
+      summary: Check screening file existence on S3
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+                  checking_path:
+                    type: string
+                  existences:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        file_name:
+                          type: string
+                        is_exists:
+                          type: boolean
+                  is_uploaded:
+                    type: integer
+                x-examples:
+                  Example 1:
+                    status: true
+                    message: OK
+                    checking_path: screening/upload/2/
+                    existences:
+                      - file_name: result.json
+                        is_exists: false
+                      - file_name: new_folder/.../file_2.json
+                        is_exists: false
+                    is_uploaded: 1
+              examples:
+                Example 1:
+                  value:
+                    status: true
+                    message: OK
+                    checking_path: screening/upload/2/
+                    existences:
+                      - file_name: result.json
+                        is_exists: false
+                      - file_name: new_folder/.../file_2.json
+                        is_exists: false
+                    is_uploaded: 1
+        '422':
+          description: Unprocessable Entity (WebDAV)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  errors:
+                    type: object
+                    properties:
+                      entry_id:
+                        type: array
+                        items:
+                          type: string
+                x-examples:
+                  Example 1:
+                    message: The selected entry id is invalid.
+                    errors:
+                      entry_id:
+                        - The selected entry id is invalid.
+              examples:
+                Example 1:
+                  value:
+                    message: The selected entry id is invalid.
+                    errors:
+                      entry_id:
+                        - The selected entry id is invalid.
+      operationId: post-screening-check-existence
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              x-examples:
+                Example 1:
+                  entry_id: 2
+                  module_id: 8
+                  intervention_or_screening: screening
+                  file_names:
+                    - result.json
+                    - new_folder/.../file_2.json
+              properties:
+                entry_id:
+                  type: integer
+                file_names:
+                  type: array
+                  items:
+                    type: string
+            examples:
+              Example 1:
+                value:
+                  entry_id: 2
+                  file_names:
+                    - result.json
+                    - new_folder/.../file_2.json
+      description: ''
+      x-stoplight:
+        id: bawyp1kkutn0r
+    parameters: []
   /get-upload-url:
     post:
       summary: Get S3 presigned urls for upload
@@ -1751,6 +1980,149 @@ paths:
                   file_names:
                     - result.json
                     - new_folder/.../file_2.json
+  /intervention/get-upload-url:
+    post:
+      summary: Get S3 presigned urls for upload to intervention
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+                  urls:
+                    type: array
+                    items:
+                      type: string
+                x-examples:
+                  Example 1:
+                    status: true
+                    message: Upload Url Generated Successfully
+                    urls:
+                      - 'https://toy8-dev-data-upload.s3.ap-southeast-1.amazonaws.com/screening/upload/2/8/result.json?X-Amz-Content-Sha256='
+                      - 'https://toy8-dev-data-upload.s3.ap-southeast-1.amazonaws.com/screening/upload/2/8/new_folder/.../file_2.json?X-Amz-Content-Sha256='
+              examples:
+                Example 1:
+                  value:
+                    status: true
+                    message: Upload Url Generated Successfully
+                    urls:
+                      - 'https://toy8-dev-data-upload.s3.ap-southeast-1.amazonaws.com/intervention/upload/1/1/result.json?X-Amz-Content-Sha256='
+                      - 'https://toy8-dev-data-upload.s3.ap-southeast-1.amazonaws.com/intervention/upload/1/1/new_folder/.../file_2.json?X-Amz-Content-Sha256='
+      operationId: post-intervention-get-upload-url
+      description: |-
+        Get presigned URLs to upload
+        Lifetime of presigned URL is 60 minutes
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              x-examples:
+                Example 1:
+                  entry_id: 2
+                  module_id: 8
+                  intervention_or_screening: screening
+                  file_names:
+                    - result.json
+                    - new_folder/.../file_2.json
+              properties:
+                entry_id:
+                  type: integer
+                module_id:
+                  type: integer
+                  nullable: true
+                file_names:
+                  type: array
+                  items:
+                    type: string
+            examples:
+              Example 1:
+                value:
+                  entry_id: 2
+                  module_id: 8
+                  file_names:
+                    - result.json
+                    - new_folder/.../file_2.json
+      x-stoplight:
+        id: t6zqanpg2uih2
+    parameters: []
+  /screening/get-upload-url:
+    post:
+      summary: Get S3 presigned urls for upload to intervention
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+                  urls:
+                    type: array
+                    items:
+                      type: string
+                x-examples:
+                  Example 1:
+                    status: true
+                    message: Upload Url Generated Successfully
+                    urls:
+                      - 'https://toy8-dev-data-upload.s3.ap-southeast-1.amazonaws.com/screening/upload/2/8/result.json?X-Amz-Content-Sha256='
+                      - 'https://toy8-dev-data-upload.s3.ap-southeast-1.amazonaws.com/screening/upload/2/8/new_folder/.../file_2.json?X-Amz-Content-Sha256='
+              examples:
+                Example 1:
+                  value:
+                    status: true
+                    message: Upload Url Generated Successfully
+                    urls:
+                      - 'https://toy8-dev-data-upload.s3.ap-southeast-1.amazonaws.com/screening/upload/2/result.json?X-Amz-Content-Sha256='
+                      - 'https://toy8-dev-data-upload.s3.ap-southeast-1.amazonaws.com/screening/upload/2/new_folder/.../file_2.json?X-Amz-Content-Sha256='
+      operationId: post-screening-get-upload-url
+      description: |-
+        Get presigned URLs to upload
+        Lifetime of presigned URL is 60 minutes
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              x-examples:
+                Example 1:
+                  entry_id: 2
+                  module_id: 8
+                  intervention_or_screening: screening
+                  file_names:
+                    - result.json
+                    - new_folder/.../file_2.json
+              properties:
+                entry_id:
+                  type: integer
+                file_names:
+                  type: array
+                  items:
+                    type: string
+            examples:
+              Example 1:
+                value:
+                  entry_id: 2
+                  module_id: 8
+                  file_names:
+                    - result.json
+                    - new_folder/.../file_2.json
+      x-stoplight:
+        id: 38xm7ew23blsl
+    parameters: []
   /settings:
     get:
       summary: Get environment settings
