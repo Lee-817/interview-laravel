@@ -1587,93 +1587,6 @@ paths:
                   intervention_module_id: 2
                   start_date: '2024-06-01'
                   end_date: '2024-06-05'
-  /check-existence:
-    post:
-      summary: Check file existence on S3
-      tags: []
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    type: boolean
-                  message:
-                    type: string
-                  checking_path:
-                    type: string
-                  existences:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        file_name:
-                          type: string
-                        is_exists:
-                          type: boolean
-                x-examples:
-                  Example 1:
-                    status: true
-                    message: OK
-                    checking_path: screening/upload/2/8/
-                    existences:
-                      - file_name: result.json
-                        is_exists: true
-                      - file_name: new_folder/.../file_2.json
-                        is_exists: false
-              examples:
-                Example 1:
-                  value:
-                    status: true
-                    message: OK
-                    checking_path: screening/upload/2/8/
-                    existences:
-                      - file_name: result.json
-                        is_exists: true
-                      - file_name: new_folder/.../file_2.json
-                        is_exists: false
-      operationId: post-check-existence
-      x-stoplight:
-        id: 245gi4l1neiev
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              x-examples:
-                Example 1:
-                  entry_id: 2
-                  module_id: 8
-                  intervention_or_screening: screening
-                  file_names:
-                    - result.json
-                    - new_folder/.../file_2.json
-              properties:
-                entry_id:
-                  type: integer
-                module_id:
-                  type: integer
-                  nullable: true
-                intervention_or_screening:
-                  type: string
-                file_names:
-                  type: array
-                  items:
-                    type: string
-            examples:
-              Example 1:
-                value:
-                  entry_id: 2
-                  module_id: 8
-                  intervention_or_screening: screening
-                  file_names:
-                    - result.json
-                    - new_folder/.../file_2.json
-      description: '*module_id is not required if target to screening'
-    parameters: []
   /intervention/check-existence:
     post:
       summary: Check intervention file existence on S3
@@ -1790,196 +1703,6 @@ paths:
       x-stoplight:
         id: m19p2bnni729b
     parameters: []
-  /screening/check-existence:
-    post:
-      summary: Check screening file existence on S3
-      tags: []
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    type: boolean
-                  message:
-                    type: string
-                  checking_path:
-                    type: string
-                  existences:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        file_name:
-                          type: string
-                        is_exists:
-                          type: boolean
-                  is_uploaded:
-                    type: integer
-                x-examples:
-                  Example 1:
-                    status: true
-                    message: OK
-                    checking_path: screening/upload/2/
-                    existences:
-                      - file_name: result.json
-                        is_exists: false
-                      - file_name: new_folder/.../file_2.json
-                        is_exists: false
-                    is_uploaded: 1
-              examples:
-                Example 1:
-                  value:
-                    status: true
-                    message: OK
-                    checking_path: screening/upload/2/
-                    existences:
-                      - file_name: result.json
-                        is_exists: false
-                      - file_name: new_folder/.../file_2.json
-                        is_exists: false
-                    is_uploaded: 1
-        '422':
-          description: Unprocessable Entity (WebDAV)
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    type: string
-                  errors:
-                    type: object
-                    properties:
-                      entry_id:
-                        type: array
-                        items:
-                          type: string
-                x-examples:
-                  Example 1:
-                    message: The selected entry id is invalid.
-                    errors:
-                      entry_id:
-                        - The selected entry id is invalid.
-              examples:
-                Example 1:
-                  value:
-                    message: The selected entry id is invalid.
-                    errors:
-                      entry_id:
-                        - The selected entry id is invalid.
-      operationId: post-screening-check-existence
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              x-examples:
-                Example 1:
-                  entry_id: 2
-                  module_id: 8
-                  intervention_or_screening: screening
-                  file_names:
-                    - result.json
-                    - new_folder/.../file_2.json
-              properties:
-                entry_id:
-                  type: integer
-                file_names:
-                  type: array
-                  items:
-                    type: string
-            examples:
-              Example 1:
-                value:
-                  entry_id: 2
-                  file_names:
-                    - result.json
-                    - new_folder/.../file_2.json
-      description: ''
-      x-stoplight:
-        id: bawyp1kkutn0r
-    parameters: []
-  /get-upload-url:
-    post:
-      summary: Get S3 presigned urls for upload
-      tags: []
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    type: boolean
-                  message:
-                    type: string
-                  urls:
-                    type: array
-                    items:
-                      type: string
-                x-examples:
-                  Example 1:
-                    status: true
-                    message: Upload Url Generated Successfully
-                    urls:
-                      - 'https://toy8-dev-data-upload.s3.ap-southeast-1.amazonaws.com/screening/upload/2/8/result.json?X-Amz-Content-Sha256='
-                      - 'https://toy8-dev-data-upload.s3.ap-southeast-1.amazonaws.com/screening/upload/2/8/new_folder/.../file_2.json?X-Amz-Content-Sha256='
-              examples:
-                Example 1:
-                  value:
-                    status: true
-                    message: Upload Url Generated Successfully
-                    urls:
-                      - 'https://toy8-dev-data-upload.s3.ap-southeast-1.amazonaws.com/screening/upload/2/8/result.json?X-Amz-Content-Sha256='
-                      - 'https://toy8-dev-data-upload.s3.ap-southeast-1.amazonaws.com/screening/upload/2/8/new_folder/.../file_2.json?X-Amz-Content-Sha256='
-      operationId: post-get-upload-url
-      x-stoplight:
-        id: bkn3zax22e99d
-      description: |-
-        Get presigned URLs to upload
-        Lifetime of presigned URL is 60 minutes
-
-        *module_id is not required if target to screening
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              x-examples:
-                Example 1:
-                  entry_id: 2
-                  module_id: 8
-                  intervention_or_screening: screening
-                  file_names:
-                    - result.json
-                    - new_folder/.../file_2.json
-              properties:
-                entry_id:
-                  type: integer
-                module_id:
-                  type: integer
-                  nullable: true
-                intervention_or_screening:
-                  type: string
-                file_names:
-                  type: array
-                  items:
-                    type: string
-            examples:
-              Example 1:
-                value:
-                  entry_id: 2
-                  module_id: 8
-                  intervention_or_screening: screening
-                  file_names:
-                    - result.json
-                    - new_folder/.../file_2.json
   /intervention/get-upload-url:
     post:
       summary: Get S3 presigned urls for upload to intervention
@@ -2053,231 +1776,6 @@ paths:
       x-stoplight:
         id: t6zqanpg2uih2
     parameters: []
-  /screening/get-upload-url:
-    post:
-      summary: Get S3 presigned urls for upload to intervention
-      tags: []
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    type: boolean
-                  message:
-                    type: string
-                  urls:
-                    type: array
-                    items:
-                      type: string
-                x-examples:
-                  Example 1:
-                    status: true
-                    message: Upload Url Generated Successfully
-                    urls:
-                      - 'https://toy8-dev-data-upload.s3.ap-southeast-1.amazonaws.com/screening/upload/2/8/result.json?X-Amz-Content-Sha256='
-                      - 'https://toy8-dev-data-upload.s3.ap-southeast-1.amazonaws.com/screening/upload/2/8/new_folder/.../file_2.json?X-Amz-Content-Sha256='
-              examples:
-                Example 1:
-                  value:
-                    status: true
-                    message: Upload Url Generated Successfully
-                    urls:
-                      - 'https://toy8-dev-data-upload.s3.ap-southeast-1.amazonaws.com/screening/upload/2/result.json?X-Amz-Content-Sha256='
-                      - 'https://toy8-dev-data-upload.s3.ap-southeast-1.amazonaws.com/screening/upload/2/new_folder/.../file_2.json?X-Amz-Content-Sha256='
-      operationId: post-screening-get-upload-url
-      description: |-
-        Get presigned URLs to upload
-        Lifetime of presigned URL is 60 minutes
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              x-examples:
-                Example 1:
-                  entry_id: 2
-                  module_id: 8
-                  intervention_or_screening: screening
-                  file_names:
-                    - result.json
-                    - new_folder/.../file_2.json
-              properties:
-                entry_id:
-                  type: integer
-                file_names:
-                  type: array
-                  items:
-                    type: string
-            examples:
-              Example 1:
-                value:
-                  entry_id: 2
-                  module_id: 8
-                  file_names:
-                    - result.json
-                    - new_folder/.../file_2.json
-      x-stoplight:
-        id: 38xm7ew23blsl
-    parameters: []
-  /settings:
-    get:
-      summary: Get environment settings
-      tags: []
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  settings:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        id:
-                          type: integer
-                        label:
-                          type: string
-                        domain:
-                          type: string
-                  pagination:
-                    type: object
-                    properties:
-                      current_page:
-                        type: integer
-                      last_page:
-                        type: integer
-                x-examples:
-                  Example 1:
-                    settings:
-                      - id: 1
-                        label: testing
-                        domain: api.toyeight.com
-                      - id: 2
-                        label: default
-                        domain: 'https://api.dev.toyeight-assessment.com/'
-                    pagination:
-                      current_page: 1
-                      last_page: 1
-              examples:
-                Example 1:
-                  value:
-                    settings:
-                      - id: 1
-                        label: testing
-                        domain: api.toyeight.com
-                      - id: 2
-                        label: default
-                        domain: 'https://api.dev.toyeight-assessment.com/'
-                    pagination:
-                      current_page: 1
-                      last_page: 1
-      operationId: get-settings
-      x-stoplight:
-        id: k5g0apq1llenc
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                page:
-                  type: integer
-              x-examples:
-                Example 1:
-                  page: 1
-            examples:
-              Example 1:
-                value:
-                  page: 1
-  '/settings/{setting_id}':
-    parameters:
-      - schema:
-          type: string
-        name: setting_id
-        in: path
-        required: true
-    get:
-      summary: Get specific environment setting detail
-      tags: []
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  setting:
-                    type: object
-                    properties:
-                      id:
-                        type: integer
-                      label:
-                        type: string
-                      domain:
-                        type: string
-                      public_key:
-                        type: string
-                x-examples:
-                  Example 1:
-                    setting:
-                      id: 1
-                      label: testing
-                      domain: api.toyeight.com
-                      public_key: '-----BEGIN PUBLIC KEY----- pub_key_line_1 pub_key_line_2 -----END PUBLIC KEY-----'
-              examples:
-                Example 1:
-                  value:
-                    setting:
-                      id: 1
-                      label: testing
-                      domain: api.toyeight.com
-                      public_key: '-----BEGIN PUBLIC KEY----- pub_key_line_1 pub_key_line_2 -----END PUBLIC KEY-----'
-        '422':
-          description: Unprocessable Entity (WebDAV)
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    type: string
-                  errors:
-                    type: object
-                    properties:
-                      setting_id:
-                        type: array
-                        items:
-                          type: string
-                x-examples:
-                  Example 1:
-                    message: The selected setting id is invalid.
-                    errors:
-                      setting_id:
-                        - The selected setting id is invalid.
-              examples:
-                Example 1:
-                  value:
-                    message: The selected setting id is invalid.
-                    errors:
-                      setting_id:
-                        - The selected setting id is invalid.
-      operationId: get-settings-setting_id
-      x-stoplight:
-        id: kg2creesm90g2
-      parameters:
-        - schema:
-            type: string
-          in: query
-          name: setting_id
-          description: id of environment setting
   /screening/kindergarten-info:
     get:
       summary: Get my kindergarten info
@@ -5378,6 +4876,508 @@ paths:
                   entry_id: 6
                   device_name: oppo A95 23
                   serial_number: ea52b8fe
+  /screening/check-existence:
+    parameters: []
+    post:
+      summary: Check screening file existence on S3
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+                  checking_path:
+                    type: string
+                  existences:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        file_name:
+                          type: string
+                        is_exists:
+                          type: boolean
+                  is_uploaded:
+                    type: integer
+                x-examples:
+                  Example 1:
+                    status: true
+                    message: OK
+                    checking_path: screening/upload/2/
+                    existences:
+                      - file_name: result.json
+                        is_exists: false
+                      - file_name: new_folder/.../file_2.json
+                        is_exists: false
+                    is_uploaded: 1
+              examples:
+                Example 1:
+                  value:
+                    status: true
+                    message: OK
+                    checking_path: screening/upload/2/
+                    existences:
+                      - file_name: result.json
+                        is_exists: false
+                      - file_name: new_folder/.../file_2.json
+                        is_exists: false
+                    is_uploaded: 1
+        '422':
+          description: Unprocessable Entity (WebDAV)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  errors:
+                    type: object
+                    properties:
+                      entry_id:
+                        type: array
+                        items:
+                          type: string
+                x-examples:
+                  Example 1:
+                    message: The selected entry id is invalid.
+                    errors:
+                      entry_id:
+                        - The selected entry id is invalid.
+              examples:
+                Example 1:
+                  value:
+                    message: The selected entry id is invalid.
+                    errors:
+                      entry_id:
+                        - The selected entry id is invalid.
+      operationId: post-screening-check-existence
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              x-examples:
+                Example 1:
+                  entry_id: 2
+                  module_id: 8
+                  intervention_or_screening: screening
+                  file_names:
+                    - result.json
+                    - new_folder/.../file_2.json
+              properties:
+                entry_id:
+                  type: integer
+                file_names:
+                  type: array
+                  items:
+                    type: string
+            examples:
+              Example 1:
+                value:
+                  entry_id: 2
+                  file_names:
+                    - result.json
+                    - new_folder/.../file_2.json
+      description: ''
+      x-stoplight:
+        id: bawyp1kkutn0r
+  /screening/get-upload-url:
+    post:
+      summary: Get S3 presigned urls for upload to intervention
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+                  urls:
+                    type: array
+                    items:
+                      type: string
+                x-examples:
+                  Example 1:
+                    status: true
+                    message: Upload Url Generated Successfully
+                    urls:
+                      - 'https://toy8-dev-data-upload.s3.ap-southeast-1.amazonaws.com/screening/upload/2/8/result.json?X-Amz-Content-Sha256='
+                      - 'https://toy8-dev-data-upload.s3.ap-southeast-1.amazonaws.com/screening/upload/2/8/new_folder/.../file_2.json?X-Amz-Content-Sha256='
+              examples:
+                Example 1:
+                  value:
+                    status: true
+                    message: Upload Url Generated Successfully
+                    urls:
+                      - 'https://toy8-dev-data-upload.s3.ap-southeast-1.amazonaws.com/screening/upload/2/result.json?X-Amz-Content-Sha256='
+                      - 'https://toy8-dev-data-upload.s3.ap-southeast-1.amazonaws.com/screening/upload/2/new_folder/.../file_2.json?X-Amz-Content-Sha256='
+      operationId: post-screening-get-upload-url
+      description: |-
+        Get presigned URLs to upload
+        Lifetime of presigned URL is 60 minutes
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              x-examples:
+                Example 1:
+                  entry_id: 2
+                  module_id: 8
+                  intervention_or_screening: screening
+                  file_names:
+                    - result.json
+                    - new_folder/.../file_2.json
+              properties:
+                entry_id:
+                  type: integer
+                file_names:
+                  type: array
+                  items:
+                    type: string
+            examples:
+              Example 1:
+                value:
+                  entry_id: 2
+                  module_id: 8
+                  file_names:
+                    - result.json
+                    - new_folder/.../file_2.json
+      x-stoplight:
+        id: 38xm7ew23blsl
+    parameters: []
+  /settings:
+    get:
+      summary: Get environment settings
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  settings:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        label:
+                          type: string
+                        domain:
+                          type: string
+                  pagination:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                      last_page:
+                        type: integer
+                x-examples:
+                  Example 1:
+                    settings:
+                      - id: 1
+                        label: testing
+                        domain: api.toyeight.com
+                      - id: 2
+                        label: default
+                        domain: 'https://api.dev.toyeight-assessment.com/'
+                    pagination:
+                      current_page: 1
+                      last_page: 1
+              examples:
+                Example 1:
+                  value:
+                    settings:
+                      - id: 1
+                        label: testing
+                        domain: api.toyeight.com
+                      - id: 2
+                        label: default
+                        domain: 'https://api.dev.toyeight-assessment.com/'
+                    pagination:
+                      current_page: 1
+                      last_page: 1
+      operationId: get-settings
+      x-stoplight:
+        id: k5g0apq1llenc
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                page:
+                  type: integer
+              x-examples:
+                Example 1:
+                  page: 1
+            examples:
+              Example 1:
+                value:
+                  page: 1
+  '/settings/{setting_id}':
+    parameters:
+      - schema:
+          type: string
+        name: setting_id
+        in: path
+        required: true
+    get:
+      summary: Get specific environment setting detail
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  setting:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                      label:
+                        type: string
+                      domain:
+                        type: string
+                      public_key:
+                        type: string
+                x-examples:
+                  Example 1:
+                    setting:
+                      id: 1
+                      label: testing
+                      domain: api.toyeight.com
+                      public_key: '-----BEGIN PUBLIC KEY----- pub_key_line_1 pub_key_line_2 -----END PUBLIC KEY-----'
+              examples:
+                Example 1:
+                  value:
+                    setting:
+                      id: 1
+                      label: testing
+                      domain: api.toyeight.com
+                      public_key: '-----BEGIN PUBLIC KEY----- pub_key_line_1 pub_key_line_2 -----END PUBLIC KEY-----'
+        '422':
+          description: Unprocessable Entity (WebDAV)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  errors:
+                    type: object
+                    properties:
+                      setting_id:
+                        type: array
+                        items:
+                          type: string
+                x-examples:
+                  Example 1:
+                    message: The selected setting id is invalid.
+                    errors:
+                      setting_id:
+                        - The selected setting id is invalid.
+              examples:
+                Example 1:
+                  value:
+                    message: The selected setting id is invalid.
+                    errors:
+                      setting_id:
+                        - The selected setting id is invalid.
+      operationId: get-settings-setting_id
+      x-stoplight:
+        id: kg2creesm90g2
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: setting_id
+          description: id of environment setting
+  /get-upload-url:
+    post:
+      summary: 'Get S3 presigned urls for upload [Deprecated soon]'
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+                  urls:
+                    type: array
+                    items:
+                      type: string
+                x-examples:
+                  Example 1:
+                    status: true
+                    message: Upload Url Generated Successfully
+                    urls:
+                      - 'https://toy8-dev-data-upload.s3.ap-southeast-1.amazonaws.com/screening/upload/2/8/result.json?X-Amz-Content-Sha256='
+                      - 'https://toy8-dev-data-upload.s3.ap-southeast-1.amazonaws.com/screening/upload/2/8/new_folder/.../file_2.json?X-Amz-Content-Sha256='
+              examples:
+                Example 1:
+                  value:
+                    status: true
+                    message: Upload Url Generated Successfully
+                    urls:
+                      - 'https://toy8-dev-data-upload.s3.ap-southeast-1.amazonaws.com/screening/upload/2/8/result.json?X-Amz-Content-Sha256='
+                      - 'https://toy8-dev-data-upload.s3.ap-southeast-1.amazonaws.com/screening/upload/2/8/new_folder/.../file_2.json?X-Amz-Content-Sha256='
+      operationId: post-get-upload-url
+      x-stoplight:
+        id: bkn3zax22e99d
+      description: |-
+        Get presigned URLs to upload
+        Lifetime of presigned URL is 60 minutes
+
+        *module_id is not required if target to screening
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              x-examples:
+                Example 1:
+                  entry_id: 2
+                  module_id: 8
+                  intervention_or_screening: screening
+                  file_names:
+                    - result.json
+                    - new_folder/.../file_2.json
+              properties:
+                entry_id:
+                  type: integer
+                module_id:
+                  type: integer
+                  nullable: true
+                intervention_or_screening:
+                  type: string
+                file_names:
+                  type: array
+                  items:
+                    type: string
+            examples:
+              Example 1:
+                value:
+                  entry_id: 2
+                  module_id: 8
+                  intervention_or_screening: screening
+                  file_names:
+                    - result.json
+                    - new_folder/.../file_2.json
+  /check-existence:
+    post:
+      summary: 'Check file existence on S3 [Deprecated soon]'
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+                  checking_path:
+                    type: string
+                  existences:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        file_name:
+                          type: string
+                        is_exists:
+                          type: boolean
+                x-examples:
+                  Example 1:
+                    status: true
+                    message: OK
+                    checking_path: screening/upload/2/8/
+                    existences:
+                      - file_name: result.json
+                        is_exists: true
+                      - file_name: new_folder/.../file_2.json
+                        is_exists: false
+              examples:
+                Example 1:
+                  value:
+                    status: true
+                    message: OK
+                    checking_path: screening/upload/2/8/
+                    existences:
+                      - file_name: result.json
+                        is_exists: true
+                      - file_name: new_folder/.../file_2.json
+                        is_exists: false
+      operationId: post-check-existence
+      x-stoplight:
+        id: 245gi4l1neiev
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              x-examples:
+                Example 1:
+                  entry_id: 2
+                  module_id: 8
+                  intervention_or_screening: screening
+                  file_names:
+                    - result.json
+                    - new_folder/.../file_2.json
+              properties:
+                entry_id:
+                  type: integer
+                module_id:
+                  type: integer
+                  nullable: true
+                intervention_or_screening:
+                  type: string
+                file_names:
+                  type: array
+                  items:
+                    type: string
+            examples:
+              Example 1:
+                value:
+                  entry_id: 2
+                  module_id: 8
+                  intervention_or_screening: screening
+                  file_names:
+                    - result.json
+                    - new_folder/.../file_2.json
+      description: '*module_id is not required if target to screening'
+    parameters: []
 components:
   schemas:
     User:
