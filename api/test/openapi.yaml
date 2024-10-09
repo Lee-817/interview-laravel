@@ -3505,6 +3505,82 @@ paths:
                 value:
                   child_user_id: '12'
                   email: tester@toyeight.com
+  /screening/cancel-entry:
+    post:
+      summary: Cancel playing screening entry
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+                x-examples:
+                  Example 1:
+                    status: true
+                    message: Update Entry Status Success
+              examples:
+                Example 1:
+                  value:
+                    status: true
+                    message: Update Entry Status Success
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+                x-examples:
+                  Example 1:
+                    status: true
+                    message: NOT FOUND
+              examples:
+                Example 1:
+                  value:
+                    status: true
+                    message: NOT FOUND
+      operationId: post-screening-cancel-entry
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                child_user_id:
+                  type: integer
+                entry_id:
+                  type: integer
+                device_name:
+                  type: string
+                serial_number:
+                  type: string
+              x-examples:
+                Example 1:
+                  child_user_id: 9
+                  entry_id: 6
+                  device_name: oppo A95 23
+                  serial_number: ea52b8fe
+            examples:
+              Example 1:
+                value:
+                  child_user_id: 9
+                  entry_id: 6
+                  device_name: oppo A95 23
+                  serial_number: ea52b8fe
+      x-stoplight:
+        id: ucg8t7ilytvn2
+    parameters: []
   /screening/modules:
     get:
       summary: Get all published screening modules
