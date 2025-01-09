@@ -5342,11 +5342,11 @@ paths:
                   value:
                     settings:
                       - id: 1
-                        label: testing
-                        domain: api.toyeight.com
-                      - id: 2
                         label: default
-                        domain: 'https://api.dev.toyeight-assessment.com/'
+                        domain: 'https://api.toyeight-service.com/'
+                      - id: 2
+                        label: dev-sg
+                        domain: 'https://api.singapore.dev.toyeight-service.com/'
                     pagination:
                       current_page: 1
                       last_page: 1
@@ -5409,9 +5409,14 @@ paths:
                   value:
                     setting:
                       id: 1
-                      label: testing
-                      domain: api.toyeight.com
-                      public_key: '-----BEGIN PUBLIC KEY----- pub_key_line_1 pub_key_line_2 -----END PUBLIC KEY-----'
+                      label: default
+                      domain: 'https://api.toyeight-service.com/'
+                      public_key: |-
+                        -----BEGIN PUBLIC KEY-----
+                        PUBLIC_KEY
+                        -----END PUBLIC KEY-----
+                      bucket_for_asset: toy8-prod-data-asset
+                      bucket_for_upload: toy8-prod-data-upload
         '422':
           description: Unprocessable Entity (WebDAV)
           content:
@@ -5874,9 +5879,9 @@ components:
 servers:
   - url: 'http://localhost:8080/api'
     description: Development
-  - url: 'https://api.dev.toyeight-assessment.com/api'
+  - url: 'https://api.dev.toyeight-service.com/api'
     description: Staging
-  - url: 'https://api.prod.toyeight-assessment.com/api'
+  - url: 'https://api.toyeight-service.com/api'
     description: Production
 tags:
   - name: Toy8 API Server
