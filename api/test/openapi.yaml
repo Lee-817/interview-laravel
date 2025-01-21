@@ -1248,6 +1248,724 @@ paths:
             type: integer
           in: query
           name: module_id
+  /intervention/activites:
+    get:
+      summary: Get activities for Intervention modules
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  Example 1:
+                    activities:
+                      - id: 5
+                        toy8_id: Test_CO_AUME
+                        parent_id: null
+                        language_id: 1
+                        intervention_screening: '1'
+                        remarks: null
+                        status: 2
+                        is_hidden: 0
+                        created_at: '2025-01-21T14:24:41.000000Z'
+                        updated_at: '2025-01-21T14:24:41.000000Z'
+                        deleted_at: null
+                        activity_items:
+                          - id: 8
+                            toy8_id: Test_CO-AUME_1-3_Q1_1737440570
+                            parent_id: null
+                            activity_item_type: 5
+                            language_id: 1
+                            intervention_screening: '1'
+                            remarks: null
+                            status: 2
+                            is_hidden: 0
+                            created_at: null
+                            updated_at: null
+                            deleted_at: null
+                            laravel_through_key: 5
+                            questions:
+                              - id: 8
+                                toy8_id: Test_CO-AUME_1-3_Q1
+                                parent_id: null
+                                game_template_id: 2
+                                language_id: 1
+                                game_level_id: 2
+                                remarks: null
+                                preview_time: 0
+                                randomized_options: 1
+                                sequenced_answers: 0
+                                question_asset_id: 25
+                                multiple_question_asset_id: null
+                                answer_amounts: null
+                                voiceover_asset_id: null
+                                is_assigned: 0
+                                config: null
+                                status: 2
+                                is_hidden: 0
+                                created_at: '2025-01-21T14:22:05.000000Z'
+                                updated_at: '2025-01-21T14:22:50.000000Z'
+                                deleted_at: null
+                                laravel_through_key: 8
+                                options:
+                                  - id: 32
+                                    game_question_id: 8
+                                    game_asset_id: 18
+                                    option_order: 1
+                                    answer_order: 1
+                                    is_answer: 1
+                                    created_at: null
+                                    updated_at: null
+                                  - id: 33
+                                    game_question_id: 8
+                                    game_asset_id: 19
+                                    option_order: 2
+                                    answer_order: 1
+                                    is_answer: 0
+                                    created_at: null
+                                    updated_at: null
+                                  - id: 34
+                                    game_question_id: 8
+                                    game_asset_id: 20
+                                    option_order: 3
+                                    answer_order: 1
+                                    is_answer: 0
+                                    created_at: null
+                                    updated_at: null
+                            activity_item_component:
+                              id: 8
+                              game_activity_item_id: 8
+                              question_id: 8
+                              asset_id: null
+                              animation_config: null
+                              order: 0
+                          - id: 9
+                            toy8_id: Test_CO-AUME_1-3_Q2_1737440553
+                            parent_id: null
+                            activity_item_type: 5
+                            language_id: 1
+                            intervention_screening: '1'
+                            remarks: null
+                            status: 2
+                            is_hidden: 0
+                            created_at: null
+                            updated_at: null
+                            deleted_at: null
+                            laravel_through_key: 5
+                            questions:
+                              - id: 9
+                                toy8_id: Test_CO-AUME_1-3_Q2
+                                parent_id: null
+                                game_template_id: 2
+                                language_id: 1
+                                game_level_id: 2
+                                remarks: null
+                                preview_time: 0
+                                randomized_options: 1
+                                sequenced_answers: 0
+                                question_asset_id: 25
+                                multiple_question_asset_id: null
+                                answer_amounts: null
+                                voiceover_asset_id: null
+                                is_assigned: 0
+                                config: null
+                                status: 2
+                                is_hidden: 0
+                                created_at: '2025-01-21T14:22:10.000000Z'
+                                updated_at: '2025-01-21T14:22:33.000000Z'
+                                deleted_at: null
+                                laravel_through_key: 9
+                                options:
+                                  - id: 26
+                                    game_question_id: 9
+                                    game_asset_id: 20
+                                    option_order: 1
+                                    answer_order: 1
+                                    is_answer: 1
+                                    created_at: null
+                                    updated_at: null
+                                  - id: 27
+                                    game_question_id: 9
+                                    game_asset_id: 19
+                                    option_order: 2
+                                    answer_order: 1
+                                    is_answer: 0
+                                    created_at: null
+                                    updated_at: null
+                                  - id: 28
+                                    game_question_id: 9
+                                    game_asset_id: 18
+                                    option_order: 3
+                                    answer_order: 1
+                                    is_answer: 0
+                                    created_at: null
+                                    updated_at: null
+                            activity_item_component:
+                              id: 9
+                              game_activity_item_id: 9
+                              question_id: 9
+                              asset_id: null
+                              animation_config: null
+                              order: 0
+                      - id: 7
+                        toy8_id: Test_FM-PCDR
+                        parent_id: null
+                        language_id: 1
+                        intervention_screening: '1'
+                        remarks: null
+                        status: 2
+                        is_hidden: 0
+                        created_at: '2025-01-21T14:25:14.000000Z'
+                        updated_at: '2025-01-21T14:25:14.000000Z'
+                        deleted_at: null
+                        activity_items:
+                          - id: 12
+                            toy8_id: Test_Beads_Imitation_Intro
+                            parent_id: null
+                            activity_item_type: 1
+                            language_id: 1
+                            intervention_screening: '1'
+                            remarks: null
+                            status: 2
+                            is_hidden: 0
+                            created_at: null
+                            updated_at: null
+                            deleted_at: null
+                            laravel_through_key: 7
+                            questions: []
+                            activity_item_component:
+                              id: 12
+                              game_activity_item_id: 12
+                              question_id: null
+                              asset_id: null
+                              animation_config: '{"audio": null, "animation": [11]}'
+                              order: 0
+                          - id: 13
+                            toy8_id: Test_Drawing_Tutorial
+                            parent_id: null
+                            activity_item_type: 3
+                            language_id: 1
+                            intervention_screening: '1'
+                            remarks: null
+                            status: 2
+                            is_hidden: 0
+                            created_at: null
+                            updated_at: null
+                            deleted_at: null
+                            laravel_through_key: 7
+                            questions: []
+                            activity_item_component:
+                              id: 13
+                              game_activity_item_id: 13
+                              question_id: null
+                              asset_id: 21
+                              animation_config: null
+                              order: 0
+                          - id: 11
+                            toy8_id: Test_FM-PCDR_Q1_1737440651
+                            parent_id: null
+                            activity_item_type: 5
+                            language_id: 1
+                            intervention_screening: '1'
+                            remarks: null
+                            status: 2
+                            is_hidden: 0
+                            created_at: null
+                            updated_at: null
+                            deleted_at: null
+                            laravel_through_key: 7
+                            questions:
+                              - id: 13
+                                toy8_id: Test_FM-PCDR_Q1
+                                parent_id: null
+                                game_template_id: 47
+                                language_id: 1
+                                game_level_id: 3
+                                remarks: null
+                                preview_time: 0
+                                randomized_options: 0
+                                sequenced_answers: 0
+                                question_asset_id: 19
+                                multiple_question_asset_id: null
+                                answer_amounts: null
+                                voiceover_asset_id: null
+                                is_assigned: 0
+                                config: null
+                                status: 2
+                                is_hidden: 0
+                                created_at: '2025-01-21T14:24:11.000000Z'
+                                updated_at: '2025-01-21T14:24:11.000000Z'
+                                deleted_at: null
+                                laravel_through_key: 11
+                                options:
+                                  - id: 38
+                                    game_question_id: 13
+                                    game_asset_id: 26
+                                    option_order: 1
+                                    answer_order: 1
+                                    is_answer: 1
+                                    created_at: null
+                                    updated_at: null
+                            activity_item_component:
+                              id: 11
+                              game_activity_item_id: 11
+                              question_id: 13
+                              asset_id: null
+                              animation_config: null
+                              order: 0
+                    pagination:
+                      current_page: 1
+                      last_page: 1
+                properties:
+                  activities:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        toy8_id:
+                          type: string
+                        parent_id:
+                          type: integer
+                          nullable: true
+                        language_id:
+                          type: integer
+                        intervention_screening:
+                          type: string
+                        remarks:
+                          type: string
+                          nullable: true
+                        status:
+                          type: integer
+                        is_hidden:
+                          type: integer
+                        created_at:
+                          type: string
+                        updated_at:
+                          type: string
+                        deleted_at:
+                          type: string
+                          nullable: true
+                        activity_items:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                              toy8_id:
+                                type: string
+                              parent_id:
+                                type: integer
+                                nullable: true
+                              activity_item_type:
+                                type: integer
+                              language_id:
+                                type: integer
+                              intervention_screening:
+                                type: string
+                              remarks:
+                                type: string
+                                nullable: true
+                              status:
+                                type: integer
+                              is_hidden:
+                                type: integer
+                              created_at:
+                                type: string
+                                nullable: true
+                              updated_at:
+                                type: string
+                                nullable: true
+                              deleted_at:
+                                type: string
+                                nullable: true
+                              laravel_through_key:
+                                type: integer
+                              questions:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: integer
+                                    toy8_id:
+                                      type: string
+                                    parent_id:
+                                      type: integer
+                                      nullable: true
+                                    game_template_id:
+                                      type: integer
+                                    language_id:
+                                      type: integer
+                                    game_level_id:
+                                      type: integer
+                                    remarks:
+                                      type: string
+                                      nullable: true
+                                    preview_time:
+                                      type: integer
+                                    randomized_options:
+                                      type: integer
+                                    sequenced_answers:
+                                      type: integer
+                                    question_asset_id:
+                                      type: integer
+                                    multiple_question_asset_id:
+                                      type: string
+                                      nullable: true
+                                    answer_amounts:
+                                      type: integer
+                                      nullable: true
+                                    voiceover_asset_id:
+                                      type: integer
+                                      nullable: true
+                                    is_assigned:
+                                      type: integer
+                                    config:
+                                      type: string
+                                      nullable: true
+                                    status:
+                                      type: integer
+                                    is_hidden:
+                                      type: integer
+                                    created_at:
+                                      type: string
+                                    updated_at:
+                                      type: string
+                                    deleted_at:
+                                      type: string
+                                      nullable: true
+                                    laravel_through_key:
+                                      type: integer
+                                    options:
+                                      type: array
+                                      items:
+                                        type: object
+                                        properties:
+                                          id:
+                                            type: integer
+                                          game_question_id:
+                                            type: integer
+                                          game_asset_id:
+                                            type: integer
+                                          option_order:
+                                            type: integer
+                                          answer_order:
+                                            type: integer
+                                          is_answer:
+                                            type: integer
+                                          created_at:
+                                            type: string
+                                            nullable: true
+                                          updated_at:
+                                            type: string
+                                            nullable: true
+                              activity_item_component:
+                                type: object
+                                properties:
+                                  id:
+                                    type: integer
+                                  game_activity_item_id:
+                                    type: integer
+                                  question_id:
+                                    type: integer
+                                    nullable: true
+                                  asset_id:
+                                    type: integer
+                                    nullable: true
+                                  animation_config:
+                                    type: string
+                                    nullable: true
+                                  order:
+                                    type: integer
+                  pagination:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                      last_page:
+                        type: integer
+              examples:
+                Example 1:
+                  value:
+                    activities:
+                      - id: 5
+                        toy8_id: Test_CO_AUME
+                        parent_id: null
+                        language_id: 1
+                        intervention_screening: '1'
+                        remarks: null
+                        status: 2
+                        is_hidden: 0
+                        created_at: '2025-01-21T14:24:41.000000Z'
+                        updated_at: '2025-01-21T14:24:41.000000Z'
+                        deleted_at: null
+                        activity_items:
+                          - id: 8
+                            toy8_id: Test_CO-AUME_1-3_Q1_1737440570
+                            parent_id: null
+                            activity_item_type: 5
+                            language_id: 1
+                            intervention_screening: '1'
+                            remarks: null
+                            status: 2
+                            is_hidden: 0
+                            created_at: null
+                            updated_at: null
+                            deleted_at: null
+                            laravel_through_key: 5
+                            questions:
+                              - id: 8
+                                toy8_id: Test_CO-AUME_1-3_Q1
+                                parent_id: null
+                                game_template_id: 2
+                                language_id: 1
+                                game_level_id: 2
+                                remarks: null
+                                preview_time: 0
+                                randomized_options: 1
+                                sequenced_answers: 0
+                                question_asset_id: 25
+                                multiple_question_asset_id: null
+                                answer_amounts: null
+                                voiceover_asset_id: null
+                                is_assigned: 0
+                                config: null
+                                status: 2
+                                is_hidden: 0
+                                created_at: '2025-01-21T14:22:05.000000Z'
+                                updated_at: '2025-01-21T14:22:50.000000Z'
+                                deleted_at: null
+                                laravel_through_key: 8
+                                options:
+                                  - id: 32
+                                    game_question_id: 8
+                                    game_asset_id: 18
+                                    option_order: 1
+                                    answer_order: 1
+                                    is_answer: 1
+                                    created_at: null
+                                    updated_at: null
+                                  - id: 33
+                                    game_question_id: 8
+                                    game_asset_id: 19
+                                    option_order: 2
+                                    answer_order: 1
+                                    is_answer: 0
+                                    created_at: null
+                                    updated_at: null
+                                  - id: 34
+                                    game_question_id: 8
+                                    game_asset_id: 20
+                                    option_order: 3
+                                    answer_order: 1
+                                    is_answer: 0
+                                    created_at: null
+                                    updated_at: null
+                            activity_item_component:
+                              id: 8
+                              game_activity_item_id: 8
+                              question_id: 8
+                              asset_id: null
+                              animation_config: null
+                              order: 0
+                          - id: 9
+                            toy8_id: Test_CO-AUME_1-3_Q2_1737440553
+                            parent_id: null
+                            activity_item_type: 5
+                            language_id: 1
+                            intervention_screening: '1'
+                            remarks: null
+                            status: 2
+                            is_hidden: 0
+                            created_at: null
+                            updated_at: null
+                            deleted_at: null
+                            laravel_through_key: 5
+                            questions:
+                              - id: 9
+                                toy8_id: Test_CO-AUME_1-3_Q2
+                                parent_id: null
+                                game_template_id: 2
+                                language_id: 1
+                                game_level_id: 2
+                                remarks: null
+                                preview_time: 0
+                                randomized_options: 1
+                                sequenced_answers: 0
+                                question_asset_id: 25
+                                multiple_question_asset_id: null
+                                answer_amounts: null
+                                voiceover_asset_id: null
+                                is_assigned: 0
+                                config: null
+                                status: 2
+                                is_hidden: 0
+                                created_at: '2025-01-21T14:22:10.000000Z'
+                                updated_at: '2025-01-21T14:22:33.000000Z'
+                                deleted_at: null
+                                laravel_through_key: 9
+                                options:
+                                  - id: 26
+                                    game_question_id: 9
+                                    game_asset_id: 20
+                                    option_order: 1
+                                    answer_order: 1
+                                    is_answer: 1
+                                    created_at: null
+                                    updated_at: null
+                                  - id: 27
+                                    game_question_id: 9
+                                    game_asset_id: 19
+                                    option_order: 2
+                                    answer_order: 1
+                                    is_answer: 0
+                                    created_at: null
+                                    updated_at: null
+                                  - id: 28
+                                    game_question_id: 9
+                                    game_asset_id: 18
+                                    option_order: 3
+                                    answer_order: 1
+                                    is_answer: 0
+                                    created_at: null
+                                    updated_at: null
+                            activity_item_component:
+                              id: 9
+                              game_activity_item_id: 9
+                              question_id: 9
+                              asset_id: null
+                              animation_config: null
+                              order: 0
+                      - id: 7
+                        toy8_id: Test_FM-PCDR
+                        parent_id: null
+                        language_id: 1
+                        intervention_screening: '1'
+                        remarks: null
+                        status: 2
+                        is_hidden: 0
+                        created_at: '2025-01-21T14:25:14.000000Z'
+                        updated_at: '2025-01-21T14:25:14.000000Z'
+                        deleted_at: null
+                        activity_items:
+                          - id: 12
+                            toy8_id: Test_Beads_Imitation_Intro
+                            parent_id: null
+                            activity_item_type: 1
+                            language_id: 1
+                            intervention_screening: '1'
+                            remarks: null
+                            status: 2
+                            is_hidden: 0
+                            created_at: null
+                            updated_at: null
+                            deleted_at: null
+                            laravel_through_key: 7
+                            questions: []
+                            activity_item_component:
+                              id: 12
+                              game_activity_item_id: 12
+                              question_id: null
+                              asset_id: null
+                              animation_config: '{"audio": null, "animation": [11]}'
+                              order: 0
+                          - id: 13
+                            toy8_id: Test_Drawing_Tutorial
+                            parent_id: null
+                            activity_item_type: 3
+                            language_id: 1
+                            intervention_screening: '1'
+                            remarks: null
+                            status: 2
+                            is_hidden: 0
+                            created_at: null
+                            updated_at: null
+                            deleted_at: null
+                            laravel_through_key: 7
+                            questions: []
+                            activity_item_component:
+                              id: 13
+                              game_activity_item_id: 13
+                              question_id: null
+                              asset_id: 21
+                              animation_config: null
+                              order: 0
+                          - id: 11
+                            toy8_id: Test_FM-PCDR_Q1_1737440651
+                            parent_id: null
+                            activity_item_type: 5
+                            language_id: 1
+                            intervention_screening: '1'
+                            remarks: null
+                            status: 2
+                            is_hidden: 0
+                            created_at: null
+                            updated_at: null
+                            deleted_at: null
+                            laravel_through_key: 7
+                            questions:
+                              - id: 13
+                                toy8_id: Test_FM-PCDR_Q1
+                                parent_id: null
+                                game_template_id: 47
+                                language_id: 1
+                                game_level_id: 3
+                                remarks: null
+                                preview_time: 0
+                                randomized_options: 0
+                                sequenced_answers: 0
+                                question_asset_id: 19
+                                multiple_question_asset_id: null
+                                answer_amounts: null
+                                voiceover_asset_id: null
+                                is_assigned: 0
+                                config: null
+                                status: 2
+                                is_hidden: 0
+                                created_at: '2025-01-21T14:24:11.000000Z'
+                                updated_at: '2025-01-21T14:24:11.000000Z'
+                                deleted_at: null
+                                laravel_through_key: 11
+                                options:
+                                  - id: 38
+                                    game_question_id: 13
+                                    game_asset_id: 26
+                                    option_order: 1
+                                    answer_order: 1
+                                    is_answer: 1
+                                    created_at: null
+                                    updated_at: null
+                            activity_item_component:
+                              id: 11
+                              game_activity_item_id: 11
+                              question_id: 13
+                              asset_id: null
+                              animation_config: null
+                              order: 0
+                    pagination:
+                      current_page: 1
+                      last_page: 1
+      operationId: get-intervention-activites
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                module_id:
+                  type: integer
+              x-examples:
+                Example 1:
+                  module_id: 1
+      x-stoplight:
+        id: k23rf423ijpcj
+    parameters: []
   /intervention/play:
     post:
       summary: Play intervention module
@@ -4922,6 +5640,940 @@ paths:
             type: string
           in: query
           name: module_id
+  /screening/activites:
+    get:
+      summary: Get activities for Screening modules
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  Example 1:
+                    activities:
+                      - id: 1
+                        toy8_id: EN_L-T-3B
+                        parent_id: null
+                        language_id: 1
+                        intervention_screening: '2'
+                        remarks: null
+                        status: 2
+                        is_hidden: 0
+                        created_at: '2025-01-16T08:57:03.000000Z'
+                        updated_at: '2025-01-16T08:57:03.000000Z'
+                        deleted_at: null
+                        activity_items:
+                          - id: 4
+                            toy8_id: EN_L-T-3B_intro
+                            parent_id: null
+                            activity_item_type: 1
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: 'look what we have here, a red ballon (wrong asset)?, tell me the color of balloon you see next'
+                            status: 2
+                            is_hidden: 0
+                            created_at: null
+                            updated_at: null
+                            deleted_at: null
+                            laravel_through_key: 1
+                            questions: []
+                            activity_item_component:
+                              id: 4
+                              game_activity_item_id: 4
+                              question_id: null
+                              asset_id: null
+                              animation_config: '{"audio": null, "animation": [11]}'
+                              order: 0
+                          - id: 1
+                            toy8_id: EN_L-T-3B_Q1_1736985890
+                            parent_id: null
+                            activity_item_type: 5
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: Orange
+                            status: 2
+                            is_hidden: 0
+                            created_at: null
+                            updated_at: null
+                            deleted_at: null
+                            laravel_through_key: 1
+                            questions:
+                              - id: 1
+                                toy8_id: EN_L-T-3B_Q1
+                                parent_id: null
+                                game_template_id: 61
+                                language_id: 1
+                                game_level_id: 2
+                                remarks: Orange
+                                preview_time: 0
+                                randomized_options: 0
+                                sequenced_answers: 1
+                                question_asset_id: null
+                                multiple_question_asset_id: '["3"]'
+                                answer_amounts: null
+                                voiceover_asset_id: null
+                                is_assigned: 0
+                                config: null
+                                status: 2
+                                is_hidden: 0
+                                created_at: '2025-01-16T08:04:50.000000Z'
+                                updated_at: '2025-01-16T08:04:50.000000Z'
+                                deleted_at: null
+                                laravel_through_key: 1
+                                options: []
+                            activity_item_component:
+                              id: 1
+                              game_activity_item_id: 1
+                              question_id: 1
+                              asset_id: null
+                              animation_config: null
+                              order: 0
+                          - id: 2
+                            toy8_id: EN_L-T-3B_Q2_1736985920
+                            parent_id: null
+                            activity_item_type: 5
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: Orange
+                            status: 2
+                            is_hidden: 0
+                            created_at: null
+                            updated_at: null
+                            deleted_at: null
+                            laravel_through_key: 1
+                            questions:
+                              - id: 2
+                                toy8_id: EN_L-T-3B_Q2
+                                parent_id: null
+                                game_template_id: 61
+                                language_id: 1
+                                game_level_id: 2
+                                remarks: Pink
+                                preview_time: 0
+                                randomized_options: 0
+                                sequenced_answers: 1
+                                question_asset_id: null
+                                multiple_question_asset_id: '["6"]'
+                                answer_amounts: null
+                                voiceover_asset_id: null
+                                is_assigned: 0
+                                config: null
+                                status: 2
+                                is_hidden: 0
+                                created_at: '2025-01-16T08:04:58.000000Z'
+                                updated_at: '2025-01-16T08:05:20.000000Z'
+                                deleted_at: null
+                                laravel_through_key: 2
+                                options: []
+                            activity_item_component:
+                              id: 2
+                              game_activity_item_id: 2
+                              question_id: 2
+                              asset_id: null
+                              animation_config: null
+                              order: 0
+                      - id: 4
+                        toy8_id: EN_L-P-3A
+                        parent_id: null
+                        language_id: 1
+                        intervention_screening: '2'
+                        remarks: null
+                        status: 2
+                        is_hidden: 0
+                        created_at: '2025-01-17T12:06:47.000000Z'
+                        updated_at: '2025-01-17T12:06:47.000000Z'
+                        deleted_at: null
+                        activity_items:
+                          - id: 6
+                            toy8_id: EN_L-P-3A_Q1_1737086767
+                            parent_id: null
+                            activity_item_type: 5
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: null
+                            status: 2
+                            is_hidden: 0
+                            created_at: null
+                            updated_at: null
+                            deleted_at: null
+                            laravel_through_key: 4
+                            questions:
+                              - id: 5
+                                toy8_id: EN_L-P-3A_Q1
+                                parent_id: null
+                                game_template_id: 41
+                                language_id: 1
+                                game_level_id: 2
+                                remarks: null
+                                preview_time: 0
+                                randomized_options: 0
+                                sequenced_answers: 1
+                                question_asset_id: null
+                                multiple_question_asset_id: '["14"]'
+                                answer_amounts: null
+                                voiceover_asset_id: null
+                                is_assigned: 0
+                                config: null
+                                status: 2
+                                is_hidden: 0
+                                created_at: '2025-01-17T12:06:07.000000Z'
+                                updated_at: '2025-01-17T12:06:07.000000Z'
+                                deleted_at: null
+                                laravel_through_key: 6
+                                options:
+                                  - id: 1
+                                    game_question_id: 5
+                                    game_asset_id: 10
+                                    option_order: 1
+                                    answer_order: 0
+                                    is_answer: 1
+                                    created_at: null
+                                    updated_at: null
+                                  - id: 2
+                                    game_question_id: 5
+                                    game_asset_id: 11
+                                    option_order: 2
+                                    answer_order: 0
+                                    is_answer: 0
+                                    created_at: null
+                                    updated_at: null
+                                  - id: 3
+                                    game_question_id: 5
+                                    game_asset_id: 12
+                                    option_order: 3
+                                    answer_order: 0
+                                    is_answer: 0
+                                    created_at: null
+                                    updated_at: null
+                                  - id: 4
+                                    game_question_id: 5
+                                    game_asset_id: 13
+                                    option_order: 4
+                                    answer_order: 0
+                                    is_answer: 0
+                                    created_at: null
+                                    updated_at: null
+                            activity_item_component:
+                              id: 6
+                              game_activity_item_id: 6
+                              question_id: 5
+                              asset_id: null
+                              animation_config: null
+                              order: 0
+                          - id: 7
+                            toy8_id: EN_L-P-3A_Q2_1737086787
+                            parent_id: null
+                            activity_item_type: 5
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: null
+                            status: 2
+                            is_hidden: 0
+                            created_at: null
+                            updated_at: null
+                            deleted_at: null
+                            laravel_through_key: 4
+                            questions:
+                              - id: 6
+                                toy8_id: EN_L-P-3A_Q2
+                                parent_id: null
+                                game_template_id: 41
+                                language_id: 1
+                                game_level_id: 2
+                                remarks: null
+                                preview_time: 0
+                                randomized_options: 0
+                                sequenced_answers: 1
+                                question_asset_id: null
+                                multiple_question_asset_id: '["14"]'
+                                answer_amounts: null
+                                voiceover_asset_id: null
+                                is_assigned: 0
+                                config: null
+                                status: 2
+                                is_hidden: 0
+                                created_at: '2025-01-17T12:06:13.000000Z'
+                                updated_at: '2025-01-17T12:06:27.000000Z'
+                                deleted_at: null
+                                laravel_through_key: 7
+                                options:
+                                  - id: 13
+                                    game_question_id: 6
+                                    game_asset_id: 11
+                                    option_order: 1
+                                    answer_order: 0
+                                    is_answer: 0
+                                    created_at: null
+                                    updated_at: null
+                                  - id: 14
+                                    game_question_id: 6
+                                    game_asset_id: 12
+                                    option_order: 2
+                                    answer_order: 0
+                                    is_answer: 0
+                                    created_at: null
+                                    updated_at: null
+                                  - id: 15
+                                    game_question_id: 6
+                                    game_asset_id: 10
+                                    option_order: 3
+                                    answer_order: 0
+                                    is_answer: 1
+                                    created_at: null
+                                    updated_at: null
+                                  - id: 16
+                                    game_question_id: 6
+                                    game_asset_id: 13
+                                    option_order: 4
+                                    answer_order: 0
+                                    is_answer: 0
+                                    created_at: null
+                                    updated_at: null
+                            activity_item_component:
+                              id: 7
+                              game_activity_item_id: 7
+                              question_id: 6
+                              asset_id: null
+                              animation_config: null
+                              order: 0
+                      - id: 2
+                        toy8_id: EN_FM-D-3A
+                        parent_id: null
+                        language_id: 1
+                        intervention_screening: '2'
+                        remarks: null
+                        status: 2
+                        is_hidden: 0
+                        created_at: '2025-01-16T08:57:26.000000Z'
+                        updated_at: '2025-01-16T08:57:26.000000Z'
+                        deleted_at: null
+                        activity_items:
+                          - id: 5
+                            toy8_id: EN_FM-D-3A_open_the_box
+                            parent_id: null
+                            activity_item_type: 3
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: null
+                            status: 2
+                            is_hidden: 0
+                            created_at: null
+                            updated_at: null
+                            deleted_at: null
+                            laravel_through_key: 2
+                            questions: []
+                            activity_item_component:
+                              id: 5
+                              game_activity_item_id: 5
+                              question_id: null
+                              asset_id: 9
+                              animation_config: null
+                              order: 0
+                          - id: 3
+                            toy8_id: EN_FM-B-3A_Q1_1736985952
+                            parent_id: null
+                            activity_item_type: 5
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: staircase_6
+                            status: 2
+                            is_hidden: 0
+                            created_at: null
+                            updated_at: null
+                            deleted_at: null
+                            laravel_through_key: 2
+                            questions:
+                              - id: 4
+                                toy8_id: EN_FM-B-3A_Q1
+                                parent_id: null
+                                game_template_id: 102
+                                language_id: 1
+                                game_level_id: 2
+                                remarks: staircase_6
+                                preview_time: 0
+                                randomized_options: 0
+                                sequenced_answers: 1
+                                question_asset_id: 1
+                                multiple_question_asset_id: null
+                                answer_amounts: null
+                                voiceover_asset_id: null
+                                is_assigned: 0
+                                config: null
+                                status: 2
+                                is_hidden: 0
+                                created_at: '2025-01-16T08:05:52.000000Z'
+                                updated_at: '2025-01-16T08:05:52.000000Z'
+                                deleted_at: null
+                                laravel_through_key: 3
+                                options: []
+                            activity_item_component:
+                              id: 3
+                              game_activity_item_id: 3
+                              question_id: 4
+                              asset_id: null
+                              animation_config: null
+                              order: 0
+                    pagination:
+                      current_page: 1
+                      last_page: 1
+                properties:
+                  activities:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        toy8_id:
+                          type: string
+                        parent_id:
+                          type: integer
+                          nullable: true
+                        language_id:
+                          type: integer
+                        intervention_screening:
+                          type: string
+                        remarks:
+                          type: string
+                          nullable: true
+                        status:
+                          type: integer
+                        is_hidden:
+                          type: integer
+                        created_at:
+                          type: string
+                        updated_at:
+                          type: string
+                        deleted_at:
+                          type: string
+                          nullable: true
+                        activity_items:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                              toy8_id:
+                                type: string
+                              parent_id:
+                                type: integer
+                                nullable: true
+                              activity_item_type:
+                                type: integer
+                              language_id:
+                                type: integer
+                              intervention_screening:
+                                type: string
+                              remarks:
+                                type: string
+                                nullable: true
+                              status:
+                                type: integer
+                              is_hidden:
+                                type: integer
+                              created_at:
+                                type: string
+                                nullable: true
+                              updated_at:
+                                type: string
+                                nullable: true
+                              deleted_at:
+                                type: string
+                                nullable: true
+                              laravel_through_key:
+                                type: integer
+                              questions:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: integer
+                                    toy8_id:
+                                      type: string
+                                    parent_id:
+                                      type: integer
+                                      nullable: true
+                                    game_template_id:
+                                      type: integer
+                                    language_id:
+                                      type: integer
+                                    game_level_id:
+                                      type: integer
+                                    remarks:
+                                      type: string
+                                      nullable: true
+                                    preview_time:
+                                      type: integer
+                                    randomized_options:
+                                      type: integer
+                                    sequenced_answers:
+                                      type: integer
+                                    question_asset_id:
+                                      type: integer
+                                      nullable: true
+                                    multiple_question_asset_id:
+                                      type: string
+                                      nullable: true
+                                    answer_amounts:
+                                      type: integer
+                                      nullable: true
+                                    voiceover_asset_id:
+                                      type: integer
+                                      nullable: true
+                                    is_assigned:
+                                      type: integer
+                                    config:
+                                      type: string
+                                      nullable: true
+                                    status:
+                                      type: integer
+                                    is_hidden:
+                                      type: integer
+                                    created_at:
+                                      type: string
+                                    updated_at:
+                                      type: string
+                                    deleted_at:
+                                      type: string
+                                      nullable: true
+                                    laravel_through_key:
+                                      type: integer
+                                    options:
+                                      type: array
+                                      items:
+                                        type: object
+                                        properties:
+                                          id:
+                                            type: integer
+                                          game_question_id:
+                                            type: integer
+                                          game_asset_id:
+                                            type: integer
+                                          option_order:
+                                            type: integer
+                                          answer_order:
+                                            type: integer
+                                          is_answer:
+                                            type: integer
+                                          created_at:
+                                            type: string
+                                            nullable: true
+                                          updated_at:
+                                            type: string
+                                            nullable: true
+                              activity_item_component:
+                                type: object
+                                properties:
+                                  id:
+                                    type: integer
+                                  game_activity_item_id:
+                                    type: integer
+                                  question_id:
+                                    type: integer
+                                    nullable: true
+                                  asset_id:
+                                    type: integer
+                                    nullable: true
+                                  animation_config:
+                                    type: string
+                                    nullable: true
+                                  order:
+                                    type: integer
+                  pagination:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                      last_page:
+                        type: integer
+              examples:
+                Example 1:
+                  value:
+                    activities:
+                      - id: 1
+                        toy8_id: EN_L-T-3B
+                        parent_id: null
+                        language_id: 1
+                        intervention_screening: '2'
+                        remarks: null
+                        status: 2
+                        is_hidden: 0
+                        created_at: '2025-01-16T08:57:03.000000Z'
+                        updated_at: '2025-01-16T08:57:03.000000Z'
+                        deleted_at: null
+                        activity_items:
+                          - id: 4
+                            toy8_id: EN_L-T-3B_intro
+                            parent_id: null
+                            activity_item_type: 1
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: 'look what we have here, a red ballon (wrong asset)?, tell me the color of balloon you see next'
+                            status: 2
+                            is_hidden: 0
+                            created_at: null
+                            updated_at: null
+                            deleted_at: null
+                            laravel_through_key: 1
+                            questions: []
+                            activity_item_component:
+                              id: 4
+                              game_activity_item_id: 4
+                              question_id: null
+                              asset_id: null
+                              animation_config: '{"audio": null, "animation": [11]}'
+                              order: 0
+                          - id: 1
+                            toy8_id: EN_L-T-3B_Q1_1736985890
+                            parent_id: null
+                            activity_item_type: 5
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: Orange
+                            status: 2
+                            is_hidden: 0
+                            created_at: null
+                            updated_at: null
+                            deleted_at: null
+                            laravel_through_key: 1
+                            questions:
+                              - id: 1
+                                toy8_id: EN_L-T-3B_Q1
+                                parent_id: null
+                                game_template_id: 61
+                                language_id: 1
+                                game_level_id: 2
+                                remarks: Orange
+                                preview_time: 0
+                                randomized_options: 0
+                                sequenced_answers: 1
+                                question_asset_id: null
+                                multiple_question_asset_id: '["3"]'
+                                answer_amounts: null
+                                voiceover_asset_id: null
+                                is_assigned: 0
+                                config: null
+                                status: 2
+                                is_hidden: 0
+                                created_at: '2025-01-16T08:04:50.000000Z'
+                                updated_at: '2025-01-16T08:04:50.000000Z'
+                                deleted_at: null
+                                laravel_through_key: 1
+                                options: []
+                            activity_item_component:
+                              id: 1
+                              game_activity_item_id: 1
+                              question_id: 1
+                              asset_id: null
+                              animation_config: null
+                              order: 0
+                          - id: 2
+                            toy8_id: EN_L-T-3B_Q2_1736985920
+                            parent_id: null
+                            activity_item_type: 5
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: Orange
+                            status: 2
+                            is_hidden: 0
+                            created_at: null
+                            updated_at: null
+                            deleted_at: null
+                            laravel_through_key: 1
+                            questions:
+                              - id: 2
+                                toy8_id: EN_L-T-3B_Q2
+                                parent_id: null
+                                game_template_id: 61
+                                language_id: 1
+                                game_level_id: 2
+                                remarks: Pink
+                                preview_time: 0
+                                randomized_options: 0
+                                sequenced_answers: 1
+                                question_asset_id: null
+                                multiple_question_asset_id: '["6"]'
+                                answer_amounts: null
+                                voiceover_asset_id: null
+                                is_assigned: 0
+                                config: null
+                                status: 2
+                                is_hidden: 0
+                                created_at: '2025-01-16T08:04:58.000000Z'
+                                updated_at: '2025-01-16T08:05:20.000000Z'
+                                deleted_at: null
+                                laravel_through_key: 2
+                                options: []
+                            activity_item_component:
+                              id: 2
+                              game_activity_item_id: 2
+                              question_id: 2
+                              asset_id: null
+                              animation_config: null
+                              order: 0
+                      - id: 4
+                        toy8_id: EN_L-P-3A
+                        parent_id: null
+                        language_id: 1
+                        intervention_screening: '2'
+                        remarks: null
+                        status: 2
+                        is_hidden: 0
+                        created_at: '2025-01-17T12:06:47.000000Z'
+                        updated_at: '2025-01-17T12:06:47.000000Z'
+                        deleted_at: null
+                        activity_items:
+                          - id: 6
+                            toy8_id: EN_L-P-3A_Q1_1737086767
+                            parent_id: null
+                            activity_item_type: 5
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: null
+                            status: 2
+                            is_hidden: 0
+                            created_at: null
+                            updated_at: null
+                            deleted_at: null
+                            laravel_through_key: 4
+                            questions:
+                              - id: 5
+                                toy8_id: EN_L-P-3A_Q1
+                                parent_id: null
+                                game_template_id: 41
+                                language_id: 1
+                                game_level_id: 2
+                                remarks: null
+                                preview_time: 0
+                                randomized_options: 0
+                                sequenced_answers: 1
+                                question_asset_id: null
+                                multiple_question_asset_id: '["14"]'
+                                answer_amounts: null
+                                voiceover_asset_id: null
+                                is_assigned: 0
+                                config: null
+                                status: 2
+                                is_hidden: 0
+                                created_at: '2025-01-17T12:06:07.000000Z'
+                                updated_at: '2025-01-17T12:06:07.000000Z'
+                                deleted_at: null
+                                laravel_through_key: 6
+                                options:
+                                  - id: 1
+                                    game_question_id: 5
+                                    game_asset_id: 10
+                                    option_order: 1
+                                    answer_order: 0
+                                    is_answer: 1
+                                    created_at: null
+                                    updated_at: null
+                                  - id: 2
+                                    game_question_id: 5
+                                    game_asset_id: 11
+                                    option_order: 2
+                                    answer_order: 0
+                                    is_answer: 0
+                                    created_at: null
+                                    updated_at: null
+                                  - id: 3
+                                    game_question_id: 5
+                                    game_asset_id: 12
+                                    option_order: 3
+                                    answer_order: 0
+                                    is_answer: 0
+                                    created_at: null
+                                    updated_at: null
+                                  - id: 4
+                                    game_question_id: 5
+                                    game_asset_id: 13
+                                    option_order: 4
+                                    answer_order: 0
+                                    is_answer: 0
+                                    created_at: null
+                                    updated_at: null
+                            activity_item_component:
+                              id: 6
+                              game_activity_item_id: 6
+                              question_id: 5
+                              asset_id: null
+                              animation_config: null
+                              order: 0
+                          - id: 7
+                            toy8_id: EN_L-P-3A_Q2_1737086787
+                            parent_id: null
+                            activity_item_type: 5
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: null
+                            status: 2
+                            is_hidden: 0
+                            created_at: null
+                            updated_at: null
+                            deleted_at: null
+                            laravel_through_key: 4
+                            questions:
+                              - id: 6
+                                toy8_id: EN_L-P-3A_Q2
+                                parent_id: null
+                                game_template_id: 41
+                                language_id: 1
+                                game_level_id: 2
+                                remarks: null
+                                preview_time: 0
+                                randomized_options: 0
+                                sequenced_answers: 1
+                                question_asset_id: null
+                                multiple_question_asset_id: '["14"]'
+                                answer_amounts: null
+                                voiceover_asset_id: null
+                                is_assigned: 0
+                                config: null
+                                status: 2
+                                is_hidden: 0
+                                created_at: '2025-01-17T12:06:13.000000Z'
+                                updated_at: '2025-01-17T12:06:27.000000Z'
+                                deleted_at: null
+                                laravel_through_key: 7
+                                options:
+                                  - id: 13
+                                    game_question_id: 6
+                                    game_asset_id: 11
+                                    option_order: 1
+                                    answer_order: 0
+                                    is_answer: 0
+                                    created_at: null
+                                    updated_at: null
+                                  - id: 14
+                                    game_question_id: 6
+                                    game_asset_id: 12
+                                    option_order: 2
+                                    answer_order: 0
+                                    is_answer: 0
+                                    created_at: null
+                                    updated_at: null
+                                  - id: 15
+                                    game_question_id: 6
+                                    game_asset_id: 10
+                                    option_order: 3
+                                    answer_order: 0
+                                    is_answer: 1
+                                    created_at: null
+                                    updated_at: null
+                                  - id: 16
+                                    game_question_id: 6
+                                    game_asset_id: 13
+                                    option_order: 4
+                                    answer_order: 0
+                                    is_answer: 0
+                                    created_at: null
+                                    updated_at: null
+                            activity_item_component:
+                              id: 7
+                              game_activity_item_id: 7
+                              question_id: 6
+                              asset_id: null
+                              animation_config: null
+                              order: 0
+                      - id: 2
+                        toy8_id: EN_FM-D-3A
+                        parent_id: null
+                        language_id: 1
+                        intervention_screening: '2'
+                        remarks: null
+                        status: 2
+                        is_hidden: 0
+                        created_at: '2025-01-16T08:57:26.000000Z'
+                        updated_at: '2025-01-16T08:57:26.000000Z'
+                        deleted_at: null
+                        activity_items:
+                          - id: 5
+                            toy8_id: EN_FM-D-3A_open_the_box
+                            parent_id: null
+                            activity_item_type: 3
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: null
+                            status: 2
+                            is_hidden: 0
+                            created_at: null
+                            updated_at: null
+                            deleted_at: null
+                            laravel_through_key: 2
+                            questions: []
+                            activity_item_component:
+                              id: 5
+                              game_activity_item_id: 5
+                              question_id: null
+                              asset_id: 9
+                              animation_config: null
+                              order: 0
+                          - id: 3
+                            toy8_id: EN_FM-B-3A_Q1_1736985952
+                            parent_id: null
+                            activity_item_type: 5
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: staircase_6
+                            status: 2
+                            is_hidden: 0
+                            created_at: null
+                            updated_at: null
+                            deleted_at: null
+                            laravel_through_key: 2
+                            questions:
+                              - id: 4
+                                toy8_id: EN_FM-B-3A_Q1
+                                parent_id: null
+                                game_template_id: 102
+                                language_id: 1
+                                game_level_id: 2
+                                remarks: staircase_6
+                                preview_time: 0
+                                randomized_options: 0
+                                sequenced_answers: 1
+                                question_asset_id: 1
+                                multiple_question_asset_id: null
+                                answer_amounts: null
+                                voiceover_asset_id: null
+                                is_assigned: 0
+                                config: null
+                                status: 2
+                                is_hidden: 0
+                                created_at: '2025-01-16T08:05:52.000000Z'
+                                updated_at: '2025-01-16T08:05:52.000000Z'
+                                deleted_at: null
+                                laravel_through_key: 3
+                                options: []
+                            activity_item_component:
+                              id: 3
+                              game_activity_item_id: 3
+                              question_id: 4
+                              asset_id: null
+                              animation_config: null
+                              order: 0
+                    pagination:
+                      current_page: 1
+                      last_page: 1
+      operationId: get-screening-activites
+      x-stoplight:
+        id: qxxzy1opiwxxf
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                module_id:
+                  type: integer
+              x-examples:
+                Example 1:
+                  module_id: 1
   /screening/play:
     post:
       summary: Playing screening module
