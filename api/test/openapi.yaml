@@ -1115,45 +1115,120 @@ paths:
                   Example 1:
                     module_items:
                       - id: 1
-                        toy8_id: intro_A
-                        module_item_type: intro
+                        toy8_id: DailyIntro_1
+                        module_item_type: '1'
                         language_id: 1
-                        intervention_screening: intervention
-                        remarks: This is a intro
-                        status: null
+                        intervention_screening: '1'
+                        remarks: Daily Intro (Day 1)
                         parent_id: null
-                        created_at: '2024-06-18T12:23:07.000000Z'
-                        updated_at: '2024-06-18T12:23:07.000000Z'
+                        status: '2'
+                        is_hidden: 0
+                        created_at: '2025-01-03T18:00:34.000000Z'
+                        updated_at: '2025-01-03T18:00:34.000000Z'
+                        deleted_at: null
+                        is_preset: 0
+                        module_item_type_name: Intro
+                        module_item_component:
+                          - id: 1
+                            module_item_id: 1
+                            activity_id: null
+                            asset_id: null
+                            animation_config: '{"audio": null, "animation": [1]}'
+                            order: 1
+                            created_at: '2025-01-03T18:00:34.000000Z'
+                            updated_at: '2025-01-03T18:00:34.000000Z'
+                      - id: 95
+                        toy8_id: Test_CO_AUME_1737440681
+                        module_item_type: '2'
+                        language_id: 1
+                        intervention_screening: '1'
+                        remarks: null
+                        parent_id: null
+                        status: '2'
+                        is_hidden: 0
+                        created_at: '2025-01-21T14:24:41.000000Z'
+                        updated_at: '2025-01-21T14:24:41.000000Z'
+                        deleted_at: null
+                        is_preset: 0
+                        module_item_type_name: Activity
+                        module_item_component:
+                          - id: 40
+                            module_item_id: 95
+                            activity_id: 5
+                            asset_id: null
+                            animation_config: null
+                            order: 1
+                            created_at: '2025-01-21T14:24:41.000000Z'
+                            updated_at: '2025-01-21T14:24:41.000000Z'
                       - id: 3
-                        toy8_id: activity_A
-                        module_item_type: activity
+                        toy8_id: MiddlePraise_activity1
+                        module_item_type: '4'
                         language_id: 1
-                        intervention_screening: intervention
-                        remarks: This is an activity
-                        status: null
+                        intervention_screening: '1'
+                        remarks: 'Middle Praise #1'
                         parent_id: null
-                        created_at: '2024-06-18T12:23:07.000000Z'
-                        updated_at: '2024-06-18T12:23:07.000000Z'
+                        status: '2'
+                        is_hidden: 0
+                        created_at: '2025-01-03T18:00:34.000000Z'
+                        updated_at: '2025-01-03T18:00:34.000000Z'
+                        deleted_at: null
+                        is_preset: 0
+                        module_item_type_name: Middle Praise
+                        module_item_component:
+                          - id: 3
+                            module_item_id: 3
+                            activity_id: null
+                            asset_id: null
+                            animation_config: '{"audio": null, "animation": [4]}'
+                            order: 1
+                            created_at: '2025-01-03T18:00:34.000000Z'
+                            updated_at: '2025-01-03T18:00:34.000000Z'
+                      - id: 97
+                        toy8_id: Test_FM-PCDR_1737440806
+                        module_item_type: '2'
+                        language_id: 1
+                        intervention_screening: '1'
+                        remarks: null
+                        parent_id: null
+                        status: '2'
+                        is_hidden: 0
+                        created_at: '2025-01-21T14:25:14.000000Z'
+                        updated_at: '2025-01-21T14:26:46.000000Z'
+                        deleted_at: null
+                        is_preset: 0
+                        module_item_type_name: Activity
+                        module_item_component:
+                          - id: 42
+                            module_item_id: 97
+                            activity_id: 7
+                            asset_id: null
+                            animation_config: null
+                            order: 1
+                            created_at: '2025-01-21T14:25:14.000000Z'
+                            updated_at: '2025-01-21T14:25:14.000000Z'
                       - id: 6
-                        toy8_id: middle_praise_A
-                        module_item_type: middle_praise
+                        toy8_id: preset_reward_EN
+                        module_item_type: '3'
                         language_id: 1
-                        intervention_screening: intervention
-                        remarks: This is a middle praise
-                        status: null
+                        intervention_screening: '1'
+                        remarks: Reward
                         parent_id: null
-                        created_at: '2024-06-18T12:23:07.000000Z'
-                        updated_at: '2024-06-18T12:23:07.000000Z'
-                      - id: 9
-                        toy8_id: reward_B
-                        module_item_type: reward
-                        language_id: 1
-                        intervention_screening: intervention
-                        remarks: This is a reward
-                        status: null
-                        parent_id: null
-                        created_at: '2024-06-18T12:23:07.000000Z'
-                        updated_at: '2024-06-18T12:23:07.000000Z'
+                        status: '2'
+                        is_hidden: 0
+                        created_at: '2025-01-03T18:00:34.000000Z'
+                        updated_at: '2025-01-03T18:00:34.000000Z'
+                        deleted_at: null
+                        is_preset: 0
+                        module_item_type_name: Reward
+                        module_item_component:
+                          - id: 6
+                            module_item_id: 6
+                            activity_id: null
+                            asset_id: null
+                            animation_config: '{"audio": null, "animation": [3]}'
+                            order: 1
+                            created_at: '2025-01-03T18:00:34.000000Z'
+                            updated_at: '2025-01-03T18:00:34.000000Z'
                     pagination:
                       current_page: 1
                       last_page: 1
@@ -1175,16 +1250,49 @@ paths:
                           type: string
                         remarks:
                           type: string
-                        status:
-                          type: string
                           nullable: true
                         parent_id:
                           type: integer
                           nullable: true
+                        status:
+                          type: string
+                        is_hidden:
+                          type: integer
                         created_at:
                           type: string
                         updated_at:
                           type: string
+                        deleted_at:
+                          type: string
+                          nullable: true
+                        is_preset:
+                          type: integer
+                        module_item_type_name:
+                          type: string
+                        module_item_component:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                              module_item_id:
+                                type: integer
+                              activity_id:
+                                type: integer
+                                nullable: true
+                              asset_id:
+                                type: integer
+                                nullable: true
+                              animation_config:
+                                type: string
+                                nullable: true
+                              order:
+                                type: integer
+                              created_at:
+                                type: string
+                              updated_at:
+                                type: string
                   pagination:
                     type: object
                     properties:
@@ -1197,45 +1305,120 @@ paths:
                   value:
                     module_items:
                       - id: 1
-                        toy8_id: intro_A
-                        module_item_type: intro
+                        toy8_id: DailyIntro_1
+                        module_item_type: '1'
                         language_id: 1
-                        intervention_screening: intervention
-                        remarks: This is a intro
-                        status: null
+                        intervention_screening: '1'
+                        remarks: Daily Intro (Day 1)
                         parent_id: null
-                        created_at: '2024-06-18T12:23:07.000000Z'
-                        updated_at: '2024-06-18T12:23:07.000000Z'
+                        status: '2'
+                        is_hidden: 0
+                        created_at: '2025-01-03T18:00:34.000000Z'
+                        updated_at: '2025-01-03T18:00:34.000000Z'
+                        deleted_at: null
+                        is_preset: 0
+                        module_item_type_name: Intro
+                        module_item_component:
+                          - id: 1
+                            module_item_id: 1
+                            activity_id: null
+                            asset_id: null
+                            animation_config: '{"audio": null, "animation": [1]}'
+                            order: 1
+                            created_at: '2025-01-03T18:00:34.000000Z'
+                            updated_at: '2025-01-03T18:00:34.000000Z'
+                      - id: 95
+                        toy8_id: Test_CO_AUME_1737440681
+                        module_item_type: '2'
+                        language_id: 1
+                        intervention_screening: '1'
+                        remarks: null
+                        parent_id: null
+                        status: '2'
+                        is_hidden: 0
+                        created_at: '2025-01-21T14:24:41.000000Z'
+                        updated_at: '2025-01-21T14:24:41.000000Z'
+                        deleted_at: null
+                        is_preset: 0
+                        module_item_type_name: Activity
+                        module_item_component:
+                          - id: 40
+                            module_item_id: 95
+                            activity_id: 5
+                            asset_id: null
+                            animation_config: null
+                            order: 1
+                            created_at: '2025-01-21T14:24:41.000000Z'
+                            updated_at: '2025-01-21T14:24:41.000000Z'
                       - id: 3
-                        toy8_id: activity_A
-                        module_item_type: activity
+                        toy8_id: MiddlePraise_activity1
+                        module_item_type: '4'
                         language_id: 1
-                        intervention_screening: intervention
-                        remarks: This is an activity
-                        status: null
+                        intervention_screening: '1'
+                        remarks: 'Middle Praise #1'
                         parent_id: null
-                        created_at: '2024-06-18T12:23:07.000000Z'
-                        updated_at: '2024-06-18T12:23:07.000000Z'
+                        status: '2'
+                        is_hidden: 0
+                        created_at: '2025-01-03T18:00:34.000000Z'
+                        updated_at: '2025-01-03T18:00:34.000000Z'
+                        deleted_at: null
+                        is_preset: 0
+                        module_item_type_name: Middle Praise
+                        module_item_component:
+                          - id: 3
+                            module_item_id: 3
+                            activity_id: null
+                            asset_id: null
+                            animation_config: '{"audio": null, "animation": [4]}'
+                            order: 1
+                            created_at: '2025-01-03T18:00:34.000000Z'
+                            updated_at: '2025-01-03T18:00:34.000000Z'
+                      - id: 97
+                        toy8_id: Test_FM-PCDR_1737440806
+                        module_item_type: '2'
+                        language_id: 1
+                        intervention_screening: '1'
+                        remarks: null
+                        parent_id: null
+                        status: '2'
+                        is_hidden: 0
+                        created_at: '2025-01-21T14:25:14.000000Z'
+                        updated_at: '2025-01-21T14:26:46.000000Z'
+                        deleted_at: null
+                        is_preset: 0
+                        module_item_type_name: Activity
+                        module_item_component:
+                          - id: 42
+                            module_item_id: 97
+                            activity_id: 7
+                            asset_id: null
+                            animation_config: null
+                            order: 1
+                            created_at: '2025-01-21T14:25:14.000000Z'
+                            updated_at: '2025-01-21T14:25:14.000000Z'
                       - id: 6
-                        toy8_id: middle_praise_A
-                        module_item_type: middle_praise
+                        toy8_id: preset_reward_EN
+                        module_item_type: '3'
                         language_id: 1
-                        intervention_screening: intervention
-                        remarks: This is a middle praise
-                        status: null
+                        intervention_screening: '1'
+                        remarks: Reward
                         parent_id: null
-                        created_at: '2024-06-18T12:23:07.000000Z'
-                        updated_at: '2024-06-18T12:23:07.000000Z'
-                      - id: 9
-                        toy8_id: reward_B
-                        module_item_type: reward
-                        language_id: 1
-                        intervention_screening: intervention
-                        remarks: This is a reward
-                        status: null
-                        parent_id: null
-                        created_at: '2024-06-18T12:23:07.000000Z'
-                        updated_at: '2024-06-18T12:23:07.000000Z'
+                        status: '2'
+                        is_hidden: 0
+                        created_at: '2025-01-03T18:00:34.000000Z'
+                        updated_at: '2025-01-03T18:00:34.000000Z'
+                        deleted_at: null
+                        is_preset: 0
+                        module_item_type_name: Reward
+                        module_item_component:
+                          - id: 6
+                            module_item_id: 6
+                            activity_id: null
+                            asset_id: null
+                            animation_config: '{"audio": null, "animation": [3]}'
+                            order: 1
+                            created_at: '2025-01-03T18:00:34.000000Z'
+                            updated_at: '2025-01-03T18:00:34.000000Z'
                     pagination:
                       current_page: 1
                       last_page: 1
@@ -1842,6 +2025,86 @@ paths:
                               asset_id: null
                               animation_config: null
                               order: 0
+                      - id: 6
+                        toy8_id: Test_SO-COMIa
+                        parent_id: null
+                        language_id: 1
+                        intervention_screening: '1'
+                        remarks: null
+                        status: 2
+                        is_hidden: 0
+                        created_at: '2025-01-21T14:24:58.000000Z'
+                        updated_at: '2025-01-21T14:24:58.000000Z'
+                        deleted_at: null
+                        activity_items:
+                          - id: 10
+                            toy8_id: Test_SO-COMIa_Q1_1737440617
+                            parent_id: null
+                            activity_item_type: 5
+                            language_id: 1
+                            intervention_screening: '1'
+                            remarks: null
+                            status: 2
+                            is_hidden: 0
+                            created_at: null
+                            updated_at: null
+                            deleted_at: null
+                            laravel_through_key: 6
+                            questions:
+                              - id: 12
+                                toy8_id: Test_SO-COMIa_Q1
+                                parent_id: null
+                                game_template_id: 50
+                                language_id: 1
+                                game_level_id: 6
+                                remarks: null
+                                preview_time: 0
+                                randomized_options: 0
+                                sequenced_answers: 0
+                                question_asset_id: 24
+                                multiple_question_asset_id: null
+                                answer_amounts: null
+                                voiceover_asset_id: null
+                                is_assigned: 0
+                                config: null
+                                status: 2
+                                is_hidden: 0
+                                created_at: '2025-01-21T14:23:37.000000Z'
+                                updated_at: '2025-01-21T14:23:37.000000Z'
+                                deleted_at: null
+                                laravel_through_key: 10
+                                options:
+                                  - id: 35
+                                    game_question_id: 12
+                                    game_asset_id: 17
+                                    option_order: 1
+                                    answer_order: 1
+                                    is_answer: 1
+                                    created_at: null
+                                    updated_at: null
+                                  - id: 36
+                                    game_question_id: 12
+                                    game_asset_id: 15
+                                    option_order: 2
+                                    answer_order: 1
+                                    is_answer: 1
+                                    created_at: null
+                                    updated_at: null
+                                  - id: 37
+                                    game_question_id: 12
+                                    game_asset_id: 16
+                                    option_order: 3
+                                    answer_order: 1
+                                    is_answer: 1
+                                    created_at: null
+                                    updated_at: null
+                            activity_item_component:
+                              id: 10
+                              game_activity_item_id: 10
+                              question_id: 12
+                              asset_id: null
+                              animation_config: null
+                              order: 0
                       - id: 7
                         toy8_id: Test_FM-PCDR
                         parent_id: null
@@ -1958,11 +2221,23 @@ paths:
             schema:
               type: object
               properties:
-                module_id:
-                  type: integer
+                activity_ids:
+                  type: array
+                  items:
+                    type: integer
               x-examples:
                 Example 1:
-                  module_id: 1
+                  activity_ids:
+                    - 5
+                    - 6
+                    - 7
+            examples:
+              Example 1:
+                value:
+                  activity_ids:
+                    - 5
+                    - 6
+                    - 7
       x-stoplight:
         id: k23rf423ijpcj
     parameters: []
@@ -5453,72 +5728,167 @@ paths:
                 x-examples:
                   Example 1:
                     module_items:
-                      - id: 10
-                        toy8_id: intro_en
+                      - id: 19
+                        toy8_id: preset_intro_A_EN
                         module_item_type: '1'
                         language_id: 1
                         intervention_screening: '2'
-                        remarks: This is an EN intro
+                        remarks: Daily Intro (Day 1)
                         parent_id: null
-                        status: '1'
-                        created_at: '2024-06-26T18:04:02.000000Z'
-                        updated_at: '2024-06-26T18:04:02.000000Z'
+                        status: '2'
+                        is_hidden: 0
+                        created_at: '2025-01-03T18:00:34.000000Z'
+                        updated_at: '2025-01-03T18:00:34.000000Z'
                         deleted_at: null
-                      - id: 13
-                        toy8_id: activity_en_B
+                        is_preset: 0
+                        module_item_type_name: Intro
+                        module_item_component:
+                          - id: 19
+                            module_item_id: 19
+                            activity_id: null
+                            asset_id: null
+                            animation_config: '{"audio": null, "animation": [1]}'
+                            order: 1
+                            created_at: '2025-01-03T18:00:34.000000Z'
+                            updated_at: '2025-01-03T18:00:34.000000Z'
+                      - id: 92
+                        toy8_id: EN_L-T-3B_1736989023
                         module_item_type: '2'
                         language_id: 1
                         intervention_screening: '2'
-                        remarks: This is an EN activity
+                        remarks: null
                         parent_id: null
-                        status: '1'
-                        created_at: '2024-06-26T18:04:02.000000Z'
-                        updated_at: '2024-06-26T18:04:02.000000Z'
+                        status: '2'
+                        is_hidden: 0
+                        created_at: '2025-01-16T08:57:03.000000Z'
+                        updated_at: '2025-01-16T08:57:03.000000Z'
                         deleted_at: null
-                      - id: 16
-                        toy8_id: middle_praise_en
+                        is_preset: 0
+                        module_item_type_name: Activity
+                        module_item_component:
+                          - id: 37
+                            module_item_id: 92
+                            activity_id: 1
+                            asset_id: null
+                            animation_config: null
+                            order: 1
+                            created_at: '2025-01-16T08:57:03.000000Z'
+                            updated_at: '2025-01-16T08:57:03.000000Z'
+                      - id: 22
+                        toy8_id: preset_praise_B_EN
                         module_item_type: '4'
                         language_id: 1
                         intervention_screening: '2'
-                        remarks: This is an EN middle praise
+                        remarks: 'Middle Praise #2'
                         parent_id: null
-                        status: '1'
-                        created_at: '2024-06-26T18:04:02.000000Z'
-                        updated_at: '2024-06-26T18:04:02.000000Z'
+                        status: '2'
+                        is_hidden: 0
+                        created_at: '2025-01-03T18:00:34.000000Z'
+                        updated_at: '2025-01-03T18:00:34.000000Z'
                         deleted_at: null
-                      - id: 13
-                        toy8_id: activity_en_B
+                        is_preset: 0
+                        module_item_type_name: Middle Praise
+                        module_item_component:
+                          - id: 22
+                            module_item_id: 22
+                            activity_id: null
+                            asset_id: null
+                            animation_config: '{"audio": null, "animation": [5]}'
+                            order: 1
+                            created_at: '2025-01-03T18:00:34.000000Z'
+                            updated_at: '2025-01-03T18:00:34.000000Z'
+                      - id: 94
+                        toy8_id: EN_L-P-3A_1737086807
                         module_item_type: '2'
                         language_id: 1
                         intervention_screening: '2'
-                        remarks: This is an EN activity
+                        remarks: null
                         parent_id: null
-                        status: '1'
-                        created_at: '2024-06-26T18:04:02.000000Z'
-                        updated_at: '2024-06-26T18:04:02.000000Z'
+                        status: '2'
+                        is_hidden: 0
+                        created_at: '2025-01-17T12:06:47.000000Z'
+                        updated_at: '2025-01-17T12:06:47.000000Z'
                         deleted_at: null
-                      - id: 16
-                        toy8_id: middle_praise_en
+                        is_preset: 0
+                        module_item_type_name: Activity
+                        module_item_component:
+                          - id: 39
+                            module_item_id: 94
+                            activity_id: 4
+                            asset_id: null
+                            animation_config: null
+                            order: 1
+                            created_at: '2025-01-17T12:06:47.000000Z'
+                            updated_at: '2025-01-17T12:06:47.000000Z'
+                      - id: 21
+                        toy8_id: preset_praise_A_EN
                         module_item_type: '4'
                         language_id: 1
                         intervention_screening: '2'
-                        remarks: This is an EN middle praise
+                        remarks: 'Middle Praise #1'
                         parent_id: null
-                        status: '1'
-                        created_at: '2024-06-26T18:04:02.000000Z'
-                        updated_at: '2024-06-26T18:04:02.000000Z'
+                        status: '2'
+                        is_hidden: 0
+                        created_at: '2025-01-03T18:00:34.000000Z'
+                        updated_at: '2025-01-03T18:00:34.000000Z'
                         deleted_at: null
-                      - id: 18
-                        toy8_id: reward_en
+                        is_preset: 0
+                        module_item_type_name: Middle Praise
+                        module_item_component:
+                          - id: 21
+                            module_item_id: 21
+                            activity_id: null
+                            asset_id: null
+                            animation_config: '{"audio": null, "animation": [4]}'
+                            order: 1
+                            created_at: '2025-01-03T18:00:34.000000Z'
+                            updated_at: '2025-01-03T18:00:34.000000Z'
+                      - id: 93
+                        toy8_id: EN_FM-D-3A_1736998163
+                        module_item_type: '2'
+                        language_id: 1
+                        intervention_screening: '2'
+                        remarks: null
+                        parent_id: null
+                        status: '2'
+                        is_hidden: 0
+                        created_at: '2025-01-16T08:57:26.000000Z'
+                        updated_at: '2025-01-16T11:29:23.000000Z'
+                        deleted_at: null
+                        is_preset: 0
+                        module_item_type_name: Activity
+                        module_item_component:
+                          - id: 38
+                            module_item_id: 93
+                            activity_id: 2
+                            asset_id: null
+                            animation_config: null
+                            order: 1
+                            created_at: '2025-01-16T08:57:26.000000Z'
+                            updated_at: '2025-01-16T08:57:26.000000Z'
+                      - id: 24
+                        toy8_id: preset_reward_EN
                         module_item_type: '3'
                         language_id: 1
                         intervention_screening: '2'
-                        remarks: This is an EN reward
+                        remarks: Reward
                         parent_id: null
-                        status: '1'
-                        created_at: '2024-06-26T18:04:02.000000Z'
-                        updated_at: '2024-06-26T18:04:02.000000Z'
+                        status: '2'
+                        is_hidden: 0
+                        created_at: '2025-01-03T18:00:34.000000Z'
+                        updated_at: '2025-01-03T18:00:34.000000Z'
                         deleted_at: null
+                        is_preset: 0
+                        module_item_type_name: Reward
+                        module_item_component:
+                          - id: 24
+                            module_item_id: 24
+                            activity_id: null
+                            asset_id: null
+                            animation_config: '{"audio": null, "animation": [3]}'
+                            order: 1
+                            created_at: '2025-01-03T18:00:34.000000Z'
+                            updated_at: '2025-01-03T18:00:34.000000Z'
                     pagination:
                       current_page: 1
                       last_page: 1
@@ -5540,11 +5910,14 @@ paths:
                           type: string
                         remarks:
                           type: string
+                          nullable: true
                         parent_id:
                           type: integer
                           nullable: true
                         status:
                           type: string
+                        is_hidden:
+                          type: integer
                         created_at:
                           type: string
                         updated_at:
@@ -5552,6 +5925,34 @@ paths:
                         deleted_at:
                           type: string
                           nullable: true
+                        is_preset:
+                          type: integer
+                        module_item_type_name:
+                          type: string
+                        module_item_component:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                              module_item_id:
+                                type: integer
+                              activity_id:
+                                type: integer
+                                nullable: true
+                              asset_id:
+                                type: integer
+                                nullable: true
+                              animation_config:
+                                type: string
+                                nullable: true
+                              order:
+                                type: integer
+                              created_at:
+                                type: string
+                              updated_at:
+                                type: string
                   pagination:
                     type: object
                     properties:
@@ -5563,72 +5964,167 @@ paths:
                 Example 1:
                   value:
                     module_items:
-                      - id: 10
-                        toy8_id: intro_en
+                      - id: 19
+                        toy8_id: preset_intro_A_EN
                         module_item_type: '1'
                         language_id: 1
                         intervention_screening: '2'
-                        remarks: This is an EN intro
+                        remarks: Daily Intro (Day 1)
                         parent_id: null
-                        status: '1'
-                        created_at: '2024-06-26T18:04:02.000000Z'
-                        updated_at: '2024-06-26T18:04:02.000000Z'
+                        status: '2'
+                        is_hidden: 0
+                        created_at: '2025-01-03T18:00:34.000000Z'
+                        updated_at: '2025-01-03T18:00:34.000000Z'
                         deleted_at: null
-                      - id: 13
-                        toy8_id: activity_en_B
+                        is_preset: 0
+                        module_item_type_name: Intro
+                        module_item_component:
+                          - id: 19
+                            module_item_id: 19
+                            activity_id: null
+                            asset_id: null
+                            animation_config: '{"audio": null, "animation": [1]}'
+                            order: 1
+                            created_at: '2025-01-03T18:00:34.000000Z'
+                            updated_at: '2025-01-03T18:00:34.000000Z'
+                      - id: 92
+                        toy8_id: EN_L-T-3B_1736989023
                         module_item_type: '2'
                         language_id: 1
                         intervention_screening: '2'
-                        remarks: This is an EN activity
+                        remarks: null
                         parent_id: null
-                        status: '1'
-                        created_at: '2024-06-26T18:04:02.000000Z'
-                        updated_at: '2024-06-26T18:04:02.000000Z'
+                        status: '2'
+                        is_hidden: 0
+                        created_at: '2025-01-16T08:57:03.000000Z'
+                        updated_at: '2025-01-16T08:57:03.000000Z'
                         deleted_at: null
-                      - id: 16
-                        toy8_id: middle_praise_en
+                        is_preset: 0
+                        module_item_type_name: Activity
+                        module_item_component:
+                          - id: 37
+                            module_item_id: 92
+                            activity_id: 1
+                            asset_id: null
+                            animation_config: null
+                            order: 1
+                            created_at: '2025-01-16T08:57:03.000000Z'
+                            updated_at: '2025-01-16T08:57:03.000000Z'
+                      - id: 22
+                        toy8_id: preset_praise_B_EN
                         module_item_type: '4'
                         language_id: 1
                         intervention_screening: '2'
-                        remarks: This is an EN middle praise
+                        remarks: 'Middle Praise #2'
                         parent_id: null
-                        status: '1'
-                        created_at: '2024-06-26T18:04:02.000000Z'
-                        updated_at: '2024-06-26T18:04:02.000000Z'
+                        status: '2'
+                        is_hidden: 0
+                        created_at: '2025-01-03T18:00:34.000000Z'
+                        updated_at: '2025-01-03T18:00:34.000000Z'
                         deleted_at: null
-                      - id: 13
-                        toy8_id: activity_en_B
+                        is_preset: 0
+                        module_item_type_name: Middle Praise
+                        module_item_component:
+                          - id: 22
+                            module_item_id: 22
+                            activity_id: null
+                            asset_id: null
+                            animation_config: '{"audio": null, "animation": [5]}'
+                            order: 1
+                            created_at: '2025-01-03T18:00:34.000000Z'
+                            updated_at: '2025-01-03T18:00:34.000000Z'
+                      - id: 94
+                        toy8_id: EN_L-P-3A_1737086807
                         module_item_type: '2'
                         language_id: 1
                         intervention_screening: '2'
-                        remarks: This is an EN activity
+                        remarks: null
                         parent_id: null
-                        status: '1'
-                        created_at: '2024-06-26T18:04:02.000000Z'
-                        updated_at: '2024-06-26T18:04:02.000000Z'
+                        status: '2'
+                        is_hidden: 0
+                        created_at: '2025-01-17T12:06:47.000000Z'
+                        updated_at: '2025-01-17T12:06:47.000000Z'
                         deleted_at: null
-                      - id: 16
-                        toy8_id: middle_praise_en
+                        is_preset: 0
+                        module_item_type_name: Activity
+                        module_item_component:
+                          - id: 39
+                            module_item_id: 94
+                            activity_id: 4
+                            asset_id: null
+                            animation_config: null
+                            order: 1
+                            created_at: '2025-01-17T12:06:47.000000Z'
+                            updated_at: '2025-01-17T12:06:47.000000Z'
+                      - id: 21
+                        toy8_id: preset_praise_A_EN
                         module_item_type: '4'
                         language_id: 1
                         intervention_screening: '2'
-                        remarks: This is an EN middle praise
+                        remarks: 'Middle Praise #1'
                         parent_id: null
-                        status: '1'
-                        created_at: '2024-06-26T18:04:02.000000Z'
-                        updated_at: '2024-06-26T18:04:02.000000Z'
+                        status: '2'
+                        is_hidden: 0
+                        created_at: '2025-01-03T18:00:34.000000Z'
+                        updated_at: '2025-01-03T18:00:34.000000Z'
                         deleted_at: null
-                      - id: 18
-                        toy8_id: reward_en
+                        is_preset: 0
+                        module_item_type_name: Middle Praise
+                        module_item_component:
+                          - id: 21
+                            module_item_id: 21
+                            activity_id: null
+                            asset_id: null
+                            animation_config: '{"audio": null, "animation": [4]}'
+                            order: 1
+                            created_at: '2025-01-03T18:00:34.000000Z'
+                            updated_at: '2025-01-03T18:00:34.000000Z'
+                      - id: 93
+                        toy8_id: EN_FM-D-3A_1736998163
+                        module_item_type: '2'
+                        language_id: 1
+                        intervention_screening: '2'
+                        remarks: null
+                        parent_id: null
+                        status: '2'
+                        is_hidden: 0
+                        created_at: '2025-01-16T08:57:26.000000Z'
+                        updated_at: '2025-01-16T11:29:23.000000Z'
+                        deleted_at: null
+                        is_preset: 0
+                        module_item_type_name: Activity
+                        module_item_component:
+                          - id: 38
+                            module_item_id: 93
+                            activity_id: 2
+                            asset_id: null
+                            animation_config: null
+                            order: 1
+                            created_at: '2025-01-16T08:57:26.000000Z'
+                            updated_at: '2025-01-16T08:57:26.000000Z'
+                      - id: 24
+                        toy8_id: preset_reward_EN
                         module_item_type: '3'
                         language_id: 1
                         intervention_screening: '2'
-                        remarks: This is an EN reward
+                        remarks: Reward
                         parent_id: null
-                        status: '1'
-                        created_at: '2024-06-26T18:04:02.000000Z'
-                        updated_at: '2024-06-26T18:04:02.000000Z'
+                        status: '2'
+                        is_hidden: 0
+                        created_at: '2025-01-03T18:00:34.000000Z'
+                        updated_at: '2025-01-03T18:00:34.000000Z'
                         deleted_at: null
+                        is_preset: 0
+                        module_item_type_name: Reward
+                        module_item_component:
+                          - id: 24
+                            module_item_id: 24
+                            activity_id: null
+                            asset_id: null
+                            animation_config: '{"audio": null, "animation": [3]}'
+                            order: 1
+                            created_at: '2025-01-03T18:00:34.000000Z'
+                            updated_at: '2025-01-03T18:00:34.000000Z'
                     pagination:
                       current_page: 1
                       last_page: 1
@@ -6316,6 +6812,83 @@ paths:
                               asset_id: null
                               animation_config: null
                               order: 0
+                      - id: 2
+                        toy8_id: EN_FM-D-3A
+                        parent_id: null
+                        language_id: 1
+                        intervention_screening: '2'
+                        remarks: null
+                        status: 2
+                        is_hidden: 0
+                        created_at: '2025-01-16T08:57:26.000000Z'
+                        updated_at: '2025-01-16T08:57:26.000000Z'
+                        deleted_at: null
+                        activity_items:
+                          - id: 5
+                            toy8_id: EN_FM-D-3A_open_the_box
+                            parent_id: null
+                            activity_item_type: 3
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: null
+                            status: 2
+                            is_hidden: 0
+                            created_at: null
+                            updated_at: null
+                            deleted_at: null
+                            laravel_through_key: 2
+                            questions: []
+                            activity_item_component:
+                              id: 5
+                              game_activity_item_id: 5
+                              question_id: null
+                              asset_id: 9
+                              animation_config: null
+                              order: 0
+                          - id: 3
+                            toy8_id: EN_FM-B-3A_Q1_1736985952
+                            parent_id: null
+                            activity_item_type: 5
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: staircase_6
+                            status: 2
+                            is_hidden: 0
+                            created_at: null
+                            updated_at: null
+                            deleted_at: null
+                            laravel_through_key: 2
+                            questions:
+                              - id: 4
+                                toy8_id: EN_FM-B-3A_Q1
+                                parent_id: null
+                                game_template_id: 102
+                                language_id: 1
+                                game_level_id: 2
+                                remarks: staircase_6
+                                preview_time: 0
+                                randomized_options: 0
+                                sequenced_answers: 1
+                                question_asset_id: 1
+                                multiple_question_asset_id: null
+                                answer_amounts: null
+                                voiceover_asset_id: null
+                                is_assigned: 0
+                                config: null
+                                status: 2
+                                is_hidden: 0
+                                created_at: '2025-01-16T08:05:52.000000Z'
+                                updated_at: '2025-01-16T08:05:52.000000Z'
+                                deleted_at: null
+                                laravel_through_key: 3
+                                options: []
+                            activity_item_component:
+                              id: 3
+                              game_activity_item_id: 3
+                              question_id: 4
+                              asset_id: null
+                              animation_config: null
+                              order: 0
                       - id: 4
                         toy8_id: EN_L-P-3A
                         parent_id: null
@@ -6480,83 +7053,6 @@ paths:
                               asset_id: null
                               animation_config: null
                               order: 0
-                      - id: 2
-                        toy8_id: EN_FM-D-3A
-                        parent_id: null
-                        language_id: 1
-                        intervention_screening: '2'
-                        remarks: null
-                        status: 2
-                        is_hidden: 0
-                        created_at: '2025-01-16T08:57:26.000000Z'
-                        updated_at: '2025-01-16T08:57:26.000000Z'
-                        deleted_at: null
-                        activity_items:
-                          - id: 5
-                            toy8_id: EN_FM-D-3A_open_the_box
-                            parent_id: null
-                            activity_item_type: 3
-                            language_id: 1
-                            intervention_screening: '2'
-                            remarks: null
-                            status: 2
-                            is_hidden: 0
-                            created_at: null
-                            updated_at: null
-                            deleted_at: null
-                            laravel_through_key: 2
-                            questions: []
-                            activity_item_component:
-                              id: 5
-                              game_activity_item_id: 5
-                              question_id: null
-                              asset_id: 9
-                              animation_config: null
-                              order: 0
-                          - id: 3
-                            toy8_id: EN_FM-B-3A_Q1_1736985952
-                            parent_id: null
-                            activity_item_type: 5
-                            language_id: 1
-                            intervention_screening: '2'
-                            remarks: staircase_6
-                            status: 2
-                            is_hidden: 0
-                            created_at: null
-                            updated_at: null
-                            deleted_at: null
-                            laravel_through_key: 2
-                            questions:
-                              - id: 4
-                                toy8_id: EN_FM-B-3A_Q1
-                                parent_id: null
-                                game_template_id: 102
-                                language_id: 1
-                                game_level_id: 2
-                                remarks: staircase_6
-                                preview_time: 0
-                                randomized_options: 0
-                                sequenced_answers: 1
-                                question_asset_id: 1
-                                multiple_question_asset_id: null
-                                answer_amounts: null
-                                voiceover_asset_id: null
-                                is_assigned: 0
-                                config: null
-                                status: 2
-                                is_hidden: 0
-                                created_at: '2025-01-16T08:05:52.000000Z'
-                                updated_at: '2025-01-16T08:05:52.000000Z'
-                                deleted_at: null
-                                laravel_through_key: 3
-                                options: []
-                            activity_item_component:
-                              id: 3
-                              game_activity_item_id: 3
-                              question_id: 4
-                              asset_id: null
-                              animation_config: null
-                              order: 0
                     pagination:
                       current_page: 1
                       last_page: 1
@@ -6569,11 +7065,23 @@ paths:
             schema:
               type: object
               properties:
-                module_id:
-                  type: integer
+                activity_ids:
+                  type: array
+                  items:
+                    type: integer
               x-examples:
                 Example 1:
-                  module_id: 1
+                  activity_ids:
+                    - 5
+                    - 6
+                    - 7
+            examples:
+              Example 1:
+                value:
+                  activity_ids:
+                    - 1
+                    - 2
+                    - 4
   /screening/play:
     post:
       summary: Playing screening module
@@ -6947,6 +7455,163 @@ paths:
       x-stoplight:
         id: 38xm7ew23blsl
     parameters: []
+  /assets:
+    get:
+      summary: Get assets
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  Example 1:
+                    assets:
+                      - id: 1
+                        toy8_id: staircase_6_png
+                        file_type: 1
+                        language_id: null
+                        intervention_screening: '2'
+                        url: 'https://fischer-local-test.s3.ap-southeast-1.amazonaws.com/game_assets/YkxtnhOtQs4dt1t.png'
+                        remarks: null
+                        created_at: '2025-01-16T08:02:23.000000Z'
+                        updated_at: '2025-01-16T08:02:23.000000Z'
+                      - id: 15
+                        toy8_id: small_green_png
+                        file_type: 1
+                        language_id: null
+                        intervention_screening: '1'
+                        url: 'https://fischer-local-test.s3.ap-southeast-1.amazonaws.com/game_assets/tfCIaljXFzCEUof.png'
+                        remarks: null
+                        created_at: '2025-01-21T14:19:32.000000Z'
+                        updated_at: '2025-01-21T14:19:32.000000Z'
+                      - id: 16
+                        toy8_id: small_blue_png
+                        file_type: 1
+                        language_id: null
+                        intervention_screening: '1'
+                        url: 'https://fischer-local-test.s3.ap-southeast-1.amazonaws.com/game_assets/D46Yq1Jm5O3tdIy.png'
+                        remarks: null
+                        created_at: '2025-01-21T14:19:32.000000Z'
+                        updated_at: '2025-01-21T14:19:32.000000Z'
+                      - id: 25
+                        toy8_id: Matching_PS-MA-5A_1_mp3
+                        file_type: 3
+                        language_id: 1
+                        intervention_screening: '1'
+                        url: 'https://fischer-local-test.s3.ap-southeast-1.amazonaws.com/game_assets/1uS5fTbicjKOGxJ.mp3'
+                        remarks: null
+                        created_at: '2025-01-21T14:21:21.000000Z'
+                        updated_at: '2025-01-21T14:21:21.000000Z'
+                    pagination:
+                      current_page: 1
+                      last_page: 1
+                properties:
+                  assets:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        toy8_id:
+                          type: string
+                        file_type:
+                          type: integer
+                        language_id:
+                          type: integer
+                          nullable: true
+                        intervention_screening:
+                          type: string
+                        url:
+                          type: string
+                        remarks:
+                          type: string
+                          nullable: true
+                        created_at:
+                          type: string
+                        updated_at:
+                          type: string
+                  pagination:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                      last_page:
+                        type: integer
+              examples:
+                Example 1:
+                  value:
+                    assets:
+                      - id: 1
+                        toy8_id: staircase_6_png
+                        file_type: 1
+                        language_id: null
+                        intervention_screening: '2'
+                        url: 'https://fischer-local-test.s3.ap-southeast-1.amazonaws.com/game_assets/YkxtnhOtQs4dt1t.png'
+                        remarks: null
+                        created_at: '2025-01-16T08:02:23.000000Z'
+                        updated_at: '2025-01-16T08:02:23.000000Z'
+                      - id: 15
+                        toy8_id: small_green_png
+                        file_type: 1
+                        language_id: null
+                        intervention_screening: '1'
+                        url: 'https://fischer-local-test.s3.ap-southeast-1.amazonaws.com/game_assets/tfCIaljXFzCEUof.png'
+                        remarks: null
+                        created_at: '2025-01-21T14:19:32.000000Z'
+                        updated_at: '2025-01-21T14:19:32.000000Z'
+                      - id: 16
+                        toy8_id: small_blue_png
+                        file_type: 1
+                        language_id: null
+                        intervention_screening: '1'
+                        url: 'https://fischer-local-test.s3.ap-southeast-1.amazonaws.com/game_assets/D46Yq1Jm5O3tdIy.png'
+                        remarks: null
+                        created_at: '2025-01-21T14:19:32.000000Z'
+                        updated_at: '2025-01-21T14:19:32.000000Z'
+                      - id: 25
+                        toy8_id: Matching_PS-MA-5A_1_mp3
+                        file_type: 3
+                        language_id: 1
+                        intervention_screening: '1'
+                        url: 'https://fischer-local-test.s3.ap-southeast-1.amazonaws.com/game_assets/1uS5fTbicjKOGxJ.mp3'
+                        remarks: null
+                        created_at: '2025-01-21T14:21:21.000000Z'
+                        updated_at: '2025-01-21T14:21:21.000000Z'
+                    pagination:
+                      current_page: 1
+                      last_page: 1
+      operationId: get-assets
+      x-stoplight:
+        id: c6qkq9xgkcgmq
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                asset_ids:
+                  type: array
+                  items:
+                    type: integer
+              x-examples:
+                Example 1:
+                  asset_ids:
+                    - '1'
+                    - 15
+                    - '16'
+                    - 25
+            examples:
+              Example 1:
+                value:
+                  asset_ids:
+                    - 1
+                    - 15
+                    - 16
+                    - 25
   /settings:
     get:
       summary: Get environment settings
