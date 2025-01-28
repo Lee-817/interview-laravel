@@ -1470,6 +1470,8 @@ paths:
                             updated_at: null
                             deleted_at: null
                             laravel_through_key: 5
+                            asset_id: null
+                            animation_id: null
                             questions:
                               - id: 8
                                 toy8_id: Test_CO-AUME_1-3_Q1
@@ -1518,13 +1520,6 @@ paths:
                                     is_answer: 0
                                     created_at: null
                                     updated_at: null
-                            activity_item_component:
-                              id: 8
-                              game_activity_item_id: 8
-                              question_id: 8
-                              asset_id: null
-                              animation_config: null
-                              order: 0
                           - id: 9
                             toy8_id: Test_CO-AUME_1-3_Q2_1737440553
                             parent_id: null
@@ -1538,6 +1533,8 @@ paths:
                             updated_at: null
                             deleted_at: null
                             laravel_through_key: 5
+                            asset_id: null
+                            animation_id: null
                             questions:
                               - id: 9
                                 toy8_id: Test_CO-AUME_1-3_Q2
@@ -1586,13 +1583,81 @@ paths:
                                     is_answer: 0
                                     created_at: null
                                     updated_at: null
-                            activity_item_component:
-                              id: 9
-                              game_activity_item_id: 9
-                              question_id: 9
-                              asset_id: null
-                              animation_config: null
-                              order: 0
+                      - id: 6
+                        toy8_id: Test_SO-COMIa
+                        parent_id: null
+                        language_id: 1
+                        intervention_screening: '1'
+                        remarks: null
+                        status: 2
+                        is_hidden: 0
+                        created_at: '2025-01-21T14:24:58.000000Z'
+                        updated_at: '2025-01-21T14:24:58.000000Z'
+                        deleted_at: null
+                        activity_items:
+                          - id: 10
+                            toy8_id: Test_SO-COMIa_Q1_1737440617
+                            parent_id: null
+                            activity_item_type: 5
+                            language_id: 1
+                            intervention_screening: '1'
+                            remarks: null
+                            status: 2
+                            is_hidden: 0
+                            created_at: null
+                            updated_at: null
+                            deleted_at: null
+                            laravel_through_key: 6
+                            asset_id: null
+                            animation_id: null
+                            questions:
+                              - id: 12
+                                toy8_id: Test_SO-COMIa_Q1
+                                parent_id: null
+                                game_template_id: 50
+                                language_id: 1
+                                game_level_id: 6
+                                remarks: null
+                                preview_time: 0
+                                randomized_options: 0
+                                sequenced_answers: 0
+                                question_asset_id: 24
+                                multiple_question_asset_id: null
+                                answer_amounts: null
+                                voiceover_asset_id: null
+                                is_assigned: 0
+                                config: null
+                                status: 2
+                                is_hidden: 0
+                                created_at: '2025-01-21T14:23:37.000000Z'
+                                updated_at: '2025-01-21T14:23:37.000000Z'
+                                deleted_at: null
+                                laravel_through_key: 10
+                                options:
+                                  - id: 35
+                                    game_question_id: 12
+                                    game_asset_id: 17
+                                    option_order: 1
+                                    answer_order: 1
+                                    is_answer: 1
+                                    created_at: null
+                                    updated_at: null
+                                  - id: 36
+                                    game_question_id: 12
+                                    game_asset_id: 15
+                                    option_order: 2
+                                    answer_order: 1
+                                    is_answer: 1
+                                    created_at: null
+                                    updated_at: null
+                                  - id: 37
+                                    game_question_id: 12
+                                    game_asset_id: 16
+                                    option_order: 3
+                                    answer_order: 1
+                                    is_answer: 1
+                                    created_at: null
+                                    updated_at: null
                       - id: 7
                         toy8_id: Test_FM-PCDR
                         parent_id: null
@@ -1618,14 +1683,9 @@ paths:
                             updated_at: null
                             deleted_at: null
                             laravel_through_key: 7
+                            asset_id: null
+                            animation_id: 11
                             questions: []
-                            activity_item_component:
-                              id: 12
-                              game_activity_item_id: 12
-                              question_id: null
-                              asset_id: null
-                              animation_config: '{"audio": null, "animation": [11]}'
-                              order: 0
                           - id: 13
                             toy8_id: Test_Drawing_Tutorial
                             parent_id: null
@@ -1639,14 +1699,9 @@ paths:
                             updated_at: null
                             deleted_at: null
                             laravel_through_key: 7
+                            asset_id: 21
+                            animation_id: null
                             questions: []
-                            activity_item_component:
-                              id: 13
-                              game_activity_item_id: 13
-                              question_id: null
-                              asset_id: 21
-                              animation_config: null
-                              order: 0
                           - id: 11
                             toy8_id: Test_FM-PCDR_Q1_1737440651
                             parent_id: null
@@ -1660,6 +1715,8 @@ paths:
                             updated_at: null
                             deleted_at: null
                             laravel_through_key: 7
+                            asset_id: null
+                            animation_id: null
                             questions:
                               - id: 13
                                 toy8_id: Test_FM-PCDR_Q1
@@ -1692,13 +1749,6 @@ paths:
                                     is_answer: 1
                                     created_at: null
                                     updated_at: null
-                            activity_item_component:
-                              id: 11
-                              game_activity_item_id: 11
-                              question_id: 13
-                              asset_id: null
-                              animation_config: null
-                              order: 0
                     pagination:
                       current_page: 1
                       last_page: 1
@@ -1769,6 +1819,12 @@ paths:
                                 nullable: true
                               laravel_through_key:
                                 type: integer
+                              asset_id:
+                                type: integer
+                                nullable: true
+                              animation_id:
+                                type: integer
+                                nullable: true
                               questions:
                                 type: array
                                 items:
@@ -1799,8 +1855,9 @@ paths:
                                     question_asset_id:
                                       type: integer
                                     multiple_question_asset_id:
-                                      type: string
+                                      type: array
                                       nullable: true
+                                      items: {}
                                     answer_amounts:
                                       type: integer
                                       nullable: true
@@ -1848,24 +1905,6 @@ paths:
                                           updated_at:
                                             type: string
                                             nullable: true
-                              activity_item_component:
-                                type: object
-                                properties:
-                                  id:
-                                    type: integer
-                                  game_activity_item_id:
-                                    type: integer
-                                  question_id:
-                                    type: integer
-                                    nullable: true
-                                  asset_id:
-                                    type: integer
-                                    nullable: true
-                                  animation_config:
-                                    type: string
-                                    nullable: true
-                                  order:
-                                    type: integer
                   pagination:
                     type: object
                     properties:
@@ -1902,6 +1941,8 @@ paths:
                             updated_at: null
                             deleted_at: null
                             laravel_through_key: 5
+                            asset_id: null
+                            animation_id: null
                             questions:
                               - id: 8
                                 toy8_id: Test_CO-AUME_1-3_Q1
@@ -1950,13 +1991,6 @@ paths:
                                     is_answer: 0
                                     created_at: null
                                     updated_at: null
-                            activity_item_component:
-                              id: 8
-                              game_activity_item_id: 8
-                              question_id: 8
-                              asset_id: null
-                              animation_config: null
-                              order: 0
                           - id: 9
                             toy8_id: Test_CO-AUME_1-3_Q2_1737440553
                             parent_id: null
@@ -1970,6 +2004,8 @@ paths:
                             updated_at: null
                             deleted_at: null
                             laravel_through_key: 5
+                            asset_id: null
+                            animation_id: null
                             questions:
                               - id: 9
                                 toy8_id: Test_CO-AUME_1-3_Q2
@@ -2018,13 +2054,6 @@ paths:
                                     is_answer: 0
                                     created_at: null
                                     updated_at: null
-                            activity_item_component:
-                              id: 9
-                              game_activity_item_id: 9
-                              question_id: 9
-                              asset_id: null
-                              animation_config: null
-                              order: 0
                       - id: 6
                         toy8_id: Test_SO-COMIa
                         parent_id: null
@@ -2050,6 +2079,8 @@ paths:
                             updated_at: null
                             deleted_at: null
                             laravel_through_key: 6
+                            asset_id: null
+                            animation_id: null
                             questions:
                               - id: 12
                                 toy8_id: Test_SO-COMIa_Q1
@@ -2098,13 +2129,6 @@ paths:
                                     is_answer: 1
                                     created_at: null
                                     updated_at: null
-                            activity_item_component:
-                              id: 10
-                              game_activity_item_id: 10
-                              question_id: 12
-                              asset_id: null
-                              animation_config: null
-                              order: 0
                       - id: 7
                         toy8_id: Test_FM-PCDR
                         parent_id: null
@@ -2130,14 +2154,9 @@ paths:
                             updated_at: null
                             deleted_at: null
                             laravel_through_key: 7
+                            asset_id: null
+                            animation_id: 11
                             questions: []
-                            activity_item_component:
-                              id: 12
-                              game_activity_item_id: 12
-                              question_id: null
-                              asset_id: null
-                              animation_config: '{"audio": null, "animation": [11]}'
-                              order: 0
                           - id: 13
                             toy8_id: Test_Drawing_Tutorial
                             parent_id: null
@@ -2151,14 +2170,9 @@ paths:
                             updated_at: null
                             deleted_at: null
                             laravel_through_key: 7
+                            asset_id: 21
+                            animation_id: null
                             questions: []
-                            activity_item_component:
-                              id: 13
-                              game_activity_item_id: 13
-                              question_id: null
-                              asset_id: 21
-                              animation_config: null
-                              order: 0
                           - id: 11
                             toy8_id: Test_FM-PCDR_Q1_1737440651
                             parent_id: null
@@ -2172,6 +2186,8 @@ paths:
                             updated_at: null
                             deleted_at: null
                             laravel_through_key: 7
+                            asset_id: null
+                            animation_id: null
                             questions:
                               - id: 13
                                 toy8_id: Test_FM-PCDR_Q1
@@ -2204,13 +2220,6 @@ paths:
                                     is_answer: 1
                                     created_at: null
                                     updated_at: null
-                            activity_item_component:
-                              id: 11
-                              game_activity_item_id: 11
-                              question_id: 13
-                              asset_id: null
-                              animation_config: null
-                              order: 0
                     pagination:
                       current_page: 1
                       last_page: 1
@@ -6175,14 +6184,9 @@ paths:
                             updated_at: null
                             deleted_at: null
                             laravel_through_key: 1
+                            asset_id: null
+                            animation_id: 11
                             questions: []
-                            activity_item_component:
-                              id: 4
-                              game_activity_item_id: 4
-                              question_id: null
-                              asset_id: null
-                              animation_config: '{"audio": null, "animation": [11]}'
-                              order: 0
                           - id: 1
                             toy8_id: EN_L-T-3B_Q1_1736985890
                             parent_id: null
@@ -6196,6 +6200,8 @@ paths:
                             updated_at: null
                             deleted_at: null
                             laravel_through_key: 1
+                            asset_id: null
+                            animation_id: null
                             questions:
                               - id: 1
                                 toy8_id: EN_L-T-3B_Q1
@@ -6220,13 +6226,6 @@ paths:
                                 deleted_at: null
                                 laravel_through_key: 1
                                 options: []
-                            activity_item_component:
-                              id: 1
-                              game_activity_item_id: 1
-                              question_id: 1
-                              asset_id: null
-                              animation_config: null
-                              order: 0
                           - id: 2
                             toy8_id: EN_L-T-3B_Q2_1736985920
                             parent_id: null
@@ -6240,6 +6239,8 @@ paths:
                             updated_at: null
                             deleted_at: null
                             laravel_through_key: 1
+                            asset_id: null
+                            animation_id: null
                             questions:
                               - id: 2
                                 toy8_id: EN_L-T-3B_Q2
@@ -6264,13 +6265,73 @@ paths:
                                 deleted_at: null
                                 laravel_through_key: 2
                                 options: []
-                            activity_item_component:
-                              id: 2
-                              game_activity_item_id: 2
-                              question_id: 2
-                              asset_id: null
-                              animation_config: null
-                              order: 0
+                      - id: 2
+                        toy8_id: EN_FM-D-3A
+                        parent_id: null
+                        language_id: 1
+                        intervention_screening: '2'
+                        remarks: null
+                        status: 2
+                        is_hidden: 0
+                        created_at: '2025-01-16T08:57:26.000000Z'
+                        updated_at: '2025-01-16T08:57:26.000000Z'
+                        deleted_at: null
+                        activity_items:
+                          - id: 5
+                            toy8_id: EN_FM-D-3A_open_the_box
+                            parent_id: null
+                            activity_item_type: 3
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: null
+                            status: 2
+                            is_hidden: 0
+                            created_at: null
+                            updated_at: null
+                            deleted_at: null
+                            laravel_through_key: 2
+                            asset_id: 9
+                            animation_id: null
+                            questions: []
+                          - id: 3
+                            toy8_id: EN_FM-B-3A_Q1_1736985952
+                            parent_id: null
+                            activity_item_type: 5
+                            language_id: 1
+                            intervention_screening: '2'
+                            remarks: staircase_6
+                            status: 2
+                            is_hidden: 0
+                            created_at: null
+                            updated_at: null
+                            deleted_at: null
+                            laravel_through_key: 2
+                            asset_id: null
+                            animation_id: null
+                            questions:
+                              - id: 4
+                                toy8_id: EN_FM-B-3A_Q1
+                                parent_id: null
+                                game_template_id: 102
+                                language_id: 1
+                                game_level_id: 2
+                                remarks: staircase_6
+                                preview_time: 0
+                                randomized_options: 0
+                                sequenced_answers: 1
+                                question_asset_id: 1
+                                multiple_question_asset_id: null
+                                answer_amounts: null
+                                voiceover_asset_id: null
+                                is_assigned: 0
+                                config: null
+                                status: 2
+                                is_hidden: 0
+                                created_at: '2025-01-16T08:05:52.000000Z'
+                                updated_at: '2025-01-16T08:05:52.000000Z'
+                                deleted_at: null
+                                laravel_through_key: 3
+                                options: []
                       - id: 4
                         toy8_id: EN_L-P-3A
                         parent_id: null
@@ -6296,6 +6357,8 @@ paths:
                             updated_at: null
                             deleted_at: null
                             laravel_through_key: 4
+                            asset_id: null
+                            animation_id: null
                             questions:
                               - id: 5
                                 toy8_id: EN_L-P-3A_Q1
@@ -6352,13 +6415,6 @@ paths:
                                     is_answer: 0
                                     created_at: null
                                     updated_at: null
-                            activity_item_component:
-                              id: 6
-                              game_activity_item_id: 6
-                              question_id: 5
-                              asset_id: null
-                              animation_config: null
-                              order: 0
                           - id: 7
                             toy8_id: EN_L-P-3A_Q2_1737086787
                             parent_id: null
@@ -6372,6 +6428,8 @@ paths:
                             updated_at: null
                             deleted_at: null
                             laravel_through_key: 4
+                            asset_id: null
+                            animation_id: null
                             questions:
                               - id: 6
                                 toy8_id: EN_L-P-3A_Q2
@@ -6428,90 +6486,6 @@ paths:
                                     is_answer: 0
                                     created_at: null
                                     updated_at: null
-                            activity_item_component:
-                              id: 7
-                              game_activity_item_id: 7
-                              question_id: 6
-                              asset_id: null
-                              animation_config: null
-                              order: 0
-                      - id: 2
-                        toy8_id: EN_FM-D-3A
-                        parent_id: null
-                        language_id: 1
-                        intervention_screening: '2'
-                        remarks: null
-                        status: 2
-                        is_hidden: 0
-                        created_at: '2025-01-16T08:57:26.000000Z'
-                        updated_at: '2025-01-16T08:57:26.000000Z'
-                        deleted_at: null
-                        activity_items:
-                          - id: 5
-                            toy8_id: EN_FM-D-3A_open_the_box
-                            parent_id: null
-                            activity_item_type: 3
-                            language_id: 1
-                            intervention_screening: '2'
-                            remarks: null
-                            status: 2
-                            is_hidden: 0
-                            created_at: null
-                            updated_at: null
-                            deleted_at: null
-                            laravel_through_key: 2
-                            questions: []
-                            activity_item_component:
-                              id: 5
-                              game_activity_item_id: 5
-                              question_id: null
-                              asset_id: 9
-                              animation_config: null
-                              order: 0
-                          - id: 3
-                            toy8_id: EN_FM-B-3A_Q1_1736985952
-                            parent_id: null
-                            activity_item_type: 5
-                            language_id: 1
-                            intervention_screening: '2'
-                            remarks: staircase_6
-                            status: 2
-                            is_hidden: 0
-                            created_at: null
-                            updated_at: null
-                            deleted_at: null
-                            laravel_through_key: 2
-                            questions:
-                              - id: 4
-                                toy8_id: EN_FM-B-3A_Q1
-                                parent_id: null
-                                game_template_id: 102
-                                language_id: 1
-                                game_level_id: 2
-                                remarks: staircase_6
-                                preview_time: 0
-                                randomized_options: 0
-                                sequenced_answers: 1
-                                question_asset_id: 1
-                                multiple_question_asset_id: null
-                                answer_amounts: null
-                                voiceover_asset_id: null
-                                is_assigned: 0
-                                config: null
-                                status: 2
-                                is_hidden: 0
-                                created_at: '2025-01-16T08:05:52.000000Z'
-                                updated_at: '2025-01-16T08:05:52.000000Z'
-                                deleted_at: null
-                                laravel_through_key: 3
-                                options: []
-                            activity_item_component:
-                              id: 3
-                              game_activity_item_id: 3
-                              question_id: 4
-                              asset_id: null
-                              animation_config: null
-                              order: 0
                     pagination:
                       current_page: 1
                       last_page: 1
@@ -6582,6 +6556,12 @@ paths:
                                 nullable: true
                               laravel_through_key:
                                 type: integer
+                              asset_id:
+                                type: integer
+                                nullable: true
+                              animation_id:
+                                type: integer
+                                nullable: true
                               questions:
                                 type: array
                                 items:
@@ -6662,24 +6642,6 @@ paths:
                                           updated_at:
                                             type: string
                                             nullable: true
-                              activity_item_component:
-                                type: object
-                                properties:
-                                  id:
-                                    type: integer
-                                  game_activity_item_id:
-                                    type: integer
-                                  question_id:
-                                    type: integer
-                                    nullable: true
-                                  asset_id:
-                                    type: integer
-                                    nullable: true
-                                  animation_config:
-                                    type: string
-                                    nullable: true
-                                  order:
-                                    type: integer
                   pagination:
                     type: object
                     properties:
@@ -6716,14 +6678,9 @@ paths:
                             updated_at: null
                             deleted_at: null
                             laravel_through_key: 1
+                            asset_id: null
+                            animation_id: 11
                             questions: []
-                            activity_item_component:
-                              id: 4
-                              game_activity_item_id: 4
-                              question_id: null
-                              asset_id: null
-                              animation_config: '{"audio": null, "animation": [11]}'
-                              order: 0
                           - id: 1
                             toy8_id: EN_L-T-3B_Q1_1736985890
                             parent_id: null
@@ -6737,6 +6694,8 @@ paths:
                             updated_at: null
                             deleted_at: null
                             laravel_through_key: 1
+                            asset_id: null
+                            animation_id: null
                             questions:
                               - id: 1
                                 toy8_id: EN_L-T-3B_Q1
@@ -6761,13 +6720,6 @@ paths:
                                 deleted_at: null
                                 laravel_through_key: 1
                                 options: []
-                            activity_item_component:
-                              id: 1
-                              game_activity_item_id: 1
-                              question_id: 1
-                              asset_id: null
-                              animation_config: null
-                              order: 0
                           - id: 2
                             toy8_id: EN_L-T-3B_Q2_1736985920
                             parent_id: null
@@ -6781,6 +6733,8 @@ paths:
                             updated_at: null
                             deleted_at: null
                             laravel_through_key: 1
+                            asset_id: null
+                            animation_id: null
                             questions:
                               - id: 2
                                 toy8_id: EN_L-T-3B_Q2
@@ -6805,13 +6759,6 @@ paths:
                                 deleted_at: null
                                 laravel_through_key: 2
                                 options: []
-                            activity_item_component:
-                              id: 2
-                              game_activity_item_id: 2
-                              question_id: 2
-                              asset_id: null
-                              animation_config: null
-                              order: 0
                       - id: 2
                         toy8_id: EN_FM-D-3A
                         parent_id: null
@@ -6837,14 +6784,9 @@ paths:
                             updated_at: null
                             deleted_at: null
                             laravel_through_key: 2
+                            asset_id: 9
+                            animation_id: null
                             questions: []
-                            activity_item_component:
-                              id: 5
-                              game_activity_item_id: 5
-                              question_id: null
-                              asset_id: 9
-                              animation_config: null
-                              order: 0
                           - id: 3
                             toy8_id: EN_FM-B-3A_Q1_1736985952
                             parent_id: null
@@ -6858,6 +6800,8 @@ paths:
                             updated_at: null
                             deleted_at: null
                             laravel_through_key: 2
+                            asset_id: null
+                            animation_id: null
                             questions:
                               - id: 4
                                 toy8_id: EN_FM-B-3A_Q1
@@ -6882,13 +6826,6 @@ paths:
                                 deleted_at: null
                                 laravel_through_key: 3
                                 options: []
-                            activity_item_component:
-                              id: 3
-                              game_activity_item_id: 3
-                              question_id: 4
-                              asset_id: null
-                              animation_config: null
-                              order: 0
                       - id: 4
                         toy8_id: EN_L-P-3A
                         parent_id: null
@@ -6914,6 +6851,8 @@ paths:
                             updated_at: null
                             deleted_at: null
                             laravel_through_key: 4
+                            asset_id: null
+                            animation_id: null
                             questions:
                               - id: 5
                                 toy8_id: EN_L-P-3A_Q1
@@ -6970,13 +6909,6 @@ paths:
                                     is_answer: 0
                                     created_at: null
                                     updated_at: null
-                            activity_item_component:
-                              id: 6
-                              game_activity_item_id: 6
-                              question_id: 5
-                              asset_id: null
-                              animation_config: null
-                              order: 0
                           - id: 7
                             toy8_id: EN_L-P-3A_Q2_1737086787
                             parent_id: null
@@ -6990,6 +6922,8 @@ paths:
                             updated_at: null
                             deleted_at: null
                             laravel_through_key: 4
+                            asset_id: null
+                            animation_id: null
                             questions:
                               - id: 6
                                 toy8_id: EN_L-P-3A_Q2
@@ -7046,13 +6980,6 @@ paths:
                                     is_answer: 0
                                     created_at: null
                                     updated_at: null
-                            activity_item_component:
-                              id: 7
-                              game_activity_item_id: 7
-                              question_id: 6
-                              asset_id: null
-                              animation_config: null
-                              order: 0
                     pagination:
                       current_page: 1
                       last_page: 1
