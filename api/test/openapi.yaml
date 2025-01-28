@@ -1114,12 +1114,12 @@ paths:
                 x-examples:
                   Example 1:
                     module_items:
-                      - id: 1
-                        toy8_id: DailyIntro_1
+                      - id: 2
+                        toy8_id: DailyIntro_2
                         module_item_type: '1'
                         language_id: 1
                         intervention_screening: '1'
-                        remarks: Daily Intro (Day 1)
+                        remarks: Daily Intro (Day 2+)
                         parent_id: null
                         status: '2'
                         is_hidden: 0
@@ -1127,18 +1127,11 @@ paths:
                         updated_at: '2025-01-03T18:00:34.000000Z'
                         deleted_at: null
                         is_preset: 0
+                        asset_id: null
+                        animation_id: 21
                         module_item_type_name: Intro
-                        module_item_component:
-                          - id: 1
-                            module_item_id: 1
-                            activity_id: null
-                            asset_id: null
-                            animation_config: '{"audio": null, "animation": [1]}'
-                            order: 1
-                            created_at: '2025-01-03T18:00:34.000000Z'
-                            updated_at: '2025-01-03T18:00:34.000000Z'
-                      - id: 95
-                        toy8_id: Test_CO_AUME_1737440681
+                      - id: 96
+                        toy8_id: Test_SO-COMIa_1737440698
                         module_item_type: '2'
                         language_id: 1
                         intervention_screening: '1'
@@ -1146,66 +1139,13 @@ paths:
                         parent_id: null
                         status: '2'
                         is_hidden: 0
-                        created_at: '2025-01-21T14:24:41.000000Z'
-                        updated_at: '2025-01-21T14:24:41.000000Z'
+                        created_at: '2025-01-21T14:24:58.000000Z'
+                        updated_at: '2025-01-21T14:24:58.000000Z'
                         deleted_at: null
                         is_preset: 0
+                        asset_id: null
+                        animation_id: null
                         module_item_type_name: Activity
-                        module_item_component:
-                          - id: 40
-                            module_item_id: 95
-                            activity_id: 5
-                            asset_id: null
-                            animation_config: null
-                            order: 1
-                            created_at: '2025-01-21T14:24:41.000000Z'
-                            updated_at: '2025-01-21T14:24:41.000000Z'
-                      - id: 3
-                        toy8_id: MiddlePraise_activity1
-                        module_item_type: '4'
-                        language_id: 1
-                        intervention_screening: '1'
-                        remarks: 'Middle Praise #1'
-                        parent_id: null
-                        status: '2'
-                        is_hidden: 0
-                        created_at: '2025-01-03T18:00:34.000000Z'
-                        updated_at: '2025-01-03T18:00:34.000000Z'
-                        deleted_at: null
-                        is_preset: 0
-                        module_item_type_name: Middle Praise
-                        module_item_component:
-                          - id: 3
-                            module_item_id: 3
-                            activity_id: null
-                            asset_id: null
-                            animation_config: '{"audio": null, "animation": [4]}'
-                            order: 1
-                            created_at: '2025-01-03T18:00:34.000000Z'
-                            updated_at: '2025-01-03T18:00:34.000000Z'
-                      - id: 97
-                        toy8_id: Test_FM-PCDR_1737440806
-                        module_item_type: '2'
-                        language_id: 1
-                        intervention_screening: '1'
-                        remarks: null
-                        parent_id: null
-                        status: '2'
-                        is_hidden: 0
-                        created_at: '2025-01-21T14:25:14.000000Z'
-                        updated_at: '2025-01-21T14:26:46.000000Z'
-                        deleted_at: null
-                        is_preset: 0
-                        module_item_type_name: Activity
-                        module_item_component:
-                          - id: 42
-                            module_item_id: 97
-                            activity_id: 7
-                            asset_id: null
-                            animation_config: null
-                            order: 1
-                            created_at: '2025-01-21T14:25:14.000000Z'
-                            updated_at: '2025-01-21T14:25:14.000000Z'
                       - id: 6
                         toy8_id: preset_reward_EN
                         module_item_type: '3'
@@ -1219,16 +1159,9 @@ paths:
                         updated_at: '2025-01-03T18:00:34.000000Z'
                         deleted_at: null
                         is_preset: 0
+                        asset_id: null
+                        animation_id: 3
                         module_item_type_name: Reward
-                        module_item_component:
-                          - id: 6
-                            module_item_id: 6
-                            activity_id: null
-                            asset_id: null
-                            animation_config: '{"audio": null, "animation": [3]}'
-                            order: 1
-                            created_at: '2025-01-03T18:00:34.000000Z'
-                            updated_at: '2025-01-03T18:00:34.000000Z'
                     pagination:
                       current_page: 1
                       last_page: 1
@@ -1267,32 +1200,14 @@ paths:
                           nullable: true
                         is_preset:
                           type: integer
+                        asset_id:
+                          type: integer
+                          nullable: true
+                        animation_id:
+                          type: integer
+                          nullable: true
                         module_item_type_name:
                           type: string
-                        module_item_component:
-                          type: array
-                          items:
-                            type: object
-                            properties:
-                              id:
-                                type: integer
-                              module_item_id:
-                                type: integer
-                              activity_id:
-                                type: integer
-                                nullable: true
-                              asset_id:
-                                type: integer
-                                nullable: true
-                              animation_config:
-                                type: string
-                                nullable: true
-                              order:
-                                type: integer
-                              created_at:
-                                type: string
-                              updated_at:
-                                type: string
                   pagination:
                     type: object
                     properties:
@@ -1304,12 +1219,12 @@ paths:
                 Example 1:
                   value:
                     module_items:
-                      - id: 1
-                        toy8_id: DailyIntro_1
+                      - id: 2
+                        toy8_id: DailyIntro_2
                         module_item_type: '1'
                         language_id: 1
                         intervention_screening: '1'
-                        remarks: Daily Intro (Day 1)
+                        remarks: Daily Intro (Day 2+)
                         parent_id: null
                         status: '2'
                         is_hidden: 0
@@ -1317,18 +1232,11 @@ paths:
                         updated_at: '2025-01-03T18:00:34.000000Z'
                         deleted_at: null
                         is_preset: 0
+                        asset_id: null
+                        animation_id: 21
                         module_item_type_name: Intro
-                        module_item_component:
-                          - id: 1
-                            module_item_id: 1
-                            activity_id: null
-                            asset_id: null
-                            animation_config: '{"audio": null, "animation": [1]}'
-                            order: 1
-                            created_at: '2025-01-03T18:00:34.000000Z'
-                            updated_at: '2025-01-03T18:00:34.000000Z'
-                      - id: 95
-                        toy8_id: Test_CO_AUME_1737440681
+                      - id: 96
+                        toy8_id: Test_SO-COMIa_1737440698
                         module_item_type: '2'
                         language_id: 1
                         intervention_screening: '1'
@@ -1336,66 +1244,13 @@ paths:
                         parent_id: null
                         status: '2'
                         is_hidden: 0
-                        created_at: '2025-01-21T14:24:41.000000Z'
-                        updated_at: '2025-01-21T14:24:41.000000Z'
+                        created_at: '2025-01-21T14:24:58.000000Z'
+                        updated_at: '2025-01-21T14:24:58.000000Z'
                         deleted_at: null
                         is_preset: 0
+                        asset_id: null
+                        animation_id: null
                         module_item_type_name: Activity
-                        module_item_component:
-                          - id: 40
-                            module_item_id: 95
-                            activity_id: 5
-                            asset_id: null
-                            animation_config: null
-                            order: 1
-                            created_at: '2025-01-21T14:24:41.000000Z'
-                            updated_at: '2025-01-21T14:24:41.000000Z'
-                      - id: 3
-                        toy8_id: MiddlePraise_activity1
-                        module_item_type: '4'
-                        language_id: 1
-                        intervention_screening: '1'
-                        remarks: 'Middle Praise #1'
-                        parent_id: null
-                        status: '2'
-                        is_hidden: 0
-                        created_at: '2025-01-03T18:00:34.000000Z'
-                        updated_at: '2025-01-03T18:00:34.000000Z'
-                        deleted_at: null
-                        is_preset: 0
-                        module_item_type_name: Middle Praise
-                        module_item_component:
-                          - id: 3
-                            module_item_id: 3
-                            activity_id: null
-                            asset_id: null
-                            animation_config: '{"audio": null, "animation": [4]}'
-                            order: 1
-                            created_at: '2025-01-03T18:00:34.000000Z'
-                            updated_at: '2025-01-03T18:00:34.000000Z'
-                      - id: 97
-                        toy8_id: Test_FM-PCDR_1737440806
-                        module_item_type: '2'
-                        language_id: 1
-                        intervention_screening: '1'
-                        remarks: null
-                        parent_id: null
-                        status: '2'
-                        is_hidden: 0
-                        created_at: '2025-01-21T14:25:14.000000Z'
-                        updated_at: '2025-01-21T14:26:46.000000Z'
-                        deleted_at: null
-                        is_preset: 0
-                        module_item_type_name: Activity
-                        module_item_component:
-                          - id: 42
-                            module_item_id: 97
-                            activity_id: 7
-                            asset_id: null
-                            animation_config: null
-                            order: 1
-                            created_at: '2025-01-21T14:25:14.000000Z'
-                            updated_at: '2025-01-21T14:25:14.000000Z'
                       - id: 6
                         toy8_id: preset_reward_EN
                         module_item_type: '3'
@@ -1409,16 +1264,9 @@ paths:
                         updated_at: '2025-01-03T18:00:34.000000Z'
                         deleted_at: null
                         is_preset: 0
+                        asset_id: null
+                        animation_id: 3
                         module_item_type_name: Reward
-                        module_item_component:
-                          - id: 6
-                            module_item_id: 6
-                            activity_id: null
-                            asset_id: null
-                            animation_config: '{"audio": null, "animation": [3]}'
-                            order: 1
-                            created_at: '2025-01-03T18:00:34.000000Z'
-                            updated_at: '2025-01-03T18:00:34.000000Z'
                     pagination:
                       current_page: 1
                       last_page: 1
@@ -5750,16 +5598,9 @@ paths:
                         updated_at: '2025-01-03T18:00:34.000000Z'
                         deleted_at: null
                         is_preset: 0
+                        asset_id: null
+                        animation_id: 1
                         module_item_type_name: Intro
-                        module_item_component:
-                          - id: 19
-                            module_item_id: 19
-                            activity_id: null
-                            asset_id: null
-                            animation_config: '{"audio": null, "animation": [1]}'
-                            order: 1
-                            created_at: '2025-01-03T18:00:34.000000Z'
-                            updated_at: '2025-01-03T18:00:34.000000Z'
                       - id: 92
                         toy8_id: EN_L-T-3B_1736989023
                         module_item_type: '2'
@@ -5773,16 +5614,9 @@ paths:
                         updated_at: '2025-01-16T08:57:03.000000Z'
                         deleted_at: null
                         is_preset: 0
+                        asset_id: null
+                        animation_id: null
                         module_item_type_name: Activity
-                        module_item_component:
-                          - id: 37
-                            module_item_id: 92
-                            activity_id: 1
-                            asset_id: null
-                            animation_config: null
-                            order: 1
-                            created_at: '2025-01-16T08:57:03.000000Z'
-                            updated_at: '2025-01-16T08:57:03.000000Z'
                       - id: 22
                         toy8_id: preset_praise_B_EN
                         module_item_type: '4'
@@ -5796,16 +5630,9 @@ paths:
                         updated_at: '2025-01-03T18:00:34.000000Z'
                         deleted_at: null
                         is_preset: 0
+                        asset_id: 3
+                        animation_id: 5
                         module_item_type_name: Middle Praise
-                        module_item_component:
-                          - id: 22
-                            module_item_id: 22
-                            activity_id: null
-                            asset_id: null
-                            animation_config: '{"audio": null, "animation": [5]}'
-                            order: 1
-                            created_at: '2025-01-03T18:00:34.000000Z'
-                            updated_at: '2025-01-03T18:00:34.000000Z'
                       - id: 94
                         toy8_id: EN_L-P-3A_1737086807
                         module_item_type: '2'
@@ -5819,16 +5646,9 @@ paths:
                         updated_at: '2025-01-17T12:06:47.000000Z'
                         deleted_at: null
                         is_preset: 0
+                        asset_id: null
+                        animation_id: null
                         module_item_type_name: Activity
-                        module_item_component:
-                          - id: 39
-                            module_item_id: 94
-                            activity_id: 4
-                            asset_id: null
-                            animation_config: null
-                            order: 1
-                            created_at: '2025-01-17T12:06:47.000000Z'
-                            updated_at: '2025-01-17T12:06:47.000000Z'
                       - id: 21
                         toy8_id: preset_praise_A_EN
                         module_item_type: '4'
@@ -5842,16 +5662,9 @@ paths:
                         updated_at: '2025-01-03T18:00:34.000000Z'
                         deleted_at: null
                         is_preset: 0
+                        asset_id: null
+                        animation_id: 4
                         module_item_type_name: Middle Praise
-                        module_item_component:
-                          - id: 21
-                            module_item_id: 21
-                            activity_id: null
-                            asset_id: null
-                            animation_config: '{"audio": null, "animation": [4]}'
-                            order: 1
-                            created_at: '2025-01-03T18:00:34.000000Z'
-                            updated_at: '2025-01-03T18:00:34.000000Z'
                       - id: 93
                         toy8_id: EN_FM-D-3A_1736998163
                         module_item_type: '2'
@@ -5865,16 +5678,9 @@ paths:
                         updated_at: '2025-01-16T11:29:23.000000Z'
                         deleted_at: null
                         is_preset: 0
+                        asset_id: null
+                        animation_id: null
                         module_item_type_name: Activity
-                        module_item_component:
-                          - id: 38
-                            module_item_id: 93
-                            activity_id: 2
-                            asset_id: null
-                            animation_config: null
-                            order: 1
-                            created_at: '2025-01-16T08:57:26.000000Z'
-                            updated_at: '2025-01-16T08:57:26.000000Z'
                       - id: 24
                         toy8_id: preset_reward_EN
                         module_item_type: '3'
@@ -5888,16 +5694,9 @@ paths:
                         updated_at: '2025-01-03T18:00:34.000000Z'
                         deleted_at: null
                         is_preset: 0
+                        asset_id: null
+                        animation_id: 3
                         module_item_type_name: Reward
-                        module_item_component:
-                          - id: 24
-                            module_item_id: 24
-                            activity_id: null
-                            asset_id: null
-                            animation_config: '{"audio": null, "animation": [3]}'
-                            order: 1
-                            created_at: '2025-01-03T18:00:34.000000Z'
-                            updated_at: '2025-01-03T18:00:34.000000Z'
                     pagination:
                       current_page: 1
                       last_page: 1
@@ -5936,32 +5735,14 @@ paths:
                           nullable: true
                         is_preset:
                           type: integer
+                        asset_id:
+                          type: integer
+                          nullable: true
+                        animation_id:
+                          type: integer
+                          nullable: true
                         module_item_type_name:
                           type: string
-                        module_item_component:
-                          type: array
-                          items:
-                            type: object
-                            properties:
-                              id:
-                                type: integer
-                              module_item_id:
-                                type: integer
-                              activity_id:
-                                type: integer
-                                nullable: true
-                              asset_id:
-                                type: integer
-                                nullable: true
-                              animation_config:
-                                type: string
-                                nullable: true
-                              order:
-                                type: integer
-                              created_at:
-                                type: string
-                              updated_at:
-                                type: string
                   pagination:
                     type: object
                     properties:
@@ -5986,16 +5767,9 @@ paths:
                         updated_at: '2025-01-03T18:00:34.000000Z'
                         deleted_at: null
                         is_preset: 0
+                        asset_id: null
+                        animation_id: 1
                         module_item_type_name: Intro
-                        module_item_component:
-                          - id: 19
-                            module_item_id: 19
-                            activity_id: null
-                            asset_id: null
-                            animation_config: '{"audio": null, "animation": [1]}'
-                            order: 1
-                            created_at: '2025-01-03T18:00:34.000000Z'
-                            updated_at: '2025-01-03T18:00:34.000000Z'
                       - id: 92
                         toy8_id: EN_L-T-3B_1736989023
                         module_item_type: '2'
@@ -6009,16 +5783,9 @@ paths:
                         updated_at: '2025-01-16T08:57:03.000000Z'
                         deleted_at: null
                         is_preset: 0
+                        asset_id: null
+                        animation_id: null
                         module_item_type_name: Activity
-                        module_item_component:
-                          - id: 37
-                            module_item_id: 92
-                            activity_id: 1
-                            asset_id: null
-                            animation_config: null
-                            order: 1
-                            created_at: '2025-01-16T08:57:03.000000Z'
-                            updated_at: '2025-01-16T08:57:03.000000Z'
                       - id: 22
                         toy8_id: preset_praise_B_EN
                         module_item_type: '4'
@@ -6032,16 +5799,9 @@ paths:
                         updated_at: '2025-01-03T18:00:34.000000Z'
                         deleted_at: null
                         is_preset: 0
+                        asset_id: 3
+                        animation_id: 5
                         module_item_type_name: Middle Praise
-                        module_item_component:
-                          - id: 22
-                            module_item_id: 22
-                            activity_id: null
-                            asset_id: null
-                            animation_config: '{"audio": null, "animation": [5]}'
-                            order: 1
-                            created_at: '2025-01-03T18:00:34.000000Z'
-                            updated_at: '2025-01-03T18:00:34.000000Z'
                       - id: 94
                         toy8_id: EN_L-P-3A_1737086807
                         module_item_type: '2'
@@ -6055,16 +5815,9 @@ paths:
                         updated_at: '2025-01-17T12:06:47.000000Z'
                         deleted_at: null
                         is_preset: 0
+                        asset_id: null
+                        animation_id: null
                         module_item_type_name: Activity
-                        module_item_component:
-                          - id: 39
-                            module_item_id: 94
-                            activity_id: 4
-                            asset_id: null
-                            animation_config: null
-                            order: 1
-                            created_at: '2025-01-17T12:06:47.000000Z'
-                            updated_at: '2025-01-17T12:06:47.000000Z'
                       - id: 21
                         toy8_id: preset_praise_A_EN
                         module_item_type: '4'
@@ -6078,16 +5831,9 @@ paths:
                         updated_at: '2025-01-03T18:00:34.000000Z'
                         deleted_at: null
                         is_preset: 0
+                        asset_id: null
+                        animation_id: 4
                         module_item_type_name: Middle Praise
-                        module_item_component:
-                          - id: 21
-                            module_item_id: 21
-                            activity_id: null
-                            asset_id: null
-                            animation_config: '{"audio": null, "animation": [4]}'
-                            order: 1
-                            created_at: '2025-01-03T18:00:34.000000Z'
-                            updated_at: '2025-01-03T18:00:34.000000Z'
                       - id: 93
                         toy8_id: EN_FM-D-3A_1736998163
                         module_item_type: '2'
@@ -6101,16 +5847,9 @@ paths:
                         updated_at: '2025-01-16T11:29:23.000000Z'
                         deleted_at: null
                         is_preset: 0
+                        asset_id: null
+                        animation_id: null
                         module_item_type_name: Activity
-                        module_item_component:
-                          - id: 38
-                            module_item_id: 93
-                            activity_id: 2
-                            asset_id: null
-                            animation_config: null
-                            order: 1
-                            created_at: '2025-01-16T08:57:26.000000Z'
-                            updated_at: '2025-01-16T08:57:26.000000Z'
                       - id: 24
                         toy8_id: preset_reward_EN
                         module_item_type: '3'
@@ -6124,16 +5863,9 @@ paths:
                         updated_at: '2025-01-03T18:00:34.000000Z'
                         deleted_at: null
                         is_preset: 0
+                        asset_id: null
+                        animation_id: 3
                         module_item_type_name: Reward
-                        module_item_component:
-                          - id: 24
-                            module_item_id: 24
-                            activity_id: null
-                            asset_id: null
-                            animation_config: '{"audio": null, "animation": [3]}'
-                            order: 1
-                            created_at: '2025-01-03T18:00:34.000000Z'
-                            updated_at: '2025-01-03T18:00:34.000000Z'
                     pagination:
                       current_page: 1
                       last_page: 1
