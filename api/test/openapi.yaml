@@ -1203,6 +1203,11 @@ paths:
                         asset_id:
                           type: integer
                           nullable: true
+                        activity_id:
+                          type: integer
+                          x-stoplight:
+                            id: 1sxdd8bpfmynt
+                          nullable: true
                         animation_id:
                           type: integer
                           nullable: true
@@ -1233,6 +1238,7 @@ paths:
                         deleted_at: null
                         is_preset: 0
                         asset_id: null
+                        activity_id: null
                         animation_id: 21
                         module_item_type_name: Intro
                       - id: 96
@@ -1249,6 +1255,7 @@ paths:
                         deleted_at: null
                         is_preset: 0
                         asset_id: null
+                        activity_id: 6
                         animation_id: null
                         module_item_type_name: Activity
                       - id: 6
@@ -1265,6 +1272,7 @@ paths:
                         deleted_at: null
                         is_preset: 0
                         asset_id: null
+                        activity_id: null
                         animation_id: 3
                         module_item_type_name: Reward
                     pagination:
@@ -5738,6 +5746,11 @@ paths:
                         asset_id:
                           type: integer
                           nullable: true
+                        activity_id:
+                          type: integer
+                          x-stoplight:
+                            id: m043a5juzanl4
+                          nullable: true
                         animation_id:
                           type: integer
                           nullable: true
@@ -5768,6 +5781,7 @@ paths:
                         deleted_at: null
                         is_preset: 0
                         asset_id: null
+                        activity_id: null
                         animation_id: 1
                         module_item_type_name: Intro
                       - id: 92
@@ -5784,6 +5798,7 @@ paths:
                         deleted_at: null
                         is_preset: 0
                         asset_id: null
+                        activity_id: 1
                         animation_id: null
                         module_item_type_name: Activity
                       - id: 22
@@ -5800,6 +5815,7 @@ paths:
                         deleted_at: null
                         is_preset: 0
                         asset_id: 3
+                        activity_id: null
                         animation_id: 5
                         module_item_type_name: Middle Praise
                       - id: 94
@@ -5816,6 +5832,7 @@ paths:
                         deleted_at: null
                         is_preset: 0
                         asset_id: null
+                        activity_id: 4
                         animation_id: null
                         module_item_type_name: Activity
                       - id: 21
@@ -5832,6 +5849,7 @@ paths:
                         deleted_at: null
                         is_preset: 0
                         asset_id: null
+                        activity_id: null
                         animation_id: 4
                         module_item_type_name: Middle Praise
                       - id: 93
@@ -5848,6 +5866,7 @@ paths:
                         deleted_at: null
                         is_preset: 0
                         asset_id: null
+                        activity_id: 2
                         animation_id: null
                         module_item_type_name: Activity
                       - id: 24
@@ -5864,6 +5883,7 @@ paths:
                         deleted_at: null
                         is_preset: 0
                         asset_id: null
+                        activity_id: null
                         animation_id: 3
                         module_item_type_name: Reward
                     pagination:
