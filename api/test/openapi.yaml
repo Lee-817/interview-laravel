@@ -323,7 +323,7 @@ paths:
         in: header
         name: Content-Type
         description: application/json
-        required: true
+    servers: []
   /intervention/entries:
     get:
       summary: Get intervention active entries
