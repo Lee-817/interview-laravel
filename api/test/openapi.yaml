@@ -317,12 +317,7 @@ paths:
               Example 1:
                 value:
                   page: 1
-    parameters:
-      - schema:
-          type: string
-        in: header
-        name: Content-Type
-        description: application/json
+    parameters: []
     servers: []
   /intervention/entries:
     get:
