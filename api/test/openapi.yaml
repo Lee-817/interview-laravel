@@ -462,6 +462,70 @@ paths:
             application/json:
               schema:
                 type: object
+                x-examples:
+                  Example 1:
+                    programs:
+                      - id: 1
+                        entry_id: 1
+                        child_user_id: 13
+                        kindergarten_user_id: 12
+                        name: program_cool_name
+                        end_date: '2025-02-06'
+                        start_date: '2025-01-21'
+                        current_program_language_id: 1
+                        status: undergoing
+                        is_hidden: 0
+                        created_at: '2025-01-21T12:12:02.000000Z'
+                        updated_at: '2025-01-21T12:12:22.000000Z'
+                        is_suspended: 0
+                        child:
+                          id: 13
+                          last_name: 16 Jan
+                          first_name: EN 3yo
+                          preferred_language_id: 1
+                          language:
+                            id: 1
+                            name: English
+                        modules:
+                          - id: 11
+                            program_id: 1
+                            kindergarten_user_id: 12
+                            day_counter: 2
+                            language_id: 1
+                            status: not_played
+                            is_uploaded: 0
+                            is_scored: 0
+                            device_name: null
+                            serial_number: null
+                            os_version: null
+                            model_number: null
+                            app_version: null
+                            finish_date: null
+                            played_at: null
+                            created_at: '2025-02-05T16:28:27.000000Z'
+                            updated_at: '2025-02-05T16:28:27.000000Z'
+                            deleted_at: null
+                          - id: 10
+                            program_id: 1
+                            kindergarten_user_id: 12
+                            day_counter: 3
+                            language_id: 1
+                            status: not_played
+                            is_uploaded: 0
+                            is_scored: 0
+                            device_name: null
+                            serial_number: null
+                            os_version: null
+                            model_number: null
+                            app_version: null
+                            finish_date: null
+                            played_at: null
+                            created_at: '2025-02-05T16:28:27.000000Z'
+                            updated_at: '2025-02-05T16:28:27.000000Z'
+                            deleted_at: null
+                    pagination:
+                      current_page: 1
+                      last_page: 1
                 properties:
                   programs:
                     type: array
@@ -486,6 +550,8 @@ paths:
                           type: integer
                         status:
                           type: string
+                        is_hidden:
+                          type: integer
                         created_at:
                           type: string
                         updated_at:
@@ -510,6 +576,55 @@ paths:
                                   type: integer
                                 name:
                                   type: string
+                        modules:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                              program_id:
+                                type: integer
+                              kindergarten_user_id:
+                                type: integer
+                              day_counter:
+                                type: integer
+                              language_id:
+                                type: integer
+                              status:
+                                type: string
+                              is_uploaded:
+                                type: integer
+                              is_scored:
+                                type: integer
+                              device_name:
+                                type: string
+                                nullable: true
+                              serial_number:
+                                type: string
+                                nullable: true
+                              os_version:
+                                type: string
+                                nullable: true
+                              model_number:
+                                type: string
+                                nullable: true
+                              app_version:
+                                type: string
+                                nullable: true
+                              finish_date:
+                                type: string
+                                nullable: true
+                              played_at:
+                                type: string
+                                nullable: true
+                              created_at:
+                                type: string
+                              updated_at:
+                                type: string
+                              deleted_at:
+                                type: string
+                                nullable: true
                   pagination:
                     type: object
                     properties:
@@ -517,56 +632,68 @@ paths:
                         type: integer
                       last_page:
                         type: integer
-                x-examples:
-                  Example 1:
-                    programs:
-                      - id: 1
-                        entry_id: 1
-                        child_user_id: 5
-                        kindergarten_user_id: 2
-                        name: program_cool_name
-                        end_date: '2024-09-01'
-                        start_date: '2024-08-14'
-                        current_program_language_id: 2
-                        status: undergoing
-                        created_at: '2024-08-14T15:46:29.000000Z'
-                        updated_at: '2024-08-14T15:57:26.000000Z'
-                        is_suspended: 1
-                        child:
-                          id: 5
-                          last_name: Taylor
-                          first_name: Otter
-                          preferred_language_id: 2
-                          language:
-                            id: 2
-                            name: Malay
-                    pagination:
-                      current_page: 1
-                      last_page: 1
               examples:
                 Example 1:
                   value:
                     programs:
                       - id: 1
                         entry_id: 1
-                        child_user_id: 5
-                        kindergarten_user_id: 2
+                        child_user_id: 13
+                        kindergarten_user_id: 12
                         name: program_cool_name
-                        end_date: '2024-09-01'
-                        start_date: '2024-08-14'
-                        current_program_language_id: 2
+                        end_date: '2025-02-06'
+                        start_date: '2025-01-21'
+                        current_program_language_id: 1
                         status: undergoing
-                        created_at: '2024-08-14T15:46:29.000000Z'
-                        updated_at: '2024-08-14T15:57:26.000000Z'
-                        is_suspended: 1
+                        is_hidden: 0
+                        created_at: '2025-01-21T12:12:02.000000Z'
+                        updated_at: '2025-01-21T12:12:22.000000Z'
+                        is_suspended: 0
                         child:
-                          id: 5
-                          last_name: Taylor
-                          first_name: Otter
-                          preferred_language_id: 2
+                          id: 13
+                          last_name: 16 Jan
+                          first_name: EN 3yo
+                          preferred_language_id: 1
                           language:
-                            id: 2
-                            name: Malay
+                            id: 1
+                            name: English
+                        modules:
+                          - id: 11
+                            program_id: 1
+                            kindergarten_user_id: 12
+                            day_counter: 2
+                            language_id: 1
+                            status: not_played
+                            is_uploaded: 0
+                            is_scored: 0
+                            device_name: null
+                            serial_number: null
+                            os_version: null
+                            model_number: null
+                            app_version: null
+                            finish_date: null
+                            played_at: null
+                            created_at: '2025-02-05T16:28:27.000000Z'
+                            updated_at: '2025-02-05T16:28:27.000000Z'
+                            deleted_at: null
+                          - id: 10
+                            program_id: 1
+                            kindergarten_user_id: 12
+                            day_counter: 3
+                            language_id: 1
+                            status: not_played
+                            is_uploaded: 0
+                            is_scored: 0
+                            device_name: null
+                            serial_number: null
+                            os_version: null
+                            model_number: null
+                            app_version: null
+                            finish_date: null
+                            played_at: null
+                            created_at: '2025-02-05T16:28:27.000000Z'
+                            updated_at: '2025-02-05T16:28:27.000000Z'
+                            deleted_at: null
                     pagination:
                       current_page: 1
                       last_page: 1
