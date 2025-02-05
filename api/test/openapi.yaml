@@ -307,6 +307,11 @@ paths:
           in: header
           name: Accept
           description: application/json
+        - schema:
+            type: string
+          in: header
+          name: Content-Type
+          description: application/json
       requestBody:
         content:
           application/json:
