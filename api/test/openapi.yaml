@@ -301,17 +301,7 @@ paths:
       x-stoplight:
         id: 35dunisztch2k
       description: Retrive a list of children under your kindergarten account
-      parameters:
-        - schema:
-            type: string
-          in: header
-          name: Accept
-          description: application/json
-        - schema:
-            type: string
-          in: header
-          name: Content-Type
-          description: application/json
+      parameters: []
       requestBody:
         content:
           application/json:
