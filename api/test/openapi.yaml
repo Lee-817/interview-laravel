@@ -6751,9 +6751,7 @@ paths:
               x-examples:
                 Example 1:
                   activity_ids:
-                    - 5
-                    - 6
-                    - 7
+                    - 68
             examples:
               Example 1:
                 value:
