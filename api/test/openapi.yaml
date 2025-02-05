@@ -2105,12 +2105,7 @@ paths:
                     - 7
       x-stoplight:
         id: k23rf423ijpcj
-    parameters:
-      - schema:
-          type: string
-        in: header
-        name: accept
-        description: application/json
+    parameters: []
   /intervention/play:
     post:
       summary: Play intervention module
@@ -6756,7 +6751,9 @@ paths:
               x-examples:
                 Example 1:
                   activity_ids:
-                    - 68
+                    - 5
+                    - 6
+                    - 7
             examples:
               Example 1:
                 value:
@@ -6764,12 +6761,6 @@ paths:
                     - 1
                     - 2
                     - 4
-    parameters:
-      - schema:
-          type: string
-        in: header
-        name: accept
-        description: application/json
   /screening/play:
     post:
       summary: Playing screening module
