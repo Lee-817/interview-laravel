@@ -317,7 +317,13 @@ paths:
               Example 1:
                 value:
                   page: 1
-    parameters: []
+    parameters:
+      - schema:
+          type: string
+        in: header
+        name: Content-Type
+        description: application/json
+        required: true
   /intervention/entries:
     get:
       summary: Get intervention active entries
