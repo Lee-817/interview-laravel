@@ -301,7 +301,12 @@ paths:
       x-stoplight:
         id: 35dunisztch2k
       description: Retrive a list of children under your kindergarten account
-      parameters: []
+      parameters:
+        - schema:
+            type: string
+          in: header
+          name: Accept
+          description: application/json
       requestBody:
         content:
           application/json:
@@ -317,12 +322,7 @@ paths:
               Example 1:
                 value:
                   page: 1
-    parameters:
-      - schema:
-          type: string
-        in: header
-        name: Accept
-        description: application/json
+    parameters: []
   /intervention/entries:
     get:
       summary: Get intervention active entries
