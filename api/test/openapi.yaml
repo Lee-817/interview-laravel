@@ -317,8 +317,12 @@ paths:
               Example 1:
                 value:
                   page: 1
-    parameters: []
-    servers: []
+    parameters:
+      - schema:
+          type: string
+        in: header
+        name: Accept
+        description: application/json
   /intervention/entries:
     get:
       summary: Get intervention active entries
@@ -2101,13 +2105,11 @@ paths:
                     - 7
       x-stoplight:
         id: k23rf423ijpcj
-      description: Get intervention activities details
-      parameters: []
     parameters:
       - schema:
           type: string
         in: header
-        name: Accept
+        name: accept
         description: application/json
   /intervention/play:
     post:
@@ -6740,7 +6742,7 @@ paths:
                       last_page: 1
       operationId: get-screening-activities
       x-stoplight:
-        id: btgw29jz88iwu
+        id: qxxzy1opiwxxf
       requestBody:
         content:
           application/json:
@@ -6759,8 +6761,15 @@ paths:
               Example 1:
                 value:
                   activity_ids:
-                    - 68
-    parameters: []
+                    - 1
+                    - 2
+                    - 4
+    parameters:
+      - schema:
+          type: string
+        in: header
+        name: accept
+        description: application/json
   /screening/play:
     post:
       summary: Playing screening module
