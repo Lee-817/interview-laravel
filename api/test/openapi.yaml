@@ -2105,11 +2105,13 @@ paths:
                     - 7
       x-stoplight:
         id: k23rf423ijpcj
+      description: Get intervention activities details
+      parameters: []
     parameters:
       - schema:
           type: string
         in: header
-        name: accept
+        name: Accept
         description: application/json
   /intervention/play:
     post:
