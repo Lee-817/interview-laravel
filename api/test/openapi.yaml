@@ -1287,7 +1287,7 @@ paths:
             type: integer
           in: query
           name: module_id
-  /intervention/activites:
+  /intervention/activities:
     get:
       summary: Get activities for Intervention modules
       tags: []
@@ -5897,7 +5897,7 @@ paths:
             type: string
           in: query
           name: module_id
-  /screening/activites:
+  /screening/activities:
     get:
       summary: Get activities for Screening modules
       tags: []
