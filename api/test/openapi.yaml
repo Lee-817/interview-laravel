@@ -6742,7 +6742,7 @@ paths:
                       last_page: 1
       operationId: get-screening-activities
       x-stoplight:
-        id: qxxzy1opiwxxf
+        id: btgw29jz88iwu
       requestBody:
         content:
           application/json:
@@ -6761,15 +6761,8 @@ paths:
               Example 1:
                 value:
                   activity_ids:
-                    - 1
-                    - 2
-                    - 4
-    parameters:
-      - schema:
-          type: string
-        in: header
-        name: accept
-        description: application/json
+                    - 68
+    parameters: []
   /screening/play:
     post:
       summary: Playing screening module
