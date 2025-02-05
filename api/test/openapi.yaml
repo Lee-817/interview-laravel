@@ -2079,7 +2079,7 @@ paths:
                     pagination:
                       current_page: 1
                       last_page: 1
-      operationId: get-intervention-activites
+      operationId: get-intervention-activities
       requestBody:
         content:
           application/json:
@@ -6735,7 +6735,7 @@ paths:
                     pagination:
                       current_page: 1
                       last_page: 1
-      operationId: get-screening-activites
+      operationId: get-screening-activities
       x-stoplight:
         id: qxxzy1opiwxxf
       requestBody:
