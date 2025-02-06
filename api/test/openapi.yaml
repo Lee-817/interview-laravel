@@ -505,6 +505,52 @@ paths:
                             created_at: '2025-02-05T16:28:27.000000Z'
                             updated_at: '2025-02-05T16:28:27.000000Z'
                             deleted_at: null
+                            module_items:
+                              - id: 2
+                                toy8_id: DailyIntro_2
+                                module_item_type: '1'
+                                language_id: 1
+                                intervention_screening: '1'
+                                remarks: Daily Intro (Day 2+)
+                                parent_id: null
+                                status: '2'
+                                is_hidden: 0
+                                created_at: '2025-01-03T18:00:34.000000Z'
+                                updated_at: '2025-01-03T18:00:34.000000Z'
+                                deleted_at: null
+                                is_preset: 0
+                                laravel_through_key: 11
+                                module_item_type_name: Intro
+                              - id: 96
+                                toy8_id: Test_SO-COMIa_1737440698
+                                module_item_type: '2'
+                                language_id: 1
+                                intervention_screening: '1'
+                                remarks: null
+                                parent_id: null
+                                status: '2'
+                                is_hidden: 0
+                                created_at: '2025-01-21T14:24:58.000000Z'
+                                updated_at: '2025-01-21T14:24:58.000000Z'
+                                deleted_at: null
+                                is_preset: 0
+                                laravel_through_key: 11
+                                module_item_type_name: Activity
+                              - id: 6
+                                toy8_id: preset_reward_EN
+                                module_item_type: '3'
+                                language_id: 1
+                                intervention_screening: '1'
+                                remarks: Reward
+                                parent_id: null
+                                status: '2'
+                                is_hidden: 0
+                                created_at: '2025-01-03T18:00:34.000000Z'
+                                updated_at: '2025-01-03T18:00:34.000000Z'
+                                deleted_at: null
+                                is_preset: 0
+                                laravel_through_key: 11
+                                module_item_type_name: Reward
                           - id: 10
                             program_id: 1
                             kindergarten_user_id: 12
@@ -523,6 +569,82 @@ paths:
                             created_at: '2025-02-05T16:28:27.000000Z'
                             updated_at: '2025-02-05T16:28:27.000000Z'
                             deleted_at: null
+                            module_items:
+                              - id: 2
+                                toy8_id: DailyIntro_2
+                                module_item_type: '1'
+                                language_id: 1
+                                intervention_screening: '1'
+                                remarks: Daily Intro (Day 2+)
+                                parent_id: null
+                                status: '2'
+                                is_hidden: 0
+                                created_at: '2025-01-03T18:00:34.000000Z'
+                                updated_at: '2025-01-03T18:00:34.000000Z'
+                                deleted_at: null
+                                is_preset: 0
+                                laravel_through_key: 10
+                                module_item_type_name: Intro
+                              - id: 52
+                                toy8_id: PS-MA-3A
+                                module_item_type: '2'
+                                language_id: 1
+                                intervention_screening: '1'
+                                remarks: Matching Game (1 answer 3 options) (Fixed)
+                                parent_id: null
+                                status: '2'
+                                is_hidden: 0
+                                created_at: '2025-01-03T18:00:35.000000Z'
+                                updated_at: '2025-01-03T18:00:35.000000Z'
+                                deleted_at: null
+                                is_preset: 0
+                                laravel_through_key: 10
+                                module_item_type_name: Activity
+                              - id: 3
+                                toy8_id: MiddlePraise_activity1
+                                module_item_type: '4'
+                                language_id: 1
+                                intervention_screening: '1'
+                                remarks: 'Middle Praise #1'
+                                parent_id: null
+                                status: '2'
+                                is_hidden: 0
+                                created_at: '2025-01-03T18:00:34.000000Z'
+                                updated_at: '2025-01-03T18:00:34.000000Z'
+                                deleted_at: null
+                                is_preset: 0
+                                laravel_through_key: 10
+                                module_item_type_name: Middle Praise
+                              - id: 65
+                                toy8_id: GM-DAIM
+                                module_item_type: '2'
+                                language_id: 1
+                                intervention_screening: '1'
+                                remarks: Dancing Imitation Game
+                                parent_id: null
+                                status: '2'
+                                is_hidden: 0
+                                created_at: '2025-01-03T18:00:35.000000Z'
+                                updated_at: '2025-01-03T18:00:35.000000Z'
+                                deleted_at: null
+                                is_preset: 0
+                                laravel_through_key: 10
+                                module_item_type_name: Activity
+                              - id: 6
+                                toy8_id: preset_reward_EN
+                                module_item_type: '3'
+                                language_id: 1
+                                intervention_screening: '1'
+                                remarks: Reward
+                                parent_id: null
+                                status: '2'
+                                is_hidden: 0
+                                created_at: '2025-01-03T18:00:34.000000Z'
+                                updated_at: '2025-01-03T18:00:34.000000Z'
+                                deleted_at: null
+                                is_preset: 0
+                                laravel_through_key: 10
+                                module_item_type_name: Reward
                     pagination:
                       current_page: 1
                       last_page: 1
@@ -625,6 +747,44 @@ paths:
                               deleted_at:
                                 type: string
                                 nullable: true
+                              module_items:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: integer
+                                    toy8_id:
+                                      type: string
+                                    module_item_type:
+                                      type: string
+                                    language_id:
+                                      type: integer
+                                    intervention_screening:
+                                      type: string
+                                    remarks:
+                                      type: string
+                                      nullable: true
+                                    parent_id:
+                                      type: integer
+                                      nullable: true
+                                    status:
+                                      type: string
+                                    is_hidden:
+                                      type: integer
+                                    created_at:
+                                      type: string
+                                    updated_at:
+                                      type: string
+                                    deleted_at:
+                                      type: string
+                                      nullable: true
+                                    is_preset:
+                                      type: integer
+                                    laravel_through_key:
+                                      type: integer
+                                    module_item_type_name:
+                                      type: string
                   pagination:
                     type: object
                     properties:
@@ -676,6 +836,52 @@ paths:
                             created_at: '2025-02-05T16:28:27.000000Z'
                             updated_at: '2025-02-05T16:28:27.000000Z'
                             deleted_at: null
+                            module_items:
+                              - id: 2
+                                toy8_id: DailyIntro_2
+                                module_item_type: '1'
+                                language_id: 1
+                                intervention_screening: '1'
+                                remarks: Daily Intro (Day 2+)
+                                parent_id: null
+                                status: '2'
+                                is_hidden: 0
+                                created_at: '2025-01-03T18:00:34.000000Z'
+                                updated_at: '2025-01-03T18:00:34.000000Z'
+                                deleted_at: null
+                                is_preset: 0
+                                laravel_through_key: 11
+                                module_item_type_name: Intro
+                              - id: 96
+                                toy8_id: Test_SO-COMIa_1737440698
+                                module_item_type: '2'
+                                language_id: 1
+                                intervention_screening: '1'
+                                remarks: null
+                                parent_id: null
+                                status: '2'
+                                is_hidden: 0
+                                created_at: '2025-01-21T14:24:58.000000Z'
+                                updated_at: '2025-01-21T14:24:58.000000Z'
+                                deleted_at: null
+                                is_preset: 0
+                                laravel_through_key: 11
+                                module_item_type_name: Activity
+                              - id: 6
+                                toy8_id: preset_reward_EN
+                                module_item_type: '3'
+                                language_id: 1
+                                intervention_screening: '1'
+                                remarks: Reward
+                                parent_id: null
+                                status: '2'
+                                is_hidden: 0
+                                created_at: '2025-01-03T18:00:34.000000Z'
+                                updated_at: '2025-01-03T18:00:34.000000Z'
+                                deleted_at: null
+                                is_preset: 0
+                                laravel_through_key: 11
+                                module_item_type_name: Reward
                           - id: 10
                             program_id: 1
                             kindergarten_user_id: 12
@@ -694,6 +900,82 @@ paths:
                             created_at: '2025-02-05T16:28:27.000000Z'
                             updated_at: '2025-02-05T16:28:27.000000Z'
                             deleted_at: null
+                            module_items:
+                              - id: 2
+                                toy8_id: DailyIntro_2
+                                module_item_type: '1'
+                                language_id: 1
+                                intervention_screening: '1'
+                                remarks: Daily Intro (Day 2+)
+                                parent_id: null
+                                status: '2'
+                                is_hidden: 0
+                                created_at: '2025-01-03T18:00:34.000000Z'
+                                updated_at: '2025-01-03T18:00:34.000000Z'
+                                deleted_at: null
+                                is_preset: 0
+                                laravel_through_key: 10
+                                module_item_type_name: Intro
+                              - id: 52
+                                toy8_id: PS-MA-3A
+                                module_item_type: '2'
+                                language_id: 1
+                                intervention_screening: '1'
+                                remarks: Matching Game (1 answer 3 options) (Fixed)
+                                parent_id: null
+                                status: '2'
+                                is_hidden: 0
+                                created_at: '2025-01-03T18:00:35.000000Z'
+                                updated_at: '2025-01-03T18:00:35.000000Z'
+                                deleted_at: null
+                                is_preset: 0
+                                laravel_through_key: 10
+                                module_item_type_name: Activity
+                              - id: 3
+                                toy8_id: MiddlePraise_activity1
+                                module_item_type: '4'
+                                language_id: 1
+                                intervention_screening: '1'
+                                remarks: 'Middle Praise #1'
+                                parent_id: null
+                                status: '2'
+                                is_hidden: 0
+                                created_at: '2025-01-03T18:00:34.000000Z'
+                                updated_at: '2025-01-03T18:00:34.000000Z'
+                                deleted_at: null
+                                is_preset: 0
+                                laravel_through_key: 10
+                                module_item_type_name: Middle Praise
+                              - id: 65
+                                toy8_id: GM-DAIM
+                                module_item_type: '2'
+                                language_id: 1
+                                intervention_screening: '1'
+                                remarks: Dancing Imitation Game
+                                parent_id: null
+                                status: '2'
+                                is_hidden: 0
+                                created_at: '2025-01-03T18:00:35.000000Z'
+                                updated_at: '2025-01-03T18:00:35.000000Z'
+                                deleted_at: null
+                                is_preset: 0
+                                laravel_through_key: 10
+                                module_item_type_name: Activity
+                              - id: 6
+                                toy8_id: preset_reward_EN
+                                module_item_type: '3'
+                                language_id: 1
+                                intervention_screening: '1'
+                                remarks: Reward
+                                parent_id: null
+                                status: '2'
+                                is_hidden: 0
+                                created_at: '2025-01-03T18:00:34.000000Z'
+                                updated_at: '2025-01-03T18:00:34.000000Z'
+                                deleted_at: null
+                                is_preset: 0
+                                laravel_through_key: 10
+                                module_item_type_name: Reward
                     pagination:
                       current_page: 1
                       last_page: 1
