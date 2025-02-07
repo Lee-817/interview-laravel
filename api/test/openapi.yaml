@@ -303,17 +303,7 @@ paths:
       description: Retrieve a list of children under your kindergarten account
       parameters: []
       requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              x-examples:
-                Example 1:
-                  page: 1
-            examples:
-              Example 1:
-                value:
-                  page: 1
+        content: {}
     parameters:
       - schema:
           type: string
@@ -427,16 +417,9 @@ paths:
       operationId: get-intervention-entries
       x-stoplight:
         id: hjtitzird2cw2
-      description: Retrive a list of active entries for each students.
+      description: Retrieve a list of active entries for each students.
       requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-            examples:
-              Example 1:
-                value:
-                  page: 1
+        content: {}
     parameters:
       - schema:
           type: string
@@ -1071,7 +1054,6 @@ paths:
             examples:
               Example 1:
                 value:
-                  page: 1
                   child_id: 5
   /intervention/modules:
     get:
@@ -3908,17 +3890,7 @@ paths:
         id: v4csb5ob835fj
       requestBody:
         description: ''
-        content:
-          application/json:
-            schema:
-              type: object
-              x-examples:
-                Example 1:
-                  page: 1
-            examples:
-              Example 1:
-                value:
-                  page: 1
+        content: {}
     parameters: []
   /screening/children:
     get:
@@ -7241,17 +7213,7 @@ paths:
       x-stoplight:
         id: k5g0apq1llenc
       requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              x-examples:
-                Example 1:
-                  page: 1
-            examples:
-              Example 1:
-                value:
-                  page: 1
+        content: {}
   '/settings/{setting_id}':
     parameters:
       - schema:
