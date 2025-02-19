@@ -2791,7 +2791,7 @@ paths:
                   serial_number: ea52b8fe
   /intervention/mark-as-uploaded:
     post:
-      summary: Your POST endpoint
+      summary: Mark intervention module as uploaded to cloud storage
       tags: []
       responses:
         '200':
