@@ -2789,6 +2789,69 @@ paths:
                   module_id: 1
                   device_name: oppo A95 23
                   serial_number: ea52b8fe
+  /intervention/mark-as-uploaded:
+    post:
+      summary: Your POST endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+                x-examples:
+                  Example 1:
+                    status: true
+                    message: Update Module Status Success
+              examples:
+                Example 1:
+                  value:
+                    status: true
+                    message: Update Module Status Success
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+                x-examples:
+                  Example 1:
+                    status: true
+                    message: NOT FOUND
+              examples:
+                Example 1:
+                  value:
+                    status: true
+                    message: NOT FOUND
+      operationId: post-intervention-mark-as-uploaded
+      x-stoplight:
+        id: oqmoqy0k4s2ne
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                module_id:
+                  type: integer
+              x-examples:
+                Example 1:
+                  module_id: 11
+            examples:
+              Example 1:
+                value:
+                  module_id: 11
   /intervention/progresses:
     get:
       summary: Get intervention program's progress
