@@ -2898,8 +2898,6 @@ paths:
                     status: true
                     message: NOT FOUND
       operationId: post-intervention-mark-as-incomplete
-      x-stoplight:
-        id: null
       requestBody:
         content:
           application/json:
@@ -2920,9 +2918,12 @@ paths:
             examples:
               Example 1:
                 value:
-                  module_id: 11
+                  module_id: 12
                   device_name: oppo A95 23
                   serial_number: ea52b8fe
+      x-stoplight:
+        id: x4aa3qhz779ky
+    parameters: []
   /intervention/progresses:
     get:
       summary: Get intervention program's progress
