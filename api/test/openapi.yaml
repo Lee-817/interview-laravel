@@ -1908,6 +1908,54 @@ paths:
                                     is_answer: 0
                                     created_at: null
                                     updated_at: null
+                            question:
+                              id: 8
+                              toy8_id: Test_CO-AUME_1-3_Q1
+                              parent_id: null
+                              game_template_id: 2
+                              language_id: 1
+                              game_level_id: 2
+                              remarks: null
+                              preview_time: 0
+                              randomized_options: 1
+                              sequenced_answers: 0
+                              question_asset_id: 25
+                              multiple_question_asset_id: null
+                              answer_amounts: null
+                              voiceover_asset_id: null
+                              is_assigned: 0
+                              config: null
+                              status: 2
+                              is_hidden: 0
+                              created_at: '2025-01-21T14:22:05.000000Z'
+                              updated_at: '2025-01-21T14:22:50.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 8
+                              options:
+                                - id: 32
+                                  game_question_id: 8
+                                  game_asset_id: 18
+                                  option_order: 1
+                                  answer_order: 1
+                                  is_answer: 1
+                                  created_at: null
+                                  updated_at: null
+                                - id: 33
+                                  game_question_id: 8
+                                  game_asset_id: 19
+                                  option_order: 2
+                                  answer_order: 1
+                                  is_answer: 0
+                                  created_at: null
+                                  updated_at: null
+                                - id: 34
+                                  game_question_id: 8
+                                  game_asset_id: 20
+                                  option_order: 3
+                                  answer_order: 1
+                                  is_answer: 0
+                                  created_at: null
+                                  updated_at: null
                           - id: 9
                             toy8_id: Test_CO-AUME_1-3_Q2_1737440553
                             parent_id: null
@@ -1971,6 +2019,54 @@ paths:
                                     is_answer: 0
                                     created_at: null
                                     updated_at: null
+                            question:
+                              id: 9
+                              toy8_id: Test_CO-AUME_1-3_Q2
+                              parent_id: null
+                              game_template_id: 2
+                              language_id: 1
+                              game_level_id: 2
+                              remarks: null
+                              preview_time: 0
+                              randomized_options: 1
+                              sequenced_answers: 0
+                              question_asset_id: 25
+                              multiple_question_asset_id: null
+                              answer_amounts: null
+                              voiceover_asset_id: null
+                              is_assigned: 0
+                              config: null
+                              status: 2
+                              is_hidden: 0
+                              created_at: '2025-01-21T14:22:10.000000Z'
+                              updated_at: '2025-01-21T14:22:33.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 9
+                              options:
+                                - id: 26
+                                  game_question_id: 9
+                                  game_asset_id: 20
+                                  option_order: 1
+                                  answer_order: 1
+                                  is_answer: 1
+                                  created_at: null
+                                  updated_at: null
+                                - id: 27
+                                  game_question_id: 9
+                                  game_asset_id: 19
+                                  option_order: 2
+                                  answer_order: 1
+                                  is_answer: 0
+                                  created_at: null
+                                  updated_at: null
+                                - id: 28
+                                  game_question_id: 9
+                                  game_asset_id: 18
+                                  option_order: 3
+                                  answer_order: 1
+                                  is_answer: 0
+                                  created_at: null
+                                  updated_at: null
                       - id: 6
                         toy8_id: Test_SO-COMIa
                         parent_id: null
@@ -2046,6 +2142,54 @@ paths:
                                     is_answer: 1
                                     created_at: null
                                     updated_at: null
+                            question:
+                              id: 12
+                              toy8_id: Test_SO-COMIa_Q1
+                              parent_id: null
+                              game_template_id: 50
+                              language_id: 1
+                              game_level_id: 6
+                              remarks: null
+                              preview_time: 0
+                              randomized_options: 0
+                              sequenced_answers: 0
+                              question_asset_id: 24
+                              multiple_question_asset_id: null
+                              answer_amounts: null
+                              voiceover_asset_id: null
+                              is_assigned: 0
+                              config: null
+                              status: 2
+                              is_hidden: 0
+                              created_at: '2025-01-21T14:23:37.000000Z'
+                              updated_at: '2025-01-21T14:23:37.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 10
+                              options:
+                                - id: 35
+                                  game_question_id: 12
+                                  game_asset_id: 17
+                                  option_order: 1
+                                  answer_order: 1
+                                  is_answer: 1
+                                  created_at: null
+                                  updated_at: null
+                                - id: 36
+                                  game_question_id: 12
+                                  game_asset_id: 15
+                                  option_order: 2
+                                  answer_order: 1
+                                  is_answer: 1
+                                  created_at: null
+                                  updated_at: null
+                                - id: 37
+                                  game_question_id: 12
+                                  game_asset_id: 16
+                                  option_order: 3
+                                  answer_order: 1
+                                  is_answer: 1
+                                  created_at: null
+                                  updated_at: null
                       - id: 7
                         toy8_id: Test_FM-PCDR
                         parent_id: null
@@ -2074,6 +2218,7 @@ paths:
                             asset_id: null
                             animation_id: 11
                             questions: []
+                            question: null
                           - id: 13
                             toy8_id: Test_Drawing_Tutorial
                             parent_id: null
@@ -2090,6 +2235,7 @@ paths:
                             asset_id: 21
                             animation_id: null
                             questions: []
+                            question: null
                           - id: 11
                             toy8_id: Test_FM-PCDR_Q1_1737440651
                             parent_id: null
@@ -2137,6 +2283,38 @@ paths:
                                     is_answer: 1
                                     created_at: null
                                     updated_at: null
+                            question:
+                              id: 13
+                              toy8_id: Test_FM-PCDR_Q1
+                              parent_id: null
+                              game_template_id: 47
+                              language_id: 1
+                              game_level_id: 3
+                              remarks: null
+                              preview_time: 0
+                              randomized_options: 0
+                              sequenced_answers: 0
+                              question_asset_id: 19
+                              multiple_question_asset_id: null
+                              answer_amounts: null
+                              voiceover_asset_id: null
+                              is_assigned: 0
+                              config: null
+                              status: 2
+                              is_hidden: 0
+                              created_at: '2025-01-21T14:24:11.000000Z'
+                              updated_at: '2025-01-21T14:24:11.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 11
+                              options:
+                                - id: 38
+                                  game_question_id: 13
+                                  game_asset_id: 26
+                                  option_order: 1
+                                  answer_order: 1
+                                  is_answer: 1
+                                  created_at: null
+                                  updated_at: null
                     pagination:
                       current_page: 1
                       last_page: 1
@@ -2243,9 +2421,8 @@ paths:
                                     question_asset_id:
                                       type: integer
                                     multiple_question_asset_id:
-                                      type: array
+                                      type: string
                                       nullable: true
-                                      items: {}
                                     answer_amounts:
                                       type: integer
                                       nullable: true
@@ -2293,6 +2470,84 @@ paths:
                                           updated_at:
                                             type: string
                                             nullable: true
+                              question:
+                                type: object
+                                nullable: true
+                                properties:
+                                  id:
+                                    type: integer
+                                  toy8_id:
+                                    type: string
+                                  parent_id:
+                                    type: integer
+                                    nullable: true
+                                  game_template_id:
+                                    type: integer
+                                  language_id:
+                                    type: integer
+                                  game_level_id:
+                                    type: integer
+                                  remarks:
+                                    type: string
+                                    nullable: true
+                                  preview_time:
+                                    type: integer
+                                  randomized_options:
+                                    type: integer
+                                  sequenced_answers:
+                                    type: integer
+                                  question_asset_id:
+                                    type: integer
+                                  multiple_question_asset_id:
+                                    type: string
+                                    nullable: true
+                                  answer_amounts:
+                                    type: integer
+                                    nullable: true
+                                  voiceover_asset_id:
+                                    type: integer
+                                    nullable: true
+                                  is_assigned:
+                                    type: integer
+                                  config:
+                                    type: string
+                                    nullable: true
+                                  status:
+                                    type: integer
+                                  is_hidden:
+                                    type: integer
+                                  created_at:
+                                    type: string
+                                  updated_at:
+                                    type: string
+                                  deleted_at:
+                                    type: string
+                                    nullable: true
+                                  laravel_through_key:
+                                    type: integer
+                                  options:
+                                    type: array
+                                    items:
+                                      type: object
+                                      properties:
+                                        id:
+                                          type: integer
+                                        game_question_id:
+                                          type: integer
+                                        game_asset_id:
+                                          type: integer
+                                        option_order:
+                                          type: integer
+                                        answer_order:
+                                          type: integer
+                                        is_answer:
+                                          type: integer
+                                        created_at:
+                                          type: string
+                                          nullable: true
+                                        updated_at:
+                                          type: string
+                                          nullable: true
                   pagination:
                     type: object
                     properties:
@@ -2379,6 +2634,54 @@ paths:
                                     is_answer: 0
                                     created_at: null
                                     updated_at: null
+                            question:
+                              id: 8
+                              toy8_id: Test_CO-AUME_1-3_Q1
+                              parent_id: null
+                              game_template_id: 2
+                              language_id: 1
+                              game_level_id: 2
+                              remarks: null
+                              preview_time: 0
+                              randomized_options: 1
+                              sequenced_answers: 0
+                              question_asset_id: 25
+                              multiple_question_asset_id: null
+                              answer_amounts: null
+                              voiceover_asset_id: null
+                              is_assigned: 0
+                              config: null
+                              status: 2
+                              is_hidden: 0
+                              created_at: '2025-01-21T14:22:05.000000Z'
+                              updated_at: '2025-01-21T14:22:50.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 8
+                              options:
+                                - id: 32
+                                  game_question_id: 8
+                                  game_asset_id: 18
+                                  option_order: 1
+                                  answer_order: 1
+                                  is_answer: 1
+                                  created_at: null
+                                  updated_at: null
+                                - id: 33
+                                  game_question_id: 8
+                                  game_asset_id: 19
+                                  option_order: 2
+                                  answer_order: 1
+                                  is_answer: 0
+                                  created_at: null
+                                  updated_at: null
+                                - id: 34
+                                  game_question_id: 8
+                                  game_asset_id: 20
+                                  option_order: 3
+                                  answer_order: 1
+                                  is_answer: 0
+                                  created_at: null
+                                  updated_at: null
                           - id: 9
                             toy8_id: Test_CO-AUME_1-3_Q2_1737440553
                             parent_id: null
@@ -2442,6 +2745,54 @@ paths:
                                     is_answer: 0
                                     created_at: null
                                     updated_at: null
+                            question:
+                              id: 9
+                              toy8_id: Test_CO-AUME_1-3_Q2
+                              parent_id: null
+                              game_template_id: 2
+                              language_id: 1
+                              game_level_id: 2
+                              remarks: null
+                              preview_time: 0
+                              randomized_options: 1
+                              sequenced_answers: 0
+                              question_asset_id: 25
+                              multiple_question_asset_id: null
+                              answer_amounts: null
+                              voiceover_asset_id: null
+                              is_assigned: 0
+                              config: null
+                              status: 2
+                              is_hidden: 0
+                              created_at: '2025-01-21T14:22:10.000000Z'
+                              updated_at: '2025-01-21T14:22:33.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 9
+                              options:
+                                - id: 26
+                                  game_question_id: 9
+                                  game_asset_id: 20
+                                  option_order: 1
+                                  answer_order: 1
+                                  is_answer: 1
+                                  created_at: null
+                                  updated_at: null
+                                - id: 27
+                                  game_question_id: 9
+                                  game_asset_id: 19
+                                  option_order: 2
+                                  answer_order: 1
+                                  is_answer: 0
+                                  created_at: null
+                                  updated_at: null
+                                - id: 28
+                                  game_question_id: 9
+                                  game_asset_id: 18
+                                  option_order: 3
+                                  answer_order: 1
+                                  is_answer: 0
+                                  created_at: null
+                                  updated_at: null
                       - id: 6
                         toy8_id: Test_SO-COMIa
                         parent_id: null
@@ -2517,6 +2868,54 @@ paths:
                                     is_answer: 1
                                     created_at: null
                                     updated_at: null
+                            question:
+                              id: 12
+                              toy8_id: Test_SO-COMIa_Q1
+                              parent_id: null
+                              game_template_id: 50
+                              language_id: 1
+                              game_level_id: 6
+                              remarks: null
+                              preview_time: 0
+                              randomized_options: 0
+                              sequenced_answers: 0
+                              question_asset_id: 24
+                              multiple_question_asset_id: null
+                              answer_amounts: null
+                              voiceover_asset_id: null
+                              is_assigned: 0
+                              config: null
+                              status: 2
+                              is_hidden: 0
+                              created_at: '2025-01-21T14:23:37.000000Z'
+                              updated_at: '2025-01-21T14:23:37.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 10
+                              options:
+                                - id: 35
+                                  game_question_id: 12
+                                  game_asset_id: 17
+                                  option_order: 1
+                                  answer_order: 1
+                                  is_answer: 1
+                                  created_at: null
+                                  updated_at: null
+                                - id: 36
+                                  game_question_id: 12
+                                  game_asset_id: 15
+                                  option_order: 2
+                                  answer_order: 1
+                                  is_answer: 1
+                                  created_at: null
+                                  updated_at: null
+                                - id: 37
+                                  game_question_id: 12
+                                  game_asset_id: 16
+                                  option_order: 3
+                                  answer_order: 1
+                                  is_answer: 1
+                                  created_at: null
+                                  updated_at: null
                       - id: 7
                         toy8_id: Test_FM-PCDR
                         parent_id: null
@@ -2545,6 +2944,7 @@ paths:
                             asset_id: null
                             animation_id: 11
                             questions: []
+                            question: null
                           - id: 13
                             toy8_id: Test_Drawing_Tutorial
                             parent_id: null
@@ -2561,6 +2961,7 @@ paths:
                             asset_id: 21
                             animation_id: null
                             questions: []
+                            question: null
                           - id: 11
                             toy8_id: Test_FM-PCDR_Q1_1737440651
                             parent_id: null
@@ -2608,6 +3009,38 @@ paths:
                                     is_answer: 1
                                     created_at: null
                                     updated_at: null
+                            question:
+                              id: 13
+                              toy8_id: Test_FM-PCDR_Q1
+                              parent_id: null
+                              game_template_id: 47
+                              language_id: 1
+                              game_level_id: 3
+                              remarks: null
+                              preview_time: 0
+                              randomized_options: 0
+                              sequenced_answers: 0
+                              question_asset_id: 19
+                              multiple_question_asset_id: null
+                              answer_amounts: null
+                              voiceover_asset_id: null
+                              is_assigned: 0
+                              config: null
+                              status: 2
+                              is_hidden: 0
+                              created_at: '2025-01-21T14:24:11.000000Z'
+                              updated_at: '2025-01-21T14:24:11.000000Z'
+                              deleted_at: null
+                              laravel_through_key: 11
+                              options:
+                                - id: 38
+                                  game_question_id: 13
+                                  game_asset_id: 26
+                                  option_order: 1
+                                  answer_order: 1
+                                  is_answer: 1
+                                  created_at: null
+                                  updated_at: null
                     pagination:
                       current_page: 1
                       last_page: 1
@@ -5008,15 +5441,19 @@ paths:
                   type: string
                 email:
                   type: string
+                has_developmental_concern:
+                  type: integer
               x-examples:
                 Example 1:
                   child_user_id: '12'
                   email: tester@toyeight.com
+                  has_developmental_concern: 0
             examples:
               Example 1:
                 value:
                   child_user_id: '12'
                   email: tester@toyeight.com
+                  has_developmental_concern: 1
   /screening/cancel-entry:
     post:
       summary: Cancel playing screening entry
