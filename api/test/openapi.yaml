@@ -7726,6 +7726,7 @@ paths:
                     - 15
                     - 16
                     - 25
+        description: 'passed asset_ids : [] will retrieve all assets'
   /settings:
     get:
       summary: Get environment settings
