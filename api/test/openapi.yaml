@@ -2420,6 +2420,7 @@ paths:
                                       type: integer
                                     question_asset_id:
                                       type: integer
+                                      nullable: true
                                     multiple_question_asset_id:
                                       type: string
                                       nullable: true
@@ -2498,6 +2499,7 @@ paths:
                                     type: integer
                                   question_asset_id:
                                     type: integer
+                                    nullable: true
                                   multiple_question_asset_id:
                                     type: string
                                     nullable: true
