@@ -7728,7 +7728,7 @@ paths:
                     - 15
                     - 16
                     - 25
-        description: 'passed asset_ids : [] will retrieve all assets'
+        description: 'passed asset_ids : [] will return empty array'
   /settings:
     get:
       summary: Get environment settings
