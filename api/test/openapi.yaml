@@ -4506,7 +4506,7 @@ paths:
                           serial_number: null
                           language_code: zh
                           child_user_id: 29
-                          language_id: null
+                          language_id: 3
                       - id: 30
                         first_name: 5yo ID
                         last_name: TestChild
@@ -4640,7 +4640,7 @@ paths:
                           serial_number: null
                           language_code: zh
                           child_user_id: 29
-                          language_id: null
+                          language_id: 3
                       - id: 30
                         first_name: 5yo ID
                         last_name: TestChild
