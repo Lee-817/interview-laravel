@@ -4476,11 +4476,11 @@ paths:
                 x-examples:
                   Example 1:
                     children:
-                      - id: 4
-                        first_name: Josh
-                        last_name: Bobby
-                        birth_date: '2021-01-20'
-                        kindergarten_user_id: 2
+                      - id: 29
+                        first_name: 18june
+                        last_name: TestChild
+                        birth_date: '2022-06-13'
+                        kindergarten_user_id: 12
                         preferred_language_id: 1
                         show_play_button: 1
                         show_resume_button: 0
@@ -4489,92 +4489,55 @@ paths:
                         suggested_modules:
                           - language_id: 1
                             language_name: English
-                            module_id: 5
+                            module_id: 0
                           - language_id: 2
                             language_name: Malay
-                            module_id: 4
+                            module_id: 0
                           - language_id: 3
                             language_name: Chinese
                             module_id: 0
+                          - language_id: 4
+                            language_name: Indonesian
+                            module_id: 0
                         today_active_screening_entries:
-                          id: 1
+                          id: 18
                           status: entered
                           device_name: null
                           serial_number: null
-                          child_user_id: 4
-                      - id: 5
-                        first_name: Otter
-                        last_name: Taylor
-                        birth_date: '2019-08-05'
-                        kindergarten_user_id: 2
-                        preferred_language_id: 2
-                        show_play_button: 0
+                          language_code: zh
+                          child_user_id: 29
+                          language_id: null
+                      - id: 30
+                        first_name: 5yo ID
+                        last_name: TestChild
+                        birth_date: '2020-06-18'
+                        kindergarten_user_id: 12
+                        preferred_language_id: 4
+                        show_play_button: 1
                         show_resume_button: 0
                         show_create_entry_button: 0
-                        age: 4
-                        suggested_modules:
-                          - language_id: 1
-                            language_name: English
-                            module_id: 2
-                          - language_id: 2
-                            language_name: Malay
-                            module_id: 0
-                          - language_id: 3
-                            language_name: Chinese
-                            module_id: 0
-                        today_active_screening_entries:
-                          id: 3
-                          status: playing
-                          device_name: OPPO A95 23
-                          serial_number: ABC123
-                          child_user_id: 5
-                      - id: 6
-                        first_name: Ruby
-                        last_name: Chan
-                        birth_date: '2018-11-09'
-                        kindergarten_user_id: 2
-                        preferred_language_id: 2
-                        show_play_button: 0
-                        show_resume_button: 0
-                        show_create_entry_button: 1
                         age: 5
                         suggested_modules:
                           - language_id: 1
                             language_name: English
-                            module_id: 3
+                            module_id: 0
                           - language_id: 2
                             language_name: Malay
                             module_id: 0
                           - language_id: 3
                             language_name: Chinese
+                            module_id: 0
+                          - language_id: 4
+                            language_name: Indonesian
                             module_id: 0
                         today_active_screening_entries:
-                          id: 4
-                          status: completed
-                          device_name: OPPO A95 23
-                          serial_number: ABC123
-                          child_user_id: 6
-                      - id: 9
-                        first_name: 新之助
-                        last_name: 野原
-                        birth_date: '2020-05-05'
-                        kindergarten_user_id: 2
-                        preferred_language_id: 1
-                        show_play_button: 0
-                        show_resume_button: 0
-                        show_create_entry_button: 1
-                        age: 4
-                        suggested_modules:
-                          - language_id: 1
-                            language_name: English
-                            module_id: 2
-                          - language_id: 2
-                            language_name: Malay
-                            module_id: 0
-                          - language_id: 3
-                            language_name: Chinese
-                            module_id: 0
-                        today_active_screening_entries: null
+                          id: 17
+                          status: entered
+                          device_name: null
+                          serial_number: null
+                          language_code: id
+                          child_user_id: 30
+                          language_id: 4
                     pagination:
                       current_page: 1
                       last_page: 1
@@ -4629,8 +4592,13 @@ paths:
                             serial_number:
                               type: string
                               nullable: true
+                            language_code:
+                              type: string
                             child_user_id:
                               type: integer
+                            language_id:
+                              type: integer
+                              nullable: true
                   pagination:
                     type: object
                     properties:
@@ -4642,11 +4610,11 @@ paths:
                 Example 1:
                   value:
                     children:
-                      - id: 4
-                        first_name: Josh
-                        last_name: Bobby
-                        birth_date: '2021-01-20'
-                        kindergarten_user_id: 2
+                      - id: 29
+                        first_name: 18june
+                        last_name: TestChild
+                        birth_date: '2022-06-13'
+                        kindergarten_user_id: 12
                         preferred_language_id: 1
                         show_play_button: 1
                         show_resume_button: 0
@@ -4655,92 +4623,55 @@ paths:
                         suggested_modules:
                           - language_id: 1
                             language_name: English
-                            module_id: 5
+                            module_id: 0
                           - language_id: 2
                             language_name: Malay
-                            module_id: 4
+                            module_id: 0
                           - language_id: 3
                             language_name: Chinese
                             module_id: 0
+                          - language_id: 4
+                            language_name: Indonesian
+                            module_id: 0
                         today_active_screening_entries:
-                          id: 1
+                          id: 18
                           status: entered
                           device_name: null
                           serial_number: null
-                          child_user_id: 4
-                      - id: 5
-                        first_name: Otter
-                        last_name: Taylor
-                        birth_date: '2019-08-05'
-                        kindergarten_user_id: 2
-                        preferred_language_id: 2
-                        show_play_button: 0
+                          language_code: zh
+                          child_user_id: 29
+                          language_id: null
+                      - id: 30
+                        first_name: 5yo ID
+                        last_name: TestChild
+                        birth_date: '2020-06-18'
+                        kindergarten_user_id: 12
+                        preferred_language_id: 4
+                        show_play_button: 1
                         show_resume_button: 0
                         show_create_entry_button: 0
-                        age: 4
-                        suggested_modules:
-                          - language_id: 1
-                            language_name: English
-                            module_id: 2
-                          - language_id: 2
-                            language_name: Malay
-                            module_id: 0
-                          - language_id: 3
-                            language_name: Chinese
-                            module_id: 0
-                        today_active_screening_entries:
-                          id: 3
-                          status: playing
-                          device_name: OPPO A95 23
-                          serial_number: ABC123
-                          child_user_id: 5
-                      - id: 6
-                        first_name: Ruby
-                        last_name: Chan
-                        birth_date: '2018-11-09'
-                        kindergarten_user_id: 2
-                        preferred_language_id: 2
-                        show_play_button: 0
-                        show_resume_button: 0
-                        show_create_entry_button: 1
                         age: 5
                         suggested_modules:
                           - language_id: 1
                             language_name: English
-                            module_id: 3
+                            module_id: 0
                           - language_id: 2
                             language_name: Malay
                             module_id: 0
                           - language_id: 3
                             language_name: Chinese
+                            module_id: 0
+                          - language_id: 4
+                            language_name: Indonesian
                             module_id: 0
                         today_active_screening_entries:
-                          id: 4
-                          status: completed
-                          device_name: OPPO A95 23
-                          serial_number: ABC123
-                          child_user_id: 6
-                      - id: 9
-                        first_name: 新之助
-                        last_name: 野原
-                        birth_date: '2020-05-05'
-                        kindergarten_user_id: 2
-                        preferred_language_id: 1
-                        show_play_button: 0
-                        show_resume_button: 0
-                        show_create_entry_button: 1
-                        age: 4
-                        suggested_modules:
-                          - language_id: 1
-                            language_name: English
-                            module_id: 2
-                          - language_id: 2
-                            language_name: Malay
-                            module_id: 0
-                          - language_id: 3
-                            language_name: Chinese
-                            module_id: 0
-                        today_active_screening_entries: null
+                          id: 17
+                          status: entered
+                          device_name: null
+                          serial_number: null
+                          language_code: id
+                          child_user_id: 30
+                          language_id: 4
                     pagination:
                       current_page: 1
                       last_page: 1
