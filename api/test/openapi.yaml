@@ -4499,7 +4499,7 @@ paths:
                           - language_id: 4
                             language_name: Indonesian
                             module_id: 0
-                        today_active_screening_entries:
+                        latest_screening_entries:
                           id: 18
                           status: entered
                           device_name: null
@@ -4530,7 +4530,7 @@ paths:
                           - language_id: 4
                             language_name: Indonesian
                             module_id: 0
-                        today_active_screening_entries:
+                        latest_screening_entries:
                           id: 17
                           status: entered
                           device_name: null
@@ -4578,7 +4578,7 @@ paths:
                                 type: string
                               module_id:
                                 type: integer
-                        today_active_screening_entries:
+                        latest_screening_entries:
                           type: object
                           nullable: true
                           properties:
@@ -4633,7 +4633,7 @@ paths:
                           - language_id: 4
                             language_name: Indonesian
                             module_id: 0
-                        today_active_screening_entries:
+                        latest_screening_entries:
                           id: 18
                           status: entered
                           device_name: null
@@ -4664,7 +4664,7 @@ paths:
                           - language_id: 4
                             language_name: Indonesian
                             module_id: 0
-                        today_active_screening_entries:
+                        latest_screening_entries:
                           id: 17
                           status: entered
                           device_name: null
