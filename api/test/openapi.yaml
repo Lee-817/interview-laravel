@@ -4580,7 +4580,6 @@ paths:
                                 type: integer
                         latest_screening_entries:
                           type: object
-                          nullable: true
                           properties:
                             id:
                               type: integer
