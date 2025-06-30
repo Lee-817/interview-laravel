@@ -3133,7 +3133,7 @@ paths:
                 Example 1:
                   value:
                     status: true
-                    message: NOT FOUND
+                    message: NOT FOUND-IM1
       operationId: post-intervention-play
       x-stoplight:
         id: rw16mhjyrp2ak
@@ -3198,6 +3198,26 @@ paths:
                   value:
                     status: true
                     message: Update Module Status Success
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+                x-examples:
+                  Example 1:
+                    status: true
+                    message: NOT FOUND-IM2
+              examples:
+                Example 1:
+                  value:
+                    status: true
+                    message: NOT FOUND-IM2
       operationId: post-intervention-finish-play
       x-stoplight:
         id: j90nobkmxto36
@@ -3268,7 +3288,7 @@ paths:
                 Example 1:
                   value:
                     status: true
-                    message: NOT FOUND
+                    message: NOT FOUND-IM3
       operationId: post-intervention-mark-as-uploaded
       x-stoplight:
         id: oqmoqy0k4s2ne
@@ -3331,7 +3351,7 @@ paths:
                 Example 1:
                   value:
                     status: true
-                    message: NOT FOUND
+                    message: NOT FOUND-IM4
       operationId: post-intervention-mark-as-incomplete
       requestBody:
         content:
@@ -4717,7 +4737,7 @@ paths:
                   serial_number: ABC123x
   /screening/create-child:
     post:
-      summary: Create new child from screening app
+      summary: 'Create new child from screening app [Deprecated]'
       tags: []
       responses:
         '200':
@@ -4815,6 +4835,70 @@ paths:
                   last_name: Chow
                   first_name: Steve
                   preferred_language_id: '1'
+  /screening/hide-child:
+    post:
+      summary: Hide child from screening app
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+                x-examples:
+                  Example 1:
+                    status: true
+                    message: Child hidden successfully
+              examples:
+                Example 1:
+                  value:
+                    status: true
+                    message: Child hidden successfully
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  Example 1:
+                    status: false
+                    message: Child not found
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+              examples:
+                Example 1:
+                  value:
+                    status: false
+                    message: Child not found
+      operationId: post-screening-hide-child
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                child_user_id:
+                  type: integer
+              x-examples:
+                Example 1:
+                  child_user_id: 30
+            examples:
+              Example 1:
+                value:
+                  child_user_id: 30
+      x-stoplight:
+        id: wgx8kvfow1um9
+    parameters: []
   /screening/entries:
     get:
       summary: Get Screening Entries
@@ -5354,30 +5438,6 @@ paths:
                       created_at: '2024-07-23T10:02:33.000000Z'
                       id: 1
           headers: {}
-        '403':
-          description: Forbidden
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    type: boolean
-                  message:
-                    type: string
-                  detected_entry_id:
-                    type: integer
-                x-examples:
-                  Example 1:
-                    status: false
-                    message: Today's Screening Entry Existed
-                    detected_entry_id: 6
-              examples:
-                Example 1:
-                  value:
-                    status: false
-                    message: Today's Screening Entry Existed
-                    detected_entry_id: 6
       operationId: post-screening-create-entry
       x-stoplight:
         id: vs4kg5yirfd9u
@@ -5552,7 +5612,7 @@ paths:
     parameters: []
   /screening/modules:
     get:
-      summary: Get all published screening modules
+      summary: 'Get all published screening modules [Deprecated]'
       tags: []
       responses:
         '200':
@@ -6036,7 +6096,7 @@ paths:
         in: path
         required: true
     get:
-      summary: Get module items from screening module id
+      summary: 'Get module items from screening module id [Deprecated]'
       tags: []
       responses:
         '200':
@@ -6354,7 +6414,7 @@ paths:
           name: module_id
   /screening/activities:
     get:
-      summary: Get activities for Screening modules
+      summary: 'Get activities for Screening modules [Deprecated]'
       tags: []
       responses:
         '200':
@@ -7372,7 +7432,7 @@ paths:
                 Example 1:
                   value:
                     status: true
-                    message: NOT FOUND
+                    message: NOT FOUND-SM2
       operationId: post-screening-finish-play
       x-stoplight:
         id: vw88020miuy5t
@@ -7381,6 +7441,12 @@ paths:
           application/json:
             schema:
               type: object
+              x-examples:
+                Example 1:
+                  child_user_id: 9
+                  entry_id: 6
+                  device_name: oppo A95 23
+                  serial_number: ea52b8fe
               properties:
                 child_user_id:
                   type: integer
@@ -7390,12 +7456,21 @@ paths:
                   type: string
                 serial_number:
                   type: string
-              x-examples:
-                Example 1:
-                  child_user_id: 9
-                  entry_id: 6
-                  device_name: oppo A95 23
-                  serial_number: ea52b8fe
+                os_version:
+                  type: string
+                  x-stoplight:
+                    id: k94jsjzx4zlib
+                  nullable: true
+                app_version:
+                  type: string
+                  x-stoplight:
+                    id: wobc7t7q99g1d
+                  nullable: true
+                model_number:
+                  type: string
+                  x-stoplight:
+                    id: 1mbbd2a69vr1d
+                  nullable: true
             examples:
               Example 1:
                 value:
