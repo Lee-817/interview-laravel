@@ -4567,17 +4567,11 @@ paths:
                           type: integer
                         age:
                           type: integer
-                        suggested_modules:
-                          type: array
-                          items:
-                            type: object
-                            properties:
-                              language_id:
-                                type: integer
-                              language_name:
-                                type: string
-                              module_id:
-                                type: integer
+                        previous_played_at:
+                          type: string
+                          x-stoplight:
+                            id: 5xv2lr0ax69eg
+                          nullable: true
                         latest_screening_entries:
                           type: object
                           properties:
@@ -4598,6 +4592,23 @@ paths:
                             language_id:
                               type: integer
                               nullable: true
+                        previous_not_playable_screening_entries:
+                          type: object
+                          x-stoplight:
+                            id: ty94iebdn3z70
+                          nullable: true
+                          properties:
+                            id:
+                              type: integer
+                            status:
+                              type: string
+                            child_user_id:
+                              type: integer
+                            finish_date:
+                              type: string
+                              x-stoplight:
+                                id: d5k17roynqf8p
+                              nullable: true
                   pagination:
                     type: object
                     properties:
@@ -4615,65 +4626,72 @@ paths:
                         birth_date: '2022-06-13'
                         kindergarten_user_id: 12
                         preferred_language_id: 1
-                        show_play_button: 1
+                        show_play_button: 0
                         show_resume_button: 0
-                        show_create_entry_button: 0
+                        show_create_entry_button: 1
                         age: 3
-                        suggested_modules:
-                          - language_id: 1
-                            language_name: English
-                            module_id: 0
-                          - language_id: 2
-                            language_name: Malay
-                            module_id: 0
-                          - language_id: 3
-                            language_name: Chinese
-                            module_id: 0
-                          - language_id: 4
-                            language_name: Indonesian
-                            module_id: 0
+                        previous_played_at: '2025-06-30 08:36:27'
                         latest_screening_entries:
-                          id: 18
-                          status: entered
+                          id: 23
+                          status: incomplete
                           device_name: null
                           serial_number: null
-                          language_code: zh
+                          language_code: en
                           child_user_id: 29
-                          language_id: 3
+                          language_id: 1
+                        previous_not_playable_screening_entries:
+                          id: 23
+                          status: incomplete
+                          finish_date: '2025-06-30 08:36:27'
+                          child_user_id: 29
                       - id: 30
                         first_name: 5yo ID
                         last_name: TestChild
                         birth_date: '2020-06-18'
                         kindergarten_user_id: 12
                         preferred_language_id: 4
-                        show_play_button: 1
+                        show_play_button: 0
                         show_resume_button: 0
-                        show_create_entry_button: 0
+                        show_create_entry_button: 1
                         age: 5
-                        suggested_modules:
-                          - language_id: 1
-                            language_name: English
-                            module_id: 0
-                          - language_id: 2
-                            language_name: Malay
-                            module_id: 0
-                          - language_id: 3
-                            language_name: Chinese
-                            module_id: 0
-                          - language_id: 4
-                            language_name: Indonesian
-                            module_id: 0
+                        previous_played_at: null
                         latest_screening_entries:
-                          id: 17
-                          status: entered
-                          device_name: null
-                          serial_number: null
+                          id: 20
+                          status: cancelled
+                          device_name: oppo A95 23
+                          serial_number: ea52b8z
                           language_code: id
                           child_user_id: 30
                           language_id: 4
+                        previous_not_playable_screening_entries: null
+                      - id: 31
+                        first_name: Test UM
+                        last_name: 23 Jun
+                        birth_date: '2020-06-23'
+                        kindergarten_user_id: 12
+                        preferred_language_id: 1
+                        show_play_button: 0
+                        show_resume_button: 0
+                        show_create_entry_button: 1
+                        age: 5
+                        previous_played_at: null
+                        latest_screening_entries:
+                          id: 21
+                          status: incomplete
+                          device_name: oppo A95 23
+                          serial_number: ea52b8z
+                          language_code: en
+                          child_user_id: 31
+                          language_id: 1
+                        previous_not_playable_screening_entries:
+                          id: 21
+                          status: incomplete
+                          finish_date: null
+                          child_user_id: 31
                     pagination:
                       current_page: 1
                       last_page: 1
+                      perPage: 3
       operationId: get-screening-children
       x-stoplight:
         id: qge30f6fenb5v
@@ -5430,7 +5448,7 @@ paths:
                 Example 1:
                   value:
                     status: true
-                    message: NOT FOUND
+                    message: NOT FOUND-SE1
       operationId: post-screening-cancel-entry
       requestBody:
         content:
@@ -5461,6 +5479,76 @@ paths:
                   serial_number: ea52b8fe
       x-stoplight:
         id: ucg8t7ilytvn2
+    parameters: []
+  /screening/discard-entry:
+    post:
+      summary: Discard screening entry
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+                x-examples:
+                  Example 1:
+                    status: true
+                    message: Update Entry Status Success
+              examples:
+                Example 1:
+                  value:
+                    status: true
+                    message: Update Entry Status Success
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+                x-examples:
+                  Example 1:
+                    status: true
+                    message: NOT FOUND
+              examples:
+                Example 1:
+                  value:
+                    status: true
+                    message: NOT FOUND-SE2
+      operationId: post-screening-discard-entry
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              x-examples:
+                Example 1:
+                  child_user_id: 9
+                  entry_id: 6
+                  device_name: oppo A95 23
+                  serial_number: ea52b8fe
+              properties:
+                child_user_id:
+                  type: integer
+                entry_id:
+                  type: integer
+            examples:
+              Example 1:
+                value:
+                  child_user_id: 9
+                  entry_id: 6
+      x-stoplight:
+        id: m89z10v7ctxrd
     parameters: []
   /screening/modules:
     get:
@@ -7201,25 +7289,6 @@ paths:
           application/json:
             schema:
               type: object
-              properties:
-                child_user_id:
-                  type: integer
-                language_id:
-                  type: integer
-                entry_id:
-                  type: integer
-                module_id:
-                  type: integer
-                device_name:
-                  type: string
-                serial_number:
-                  type: string
-                os_version:
-                  type: string
-                model_number:
-                  type: string
-                app_version:
-                  type: string
               x-examples:
                 Example 1:
                   child_user_id: 9
@@ -7231,13 +7300,29 @@ paths:
                   os_version: ColorOS 13.0
                   model_number: CPH2365
                   app_version: V1.0.1b
+              properties:
+                child_user_id:
+                  type: integer
+                language_id:
+                  type: integer
+                entry_id:
+                  type: integer
+                device_name:
+                  type: string
+                serial_number:
+                  type: string
+                os_version:
+                  type: string
+                model_number:
+                  type: string
+                app_version:
+                  type: string
             examples:
               Example 1:
                 value:
                   child_user_id: 9
                   language_id: 1
                   entry_id: 6
-                  module_id: 1
                   device_name: oppo A95 23
                   serial_number: ea52b8fe
                   os_version: ColorOS 13.0
