@@ -7285,7 +7285,7 @@ paths:
                     - 4
   /screening/play:
     post:
-      summary: Playing screening module
+      summary: Playing screening entry
       tags: []
       responses:
         '200':
@@ -7385,7 +7385,7 @@ paths:
                 app_version:
                   type: string
                 has_developmental_concern:
-                  type: boolean
+                  type: integer
                   x-stoplight:
                     id: txqqlkddbhi7t
             examples:
@@ -7399,6 +7399,7 @@ paths:
                   os_version: ColorOS 13.0
                   model_number: CPH2365
                   app_version: V1.0.1b
+                  has_developmental_concern: 1
   /screening/finish-play:
     post:
       summary: Finish playing screening module
