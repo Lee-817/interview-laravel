@@ -4612,6 +4612,10 @@ paths:
                             language_id:
                               type: integer
                               nullable: true
+                            has_developmental_concern:
+                              type: integer
+                              x-stoplight:
+                                id: o6eamyp6qdvh3
                         previous_not_playable_screening_entries:
                           type: object
                           x-stoplight:
@@ -4658,6 +4662,7 @@ paths:
                           serial_number: null
                           language_code: en
                           child_user_id: 29
+                          has_developmental_concern: 0
                           language_id: 1
                         previous_not_playable_screening_entries:
                           id: 23
@@ -4682,6 +4687,7 @@ paths:
                           serial_number: ea52b8z
                           language_code: id
                           child_user_id: 30
+                          has_developmental_concern: 1
                           language_id: 4
                         previous_not_playable_screening_entries: null
                       - id: 31
@@ -4702,6 +4708,7 @@ paths:
                           serial_number: ea52b8z
                           language_code: en
                           child_user_id: 31
+                          has_developmental_concern: 0
                           language_id: 1
                         previous_not_playable_screening_entries:
                           id: 21
@@ -7377,6 +7384,10 @@ paths:
                   type: string
                 app_version:
                   type: string
+                has_developmental_concern:
+                  type: boolean
+                  x-stoplight:
+                    id: txqqlkddbhi7t
             examples:
               Example 1:
                 value:
