@@ -5647,7 +5647,7 @@ paths:
     parameters: []
   /screening/completed-entry:
     post:
-      summary: Completed screening module
+      summary: Completed screening entry
       tags: []
       responses:
         '200':
