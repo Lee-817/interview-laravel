@@ -5571,7 +5571,7 @@ paths:
     parameters: []
   /screening/cancelled-entry:
     post:
-      summary: cancelled screening entry
+      summary: Cancelled screening entry
       tags: []
       responses:
         '200':
@@ -5647,7 +5647,7 @@ paths:
     parameters: []
   /screening/completed-entry:
     post:
-      summary: Finish playing screening module
+      summary: Completed screening module
       tags: []
       responses:
         '200':
