@@ -5620,30 +5620,28 @@ paths:
           application/json:
             schema:
               type: object
-              properties:
-                child_user_id:
-                  type: integer
-                entry_id:
-                  type: integer
-                device_name:
-                  type: string
-                serial_number:
-                  type: string
               x-examples:
                 Example 1:
                   child_user_id: 9
                   entry_id: 6
                   device_name: oppo A95 23
                   serial_number: ea52b8fe
+              properties:
+                entry_id:
+                  type: integer
+                device_name:
+                  type: string
+                serial_number:
+                  type: string
             examples:
               Example 1:
                 value:
-                  child_user_id: 9
-                  entry_id: 6
+                  entry_id: 52
                   device_name: oppo A95 23
-                  serial_number: ea52b8fe
+                  serial_number: ea52b8z
       x-stoplight:
         id: ucg8t7ilytvn2
+      description: The entry status must be 'entered'
     parameters: []
   /screening/completed-entry:
     post:
@@ -5787,24 +5785,27 @@ paths:
           application/json:
             schema:
               type: object
-              x-examples:
-                Example 1:
-                  child_user_id: 9
-                  entry_id: 6
-                  device_name: oppo A95 23
-                  serial_number: ea52b8fe
               properties:
-                child_user_id:
-                  type: integer
                 entry_id:
                   type: integer
+                device_name:
+                  type: string
+                serial_number:
+                  type: string
+              x-examples:
+                Example 1:
+                  entry_id: 53
+                  device_name: oppo A95 23
+                  serial_number: ea52b8z
             examples:
               Example 1:
                 value:
-                  child_user_id: 9
-                  entry_id: 6
+                  entry_id: 53
+                  device_name: oppo A95 23
+                  serial_number: ea52b8z
       x-stoplight:
         id: m89z10v7ctxrd
+      description: The entry status must be 'entered' or 'playing'
     parameters: []
   /screening/check-existence:
     parameters: []
