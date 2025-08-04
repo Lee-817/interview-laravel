@@ -5807,6 +5807,90 @@ paths:
         id: m89z10v7ctxrd
       description: The entry status must be 'entered' or 'playing'
     parameters: []
+  /screening/mark-as-uploaded:
+    post:
+      summary: Mark screening entry as uploaded to cloud storage
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+                x-examples:
+                  Example 1:
+                    status: true
+                    message: Update Module Status Success
+              examples:
+                Example 1:
+                  value:
+                    status: true
+                    message: Update Module Status Success
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                  message:
+                    type: string
+                x-examples:
+                  Example 1:
+                    status: true
+                    message: NOT FOUND
+              examples:
+                Example 1:
+                  value:
+                    status: true
+                    message: NOT FOUND-SE5
+      operationId: post-screening-mark-as-uploaded
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                entry_id:
+                  type: integer
+                device_name:
+                  type: string
+                serial_number:
+                  type: string
+                os_version:
+                  type: string
+                model_number:
+                  type: string
+                app_version:
+                  type: string
+              x-examples:
+                Example 1:
+                  entry_id: 22
+                  device_name: oppo A95 23
+                  serial_number: ea52b8z
+                  os_version: ColorOS 13.0
+                  model_number: CPH2365
+                  app_version: V1.0.1b
+            examples:
+              Example 1:
+                value:
+                  entry_id: 22
+                  device_name: oppo A95 23 x
+                  serial_number: ea52b8z
+                  os_version: ColorOS 13.0
+                  model_number: CPH2365
+                  app_version: V1.0.1b
+      x-stoplight:
+        id: wdedqhf80j9e8
+    parameters: []
   /screening/check-existence:
     parameters: []
     post:
