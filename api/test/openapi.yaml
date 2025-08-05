@@ -6006,7 +6006,7 @@ paths:
         id: bawyp1kkutn0r
   /screening/get-upload-url:
     post:
-      summary: Get S3 presigned urls for upload to intervention
+      summary: Get S3 presigned urls for upload to screening
       tags: []
       responses:
         '200':
